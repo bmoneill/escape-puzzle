@@ -13,7 +13,7 @@ execute_process(
 )
 
 # Project Version
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DESCAPEPUZZLE_VERSION='\"${GIT_COMMIT_HASH}\"'")
+add_compile_definitions("ESCAPEPUZZLE_VERSION=\"${GIT_COMMIT_HASH}\"")
 
 function(Build_Game)
   add_subdirectory(src)
