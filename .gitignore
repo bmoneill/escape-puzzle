@@ -1,0 +1,15 @@
+# Building/testing
+build*
+vgcore*
+gmon.out
+
+# Docs output
+docs/html
+
+# Editor stuff
+.zed
+.clangd
+.vscode
+
+# OS files
+.DS_Store
