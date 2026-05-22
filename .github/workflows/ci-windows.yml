@@ -43,5 +43,10 @@ jobs:
           name: build
           path: ${{ github.workspace }}/build
 
+      - name: Set up MinGW
+        uses: egor-tensin/setup-mingw@v3
+        with:
+          platform: x64
+
       - name: Run tests
         run: ctest --test-dir ${{github.workspace}}/build --output-on-failure --verbose

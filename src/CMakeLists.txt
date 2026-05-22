@@ -43,7 +43,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 target_link_libraries(${PROJECT_NAME} raylib)
 
 if(TEST)
-  add_library(lib${PROJECT_NAME} SHARED ${SOURCES})
+  add_library(lib${PROJECT_NAME} STATIC ${SOURCES})
   target_include_directories(lib${PROJECT_NAME} PUBLIC
   "${CMAKE_SOURCE_DIR}/src"
   "${CMAKE_SOURCE_DIR}/../external/raylib/src"
