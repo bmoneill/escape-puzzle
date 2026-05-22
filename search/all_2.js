@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['start_5fgame_0',['start_game',['../escapepuzzle_8c.html#a7b3c5eabdee23a068174748b1d2df871',1,'start_game(void):&#160;escapepuzzle.c'],['../escapepuzzle_8h.html#a7b3c5eabdee23a068174748b1d2df871',1,'start_game(void):&#160;escapepuzzle.c']]]
+  ['main_0',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
+  ['main_2ec_1',['main.c',['../main_8c.html',1,'']]]
 ];
