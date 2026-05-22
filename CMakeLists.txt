@@ -4,6 +4,17 @@ include(CTest)
 
 option(TEST "Enable tests" ON)
 
+# Get git commit hash for version
+execute_process(
+    COMMAND git rev-parse --short HEAD
+    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
+    OUTPUT_VARIABLE GIT_COMMIT_HASH
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+)
+
+# Project Version
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DESCAPEPUZZLE_VERSION='\"${GIT_COMMIT_HASH}\"'")
+
 function(Build_Game)
   add_subdirectory(src)
   include_directories(src)
@@ -15,7 +26,6 @@ function(Build_Tests)
 endfunction()
 
 Build_Game()
-
 if(TEST)
   Build_Tests()
 endif()

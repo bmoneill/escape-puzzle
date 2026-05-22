@@ -6,21 +6,10 @@ if(CMAKE_PLATFORM_ID STREQUAL "Windows")
   set(CMAKE_C_COMPILER "x86_64-w64-mingw32-gcc")
 endif()
 
-# Get git commit hash for version
-execute_process(
-    COMMAND git rev-parse --short HEAD
-    WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
-    OUTPUT_VARIABLE GIT_COMMIT_HASH
-    OUTPUT_STRIP_TRAILING_WHITESPACE
-)
-
-
 ######################
 ### COMPILER FLAGS ###
 ######################
 
-# Project Version
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DESCAPEPUZZLE_VERSION='\"${GIT_COMMIT_HASH}\"'")
 
 # C Standard
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c17 -D_DEFAULT_SOURCE -D_BSD_SOURCE -D_XOPEN_SOURCE=700 -D_FILE_OFFSET_BITS=64")

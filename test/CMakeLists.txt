@@ -1,7 +1,6 @@
 function(add_escapepuzzle_test name)
   set(test_src "${CMAKE_CURRENT_SOURCE_DIR}/test_${name}.c")
   set(runner_src "${CMAKE_CURRENT_BINARY_DIR}/test_${name}_runner.c")
-  set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -DESCAPEPUZZLE_VERSION='\"${GIT_COMMIT_HASH}\"'")
 
   add_custom_command(
         OUTPUT ${runner_src}
