@@ -13,6 +13,12 @@ jobs:
         with:
           submodules: true
 
+      - name: Cache external dependencies
+        uses: actions/cache@v4
+        with:
+          path: ${{ github.workspace }}/build/external
+          key: ${{ runner.os }}-external-${{ hashFiles('external/CMakeLists.txt', 'external/raylib/CMakeLists.txt', 'external/raylib/src/CMakeLists.txt') }}
+
       - name: Configure CMake
         run: cmake -B ${{github.workspace}}/build -DTEST=ON
 
