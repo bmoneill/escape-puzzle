@@ -5,10 +5,12 @@
  */
 #include "escapepuzzle.h"
 
+#include "ui/ui.h"
+
 #include <stdio.h>
 
 int start_game(void) {
-    printf("Welcome to the Escape Puzzle Game!\n");
+    ui_init(&(UI) { 0 });
     return 0;
 }
 

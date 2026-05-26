@@ -4,3 +4,6 @@
 [submodule "external/raylib"]
 	path = external/raylib
 	url = https://github.com/raysan5/raylib
+[submodule "external/arena"]
+	path = external/arena
+	url = https://github.com/bmoneill/arena

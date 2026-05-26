@@ -33,12 +33,20 @@ include_directories(
 # We don't include main.c here because it's not used for testing
 set(SOURCES
   "escapepuzzle.c"
+  "core/ht.c"
+  "core/locale.c"
+  "core/log.c"
+  "core/memory.c"
+  "core/random.c"
+  "ui/main_menu.c"
+  "ui/ui.c"
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} "main.c")
 target_include_directories(${PROJECT_NAME} PUBLIC
   "${CMAKE_SOURCE_DIR}/src"
   "${CMAKE_SOURCE_DIR}/../external/raylib/src"
+  "${CMAKE_SOURCE_DIR}/../external/arena/src/arena"
 )
 target_link_libraries(${PROJECT_NAME} raylib)
 
@@ -47,6 +55,7 @@ if(TEST)
   target_include_directories(lib${PROJECT_NAME} PUBLIC
   "${CMAKE_SOURCE_DIR}/src"
   "${CMAKE_SOURCE_DIR}/../external/raylib/src"
+  "${CMAKE_SOURCE_DIR}/../external/arena/src/arena"
 )
-  target_link_libraries(lib${PROJECT_NAME} raylib)
+  target_link_libraries(lib${PROJECT_NAME} raylib arena)
 endif()
