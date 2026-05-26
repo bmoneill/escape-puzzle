@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['escapepuzzle_2ec_0',['escapepuzzle.c',['../escapepuzzle_8c.html',1,'']]],
-  ['escapepuzzle_2eh_1',['escapepuzzle.h',['../escapepuzzle_8h.html',1,'']]]
+  ['config_2eh_0',['config.h',['../config_8h.html',1,'']]]
 ];
