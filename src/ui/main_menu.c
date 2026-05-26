@@ -26,7 +26,7 @@ void draw_main_menu(UI* ui) {
     const int   num_items    = sizeof(menu_items) / sizeof(menu_items[0]);
 
     for (int i = 0; i < num_items; i++) {
-        Color color = (i == selected_item) ? RED : WHITE;
+        Color color = (i == ui->selected_menu_item) ? RED : WHITE;
         DrawText(menu_items[i], 100, 100 + i * 40, 20, color);
     }
 }

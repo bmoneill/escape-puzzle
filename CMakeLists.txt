@@ -15,17 +15,9 @@ execute_process(
 # Project Version
 add_compile_definitions("ESCAPEPUZZLE_VERSION=\"${GIT_COMMIT_HASH}\"")
 
-function(Build_Game)
-  add_subdirectory(src)
-  include_directories(src)
-endfunction()
+add_subdirectory(external)
+add_subdirectory(src)
 
-function(Build_Tests)
-  add_subdirectory(external)
-  add_subdirectory(test)
-endfunction()
-
-Build_Game()
 if(TEST)
-  Build_Tests()
+  add_subdirectory(test)
 endif()
