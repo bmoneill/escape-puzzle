@@ -26,27 +26,28 @@ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O3 -ffast-math")
 ### SOURCES & HEADERS ###
 #########################
 
-include_directories(
-  "${CMAKE_SOURCE_DIR}/../external/raylib/src"
-  )
-
 # We don't include main.c here because it's not used for testing
 set(SOURCES
   "escapepuzzle.c"
+  "core/ht.c"
+  "core/locale.c"
+  "core/log.c"
+  "core/memory.c"
+  "core/random.c"
+  "ui/main_menu.c"
+  "ui/ui.c"
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES} "main.c")
 target_include_directories(${PROJECT_NAME} PUBLIC
-  "${CMAKE_SOURCE_DIR}/src"
-  "${CMAKE_SOURCE_DIR}/../external/raylib/src"
+  "${CMAKE_CURRENT_SOURCE_DIR}"
 )
-target_link_libraries(${PROJECT_NAME} raylib)
+target_link_libraries(${PROJECT_NAME} raylib arena)
 
 if(TEST)
   add_library(lib${PROJECT_NAME} STATIC ${SOURCES})
   target_include_directories(lib${PROJECT_NAME} PUBLIC
-  "${CMAKE_SOURCE_DIR}/src"
-  "${CMAKE_SOURCE_DIR}/../external/raylib/src"
-)
-  target_link_libraries(lib${PROJECT_NAME} raylib)
+    "${CMAKE_CURRENT_SOURCE_DIR}"
+  )
+  target_link_libraries(lib${PROJECT_NAME} raylib arena)
 endif()
