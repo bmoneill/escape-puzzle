@@ -13,6 +13,7 @@ int start_game(void) {
     printf("Welcome to the Escape Puzzle Game!\n");
     printf("Test commit");
     printf("Test2");
+    printf("Test3");
     ui_init(&(UI) { 0 });
     return 0;
 }
