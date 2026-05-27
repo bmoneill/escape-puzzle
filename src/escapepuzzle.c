@@ -11,9 +11,17 @@
 
 int start_game(void) {
     printf("Welcome to the Escape Puzzle Game!\n");
+<<<<<<< HEAD
+=======
+    printf("Test commit ignore");
+>>>>>>> ab11110 (Test commit)
     ui_init(&(UI) { 0 });
     return 0;
 }
 
+<<<<<<< HEAD
 const char* escapepuzzle_version(void) { return ESCAPEPUZZLE_VERSION; }
 
+=======
+const char* escapepuzzle_version(void) { return ESCAPEPUZZLE_VERSION; }
+>>>>>>> ab11110 (Test commit)
