@@ -19,7 +19,8 @@ void ui_init(UI* ui) {
         ClearBackground(RAYWHITE);
         switch (ui->state) {
         case UI_STATE_MAIN_MENU:
-            draw_main_menu(0);
+            update_main_menu(ui);
+            draw_main_menu(ui);
             break;
         case UI_STATE_IN_GAME:
             break;
