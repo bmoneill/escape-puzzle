@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ht_2ec_0',['ht.c',['../ht_8c.html',1,'']]],
-  ['ht_2eh_1',['ht.h',['../ht_8h.html',1,'']]]
+  ['game_5fstate_2ec_0',['game_state.c',['../game__state_8c.html',1,'']]],
+  ['game_5fstate_2eh_1',['game_state.h',['../game__state_8h.html',1,'']]]
 ];

@@ -22,5 +22,6 @@ var searchData=
   ['ui_5fstate_5fpause_19',['UI_STATE_PAUSE',['../ui_8h.html#a46982b6b3247b002a74dde6ca26b2344abb8bd4f0f83851061ae351afc2bf09ce',1,'ui.h']]],
   ['uistate_20',['UIState',['../ui_8h.html#a46982b6b3247b002a74dde6ca26b2344',1,'ui.h']]],
   ['update_5fmain_5fmenu_21',['update_main_menu',['../main__menu_8c.html#afba4ba34e7368eeba9a06fe09df1fc2f',1,'update_main_menu(UI *ui):&#160;main_menu.c'],['../main__menu_8h.html#afba4ba34e7368eeba9a06fe09df1fc2f',1,'update_main_menu(UI *ui):&#160;main_menu.c']]],
-  ['used_22',['used',['../structMemoryManager.html#a796338dad562facbdf929c29013086df',1,'MemoryManager']]]
+  ['update_5fplayer_22',['update_player',['../input_8c.html#ab63c28c1880f38be1634ef275622df9a',1,'input.c']]],
+  ['used_23',['used',['../structMemoryManager.html#a796338dad562facbdf929c29013086df',1,'MemoryManager']]]
 ];

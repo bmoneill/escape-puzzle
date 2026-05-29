@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['uistate_0',['UIState',['../ui_8h.html#a46982b6b3247b002a74dde6ca26b2344',1,'ui.h']]]
+  ['tiletype_0',['TileType',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1',1,'tile.h']]]
 ];

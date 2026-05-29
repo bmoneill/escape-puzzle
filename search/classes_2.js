@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['memorymanager_0',['MemoryManager',['../structMemoryManager.html',1,'']]]
+  ['locale_0',['Locale',['../structLocale.html',1,'']]],
+  ['localeentry_1',['LocaleEntry',['../structLocaleEntry.html',1,'']]]
 ];

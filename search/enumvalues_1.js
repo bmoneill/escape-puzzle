@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['ui_5fstate_5fgame_5fover_0',['UI_STATE_GAME_OVER',['../ui_8h.html#a46982b6b3247b002a74dde6ca26b2344a60ba9f2a9fb2a7f53f1191f6c7b3e544',1,'ui.h']]],
-  ['ui_5fstate_5fin_5fgame_1',['UI_STATE_IN_GAME',['../ui_8h.html#a46982b6b3247b002a74dde6ca26b2344ae68ea7efc1ce7c07ebae3f33e7cb786e',1,'ui.h']]],
-  ['ui_5fstate_5fmain_5fmenu_2',['UI_STATE_MAIN_MENU',['../ui_8h.html#a46982b6b3247b002a74dde6ca26b2344a83428a07b2010df3ea8eea54b670c482',1,'ui.h']]],
-  ['ui_5fstate_5fpause_3',['UI_STATE_PAUSE',['../ui_8h.html#a46982b6b3247b002a74dde6ca26b2344abb8bd4f0f83851061ae351afc2bf09ce',1,'ui.h']]]
+  ['tile_5fexit_0',['TILE_EXIT',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1aea496f253cb69969788c51bf22580e7c',1,'tile.h']]],
+  ['tile_5ffloor_1',['TILE_FLOOR',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a64d39aaa6c7946a2afff0c301daa1724',1,'tile.h']]],
+  ['tile_5flever_2',['TILE_LEVER',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1ae13fe0f1294ff3a5df8dac7bbec79655',1,'tile.h']]],
+  ['tile_5fwall_3',['TILE_WALL',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1afc3e42901752d92e55d61c1a5caec31b',1,'tile.h']]]
 ];
