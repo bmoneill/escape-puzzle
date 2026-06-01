@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PROJECTNAME: src/game/game_state.h File Reference</title>
+<title>PROJECTNAME: src/graphics/raylib/render.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('game__state_8h.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('render_8c.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -91,35 +91,37 @@ $(document).ready(function(){initNavTree('game__state_8h.html',''); initResizabl
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">game_state.h File Reference</div></div>
+  <div class="headertitle"><div class="title">render.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="map_8h_source.html">map.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="player_8h_source.html">player.h</a>&quot;</code><br />
-</div>
-<p><a href="game__state_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structGameState.html">GameState</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+
+<p>Raylib implementation of the rendering system.  
+<a href="#details">More...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="render_8h_source.html">graphics/render.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="game_8h_source.html">game/game.h</a>&quot;</code><br />
+<code>#include &quot;raylib.h&quot;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa4db6b0909bb25c39c05fd5b15d08dec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game__state_8h.html#aa4db6b0909bb25c39c05fd5b15d08dec">game_state_init</a> (<a class="el" href="structGameState.html">GameState</a> *game)</td></tr>
-<tr class="separator:aa4db6b0909bb25c39c05fd5b15d08dec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19d602180d3af1e1e3969518075548cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#a19d602180d3af1e1e3969518075548cc">render_init</a> (void)</td></tr>
+<tr class="memdesc:a19d602180d3af1e1e3969518075548cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the renderer.  <br /></td></tr>
+<tr class="separator:a19d602180d3af1e1e3969518075548cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf488c90c775fc0d08b87917af1e73ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#aaf488c90c775fc0d08b87917af1e73ef">render_frame</a> (<a class="el" href="structGameState.html">GameState</a> *game)</td></tr>
+<tr class="memdesc:aaf488c90c775fc0d08b87917af1e73ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render a single frame of the game.  <br /></td></tr>
+<tr class="separator:aaf488c90c775fc0d08b87917af1e73ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="aa4db6b0909bb25c39c05fd5b15d08dec" name="aa4db6b0909bb25c39c05fd5b15d08dec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4db6b0909bb25c39c05fd5b15d08dec">&#9670;&#160;</a></span>game_state_init()</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Raylib implementation of the rendering system. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="aaf488c90c775fc0d08b87917af1e73ef" name="aaf488c90c775fc0d08b87917af1e73ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf488c90c775fc0d08b87917af1e73ef">&#9670;&#160;</a></span>render_frame()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void game_state_init </td>
+          <td class="memname">void render_frame </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structGameState.html">GameState</a> *&#160;</td>
           <td class="paramname"><em>game</em></td><td>)</td>
@@ -128,6 +130,35 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Render a single frame of the game. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>The current game state to render </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a19d602180d3af1e1e3969518075548cc" name="a19d602180d3af1e1e3969518075548cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19d602180d3af1e1e3969518075548cc">&#9670;&#160;</a></span>render_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void render_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the renderer. </p>
+<p>This function should be called once at the start of the program to set up any necessary graphics resources. </p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -135,7 +166,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1699be727a800b1d059c6f7f2b91d2ee.html">game</a></li><li class="navelem"><a class="el" href="game__state_8h.html">game_state.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_560415a5d2bc4999842279f4fc1debef.html">graphics</a></li><li class="navelem"><a class="el" href="dir_328c7714e004d6d5eed9319b723bffca.html">raylib</a></li><li class="navelem"><a class="el" href="render_8c.html">render.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

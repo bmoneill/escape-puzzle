@@ -1,4 +1,4 @@
 var input_8c =
 [
-    [ "update_player", "input_8c.html#ab63c28c1880f38be1634ef275622df9a", null ]
+    [ "get_keys_pressed", "input_8c.html#a8a59146ce09a6644b0df71484c7816e9", null ]
 ];

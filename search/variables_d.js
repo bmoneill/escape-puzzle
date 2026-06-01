@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['width_0',['width',['../structMap.html#a2474a5474cbff19523a51eb1de01cda4',1,'Map::width()'],['../structPlayer.html#a2474a5474cbff19523a51eb1de01cda4',1,'Player::width()']]]
+  ['used_0',['used',['../structMemoryManager.html#a796338dad562facbdf929c29013086df',1,'MemoryManager']]]
 ];

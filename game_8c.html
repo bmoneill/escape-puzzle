@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PROJECTNAME: src/ui Directory Reference</title>
+<title>PROJECTNAME: src/game/game.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('dir_da5c6b39c0a2f54e57df6799511cd3ab.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('game_8c.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -90,27 +90,65 @@ $(document).ready(function(){initNavTree('dir_da5c6b39c0a2f54e57df6799511cd3ab.h
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ui Directory Reference</div></div>
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">game.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
-Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main__menu_8c.html">main_menu.c</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main__menu_8h.html">main_menu.h</a> <a href="main__menu_8h_source.html">[code]</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html">ui.c</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html">ui.h</a> <a href="ui_8h_source.html">[code]</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<div class="textblock"><code>#include &quot;<a class="el" href="game_8h_source.html">game.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="render_8h_source.html">graphics/render.h</a>&quot;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a6525e21c4a51aecdaeeebf9946b1a8d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a6525e21c4a51aecdaeeebf9946b1a8d1">game_init</a> (<a class="el" href="structGameState.html">GameState</a> *game)</td></tr>
+<tr class="separator:a6525e21c4a51aecdaeeebf9946b1a8d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09e423ee70415035a79abf190698a4b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a09e423ee70415035a79abf190698a4b8">game_exit</a> (<a class="el" href="structGameState.html">GameState</a> *game)</td></tr>
+<tr class="separator:a09e423ee70415035a79abf190698a4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a09e423ee70415035a79abf190698a4b8" name="a09e423ee70415035a79abf190698a4b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09e423ee70415035a79abf190698a4b8">&#9670;&#160;</a></span>game_exit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game_exit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGameState.html">GameState</a> *&#160;</td>
+          <td class="paramname"><em>game</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6525e21c4a51aecdaeeebf9946b1a8d1" name="a6525e21c4a51aecdaeeebf9946b1a8d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6525e21c4a51aecdaeeebf9946b1a8d1">&#9670;&#160;</a></span>game_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void game_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structGameState.html">GameState</a> *&#160;</td>
+          <td class="paramname"><em>game</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_da5c6b39c0a2f54e57df6799511cd3ab.html">ui</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1699be727a800b1d059c6f7f2b91d2ee.html">game</a></li><li class="navelem"><a class="el" href="game_8c.html">game.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

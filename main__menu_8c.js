@@ -1,5 +1,5 @@
 var main__menu_8c =
 [
-    [ "draw_main_menu", "main__menu_8c.html#a86b80da2b5dbab70a3b3b4d81191ee94", null ],
-    [ "update_main_menu", "main__menu_8c.html#afba4ba34e7368eeba9a06fe09df1fc2f", null ]
+    [ "exit_game", "main__menu_8c.html#af5fb6ee83a58785407163bd1f97390ec", null ],
+    [ "main_menu_init", "main__menu_8c.html#a04674b3da6794856224acf0df1b477b7", null ]
 ];

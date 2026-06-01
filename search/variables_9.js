@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['seed_5fptr_0',['seed_ptr',['../random_8c.html#a831130bab15fab82397e216b99a28b74',1,'random.c']]],
-  ['selected_5fmenu_5fitem_1',['selected_menu_item',['../structUI.html#a461213a787479df74939a460aa644449',1,'UI']]],
-  ['solid_2',['solid',['../structTile.html#a17a27bf4fcb3478774f130c1b90afa7d',1,'Tile']]],
-  ['state_3',['state',['../structUI.html#a2b7cef2c436900190d11f53f5caa3b9c',1,'UI']]],
-  ['stats_4',['stats',['../structMemoryManager.html#a506ab849a6ca589b1f414d022d765564',1,'MemoryManager']]]
+  ['name_0',['name',['../structMenuItem.html#a8f8f80d37794cde9472343e4487ba3eb',1,'MenuItem']]],
+  ['num_5fitems_1',['num_items',['../structMenu.html#ad59331b02d78afbd7ff3f38408b4fd8d',1,'Menu']]]
 ];
