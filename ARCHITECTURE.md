@@ -11,6 +11,7 @@ Most modules are designed to have a similar lifecycle: `MODULE_init`, `MODULE_up
 ## Table of Contents
 
 - [Core Modules](#core-modules)
+  - [Hash Table](#hash-table)
   - [Locale](#locale)
   - [Logging](#logging)
   - [Memory](#memory)
@@ -27,6 +28,14 @@ Most modules are designed to have a similar lifecycle: `MODULE_init`, `MODULE_up
   - [Render](#render)
 
 ## Core Modules
+
+### Hash Table
+
+File: `core/ht.c`
+
+This is an implementation of a hash table, which is used for storing key-value
+pairs. This can be used for various purposes in the project,
+but is not used anywhere yet.
 
 ### Locale
 
@@ -55,6 +64,16 @@ This project uses an arena allocator, which allows for efficient memory manageme
 For example, once the player completes a level, all memory associated with that
 level can be freed in one operation, rather than having to track and free
 individual allocations.
+
+Four arenas are used in the project:
+
+- `MEM_TEMP`: Temporary memory for short-term use. TODO: Figure out when this
+  should be cleared or exist at all.
+- `MEM_FRAME`: Memory for the current frame, freed after frame is drawn.
+- `MEM_LEVEL`: Memory for the current level, freed when player completes level.
+- `MEM_PERM`: Permanent memory for the entire game, freed when game is closed.
+  This is used for things like textures and other resources that are loaded once
+  and used throughout the game.
 
 ## Random
 
