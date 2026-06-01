@@ -93,31 +93,32 @@ $(document).ready(function(){initNavTree('game_8h_source.html',''); initResizabl
   <div class="headertitle"><div class="title">game.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="game_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// game.h</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#ifndef GAME_H</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#define GAME_H</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="map_8h.html">map.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="player_8h.html">player.h</a>&quot;</span></div>
+<a href="game_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#ifndef GAME_H</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#define GAME_H</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structGameState.html">    8</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structGameState.html#ac9becb8e2f80125547c8cc8f9d56b7ab">    9</a></span>    <a class="code hl_struct" href="structMap.html">Map</a>    <a class="code hl_variable" href="structGameState.html#ac9becb8e2f80125547c8cc8f9d56b7ab">map</a>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structGameState.html#af61d6983a9396a11078805087518af88">   10</a></span>    <a class="code hl_struct" href="structPlayer.html">Player</a> <a class="code hl_variable" href="structGameState.html#af61d6983a9396a11078805087518af88">player</a>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>} <a class="code hl_struct" href="structGameState.html">GameState</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a6525e21c4a51aecdaeeebf9946b1a8d1">game_init</a>(<a class="code hl_struct" href="structGameState.html">GameState</a>* game);</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a09e423ee70415035a79abf190698a4b8">game_exit</a>(<a class="code hl_struct" href="structGameState.html">GameState</a>* game);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="agame_8h_html_a09e423ee70415035a79abf190698a4b8"><div class="ttname"><a href="game_8h.html#a09e423ee70415035a79abf190698a4b8">game_exit</a></div><div class="ttdeci">void game_exit(GameState *game)</div><div class="ttdef"><b>Definition:</b> game.c:19</div></div>
-<div class="ttc" id="agame_8h_html_a6525e21c4a51aecdaeeebf9946b1a8d1"><div class="ttname"><a href="game_8h.html#a6525e21c4a51aecdaeeebf9946b1a8d1">game_init</a></div><div class="ttdeci">void game_init(GameState *game)</div><div class="ttdef"><b>Definition:</b> game.c:7</div></div>
-<div class="ttc" id="amap_8h_html"><div class="ttname"><a href="map_8h.html">map.h</a></div></div>
-<div class="ttc" id="aplayer_8h_html"><div class="ttname"><a href="player_8h.html">player.h</a></div></div>
-<div class="ttc" id="astructGameState_html"><div class="ttname"><a href="structGameState.html">GameState</a></div><div class="ttdef"><b>Definition:</b> game.h:8</div></div>
-<div class="ttc" id="astructGameState_html_ac9becb8e2f80125547c8cc8f9d56b7ab"><div class="ttname"><a href="structGameState.html#ac9becb8e2f80125547c8cc8f9d56b7ab">GameState::map</a></div><div class="ttdeci">Map map</div><div class="ttdef"><b>Definition:</b> game.h:9</div></div>
-<div class="ttc" id="astructGameState_html_af61d6983a9396a11078805087518af88"><div class="ttname"><a href="structGameState.html#af61d6983a9396a11078805087518af88">GameState::player</a></div><div class="ttdeci">Player player</div><div class="ttdef"><b>Definition:</b> game.h:10</div></div>
-<div class="ttc" id="astructMap_html"><div class="ttname"><a href="structMap.html">Map</a></div><div class="ttdef"><b>Definition:</b> map.h:10</div></div>
-<div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> player.h:11</div></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="map_8h.html">map.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="player_8h.html">player.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structGameState.html">   14</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structGameState.html#ac9becb8e2f80125547c8cc8f9d56b7ab">   15</a></span>    <a class="code hl_struct" href="structMap.html">Map</a>    <a class="code hl_variable" href="structGameState.html#ac9becb8e2f80125547c8cc8f9d56b7ab">map</a>; </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structGameState.html#af61d6983a9396a11078805087518af88">   16</a></span>    <a class="code hl_struct" href="structPlayer.html">Player</a> <a class="code hl_variable" href="structGameState.html#af61d6983a9396a11078805087518af88">player</a>; </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>} <a class="code hl_struct" href="structGameState.html">GameState</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a6525e21c4a51aecdaeeebf9946b1a8d1">game_init</a>(<a class="code hl_struct" href="structGameState.html">GameState</a>* game);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keywordtype">void</span> <a class="code hl_function" href="game_8h.html#a09e423ee70415035a79abf190698a4b8">game_exit</a>(<a class="code hl_struct" href="structGameState.html">GameState</a>* game);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="agame_8h_html_a09e423ee70415035a79abf190698a4b8"><div class="ttname"><a href="game_8h.html#a09e423ee70415035a79abf190698a4b8">game_exit</a></div><div class="ttdeci">void game_exit(GameState *game)</div><div class="ttdoc">Exits the game, performing any necessary cleanup.</div><div class="ttdef"><b>Definition:</b> game.c:20</div></div>
+<div class="ttc" id="agame_8h_html_a6525e21c4a51aecdaeeebf9946b1a8d1"><div class="ttname"><a href="game_8h.html#a6525e21c4a51aecdaeeebf9946b1a8d1">game_init</a></div><div class="ttdeci">void game_init(GameState *game)</div><div class="ttdoc">Initializes the game state and enters the game loop.</div><div class="ttdef"><b>Definition:</b> game.c:10</div></div>
+<div class="ttc" id="amap_8h_html"><div class="ttname"><a href="map_8h.html">map.h</a></div><div class="ttdoc">Map header.</div></div>
+<div class="ttc" id="aplayer_8h_html"><div class="ttname"><a href="player_8h.html">player.h</a></div><div class="ttdoc">Player header.</div></div>
+<div class="ttc" id="astructGameState_html"><div class="ttname"><a href="structGameState.html">GameState</a></div><div class="ttdoc">Represents the entire state of the game, including the map and player.</div><div class="ttdef"><b>Definition:</b> game.h:14</div></div>
+<div class="ttc" id="astructGameState_html_ac9becb8e2f80125547c8cc8f9d56b7ab"><div class="ttname"><a href="structGameState.html#ac9becb8e2f80125547c8cc8f9d56b7ab">GameState::map</a></div><div class="ttdeci">Map map</div><div class="ttdoc">The current game map, including layout and objects.</div><div class="ttdef"><b>Definition:</b> game.h:15</div></div>
+<div class="ttc" id="astructGameState_html_af61d6983a9396a11078805087518af88"><div class="ttname"><a href="structGameState.html#af61d6983a9396a11078805087518af88">GameState::player</a></div><div class="ttdeci">Player player</div><div class="ttdoc">The player character, including position and state.</div><div class="ttdef"><b>Definition:</b> game.h:16</div></div>
+<div class="ttc" id="astructMap_html"><div class="ttname"><a href="structMap.html">Map</a></div><div class="ttdef"><b>Definition:</b> map.h:18</div></div>
+<div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdef"><b>Definition:</b> player.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

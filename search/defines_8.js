@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['map_5fheight_0',['MAP_HEIGHT',['../map_8h.html#a529d5ebb449edf31d9835d13f4fb9f89',1,'map.h']]],
-  ['map_5fwidth_1',['MAP_WIDTH',['../map_8h.html#aa037a6d6a4f04d51c7ec1c9ee9054e76',1,'map.h']]],
+  ['max_5fmap_5fheight_0',['MAX_MAP_HEIGHT',['../map_8h.html#abd6ea02554bef5847ae9eb90cf69037a',1,'map.h']]],
+  ['max_5fmap_5fwidth_1',['MAX_MAP_WIDTH',['../map_8h.html#a47a9b5a53c3c640caa44a80bfcd120a3',1,'map.h']]],
   ['mem_5fframe_2',['MEM_FRAME',['../memory_8h.html#af42caa3298a8aa760b3a5171a17ec5ce',1,'memory.h']]],
   ['mem_5fframe_5fstrdup_3',['MEM_FRAME_STRDUP',['../memory_8h.html#a47463452289f14baaeaf2ca2fb55e9ff',1,'memory.h']]],
   ['mem_5flevel_4',['MEM_LEVEL',['../memory_8h.html#ac6eb2577e0d851c1eedf19a3001149c4',1,'memory.h']]],

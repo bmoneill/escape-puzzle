@@ -95,6 +95,9 @@ $(document).ready(function(){initNavTree('game_8c.html',''); initResizable(); })
   <div class="headertitle"><div class="title">game.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Core game logic.  
+<a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="game_8h_source.html">game.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="render_8h_source.html">graphics/render.h</a>&quot;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
@@ -102,11 +105,15 @@ $(document).ready(function(){initNavTree('game_8c.html',''); initResizable(); })
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a6525e21c4a51aecdaeeebf9946b1a8d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a6525e21c4a51aecdaeeebf9946b1a8d1">game_init</a> (<a class="el" href="structGameState.html">GameState</a> *game)</td></tr>
+<tr class="memdesc:a6525e21c4a51aecdaeeebf9946b1a8d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the game state and enters the game loop.  <br /></td></tr>
 <tr class="separator:a6525e21c4a51aecdaeeebf9946b1a8d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09e423ee70415035a79abf190698a4b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a09e423ee70415035a79abf190698a4b8">game_exit</a> (<a class="el" href="structGameState.html">GameState</a> *game)</td></tr>
+<tr class="memdesc:a09e423ee70415035a79abf190698a4b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the game, performing any necessary cleanup.  <br /></td></tr>
 <tr class="separator:a09e423ee70415035a79abf190698a4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Core game logic. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a id="a09e423ee70415035a79abf190698a4b8" name="a09e423ee70415035a79abf190698a4b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a09e423ee70415035a79abf190698a4b8">&#9670;&#160;</a></span>game_exit()</h2>
 
@@ -122,6 +129,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Exits the game, performing any necessary cleanup. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>Pointer to the <a class="el" href="structGameState.html" title="Represents the entire state of the game, including the map and player.">GameState</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -140,6 +155,14 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Initializes the game state and enters the game loop. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">game</td><td>Pointer to the <a class="el" href="structGameState.html" title="Represents the entire state of the game, including the map and player.">GameState</a> to initialize. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

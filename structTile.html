@@ -96,43 +96,55 @@ $(document).ready(function(){initNavTree('structTile.html',''); initResizable();
 </div><!--header-->
 <div class="contents">
 
+<p>Represents a single tile in the game map, including its type, texture, and solidity.  
+ <a href="structTile.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="tile_8h_source.html">tile.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a97d14167d3a1ce734215dba8b98ea9f9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1">TileType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTile.html#a97d14167d3a1ce734215dba8b98ea9f9">type</a></td></tr>
+<tr class="memdesc:a97d14167d3a1ce734215dba8b98ea9f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the tile (e.g., floor, wall, lever, exit).  <br /></td></tr>
 <tr class="separator:a97d14167d3a1ce734215dba8b98ea9f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac312e9ff5c83cc8b1f6ede96d87d79b5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTile.html#ac312e9ff5c83cc8b1f6ede96d87d79b5">texture_id</a></td></tr>
-<tr class="separator:ac312e9ff5c83cc8b1f6ede96d87d79b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a17a27bf4fcb3478774f130c1b90afa7d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTile.html#a17a27bf4fcb3478774f130c1b90afa7d">solid</a></td></tr>
-<tr class="separator:a17a27bf4fcb3478774f130c1b90afa7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a61dd869a984a2b19a5f892dbb27621"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a332ccd83dfe2973e6cb2b61e4f3ab7e6">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTile.html#a3a61dd869a984a2b19a5f892dbb27621">texture_id</a></td></tr>
+<tr class="memdesc:a3a61dd869a984a2b19a5f892dbb27621"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ID of the texture to use when rendering this tile.  <br /></td></tr>
+<tr class="separator:a3a61dd869a984a2b19a5f892dbb27621"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97364c2752d8cecb3b08bf3ce8f24544"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a332ccd83dfe2973e6cb2b61e4f3ab7e6">u32</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structTile.html#a97364c2752d8cecb3b08bf3ce8f24544">solid</a></td></tr>
+<tr class="memdesc:a97364c2752d8cecb3b08bf3ce8f24544"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the tile is solid (1) or passable (0), affecting player movement and interactions.  <br /></td></tr>
+<tr class="separator:a97364c2752d8cecb3b08bf3ce8f24544"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
-<a id="a17a27bf4fcb3478774f130c1b90afa7d" name="a17a27bf4fcb3478774f130c1b90afa7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17a27bf4fcb3478774f130c1b90afa7d">&#9670;&#160;</a></span>solid</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a single tile in the game map, including its type, texture, and solidity. </p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="a97364c2752d8cecb3b08bf3ce8f24544" name="a97364c2752d8cecb3b08bf3ce8f24544"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97364c2752d8cecb3b08bf3ce8f24544">&#9670;&#160;</a></span>solid</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int solid</td>
+          <td class="memname"><a class="el" href="types_8h.html#a332ccd83dfe2973e6cb2b61e4f3ab7e6">u32</a> solid</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Whether the tile is solid (1) or passable (0), affecting player movement and interactions. </p>
+
 </div>
 </div>
-<a id="ac312e9ff5c83cc8b1f6ede96d87d79b5" name="ac312e9ff5c83cc8b1f6ede96d87d79b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac312e9ff5c83cc8b1f6ede96d87d79b5">&#9670;&#160;</a></span>texture_id</h2>
+<a id="a3a61dd869a984a2b19a5f892dbb27621" name="a3a61dd869a984a2b19a5f892dbb27621"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a61dd869a984a2b19a5f892dbb27621">&#9670;&#160;</a></span>texture_id</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int texture_id</td>
+          <td class="memname"><a class="el" href="types_8h.html#a332ccd83dfe2973e6cb2b61e4f3ab7e6">u32</a> texture_id</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The ID of the texture to use when rendering this tile. </p>
 
 </div>
 </div>
@@ -147,6 +159,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>The type of the tile (e.g., floor, wall, lever, exit). </p>
 
 </div>
 </div>

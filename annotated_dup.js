@@ -11,7 +11,6 @@ var annotated_dup =
     [ "MenuItem", "structMenuItem.html", "structMenuItem" ],
     [ "Player", "structPlayer.html", "structPlayer" ],
     [ "Tile", "structTile.html", "structTile" ],
-    [ "UI", "structUI.html", "structUI" ],
     [ "vec2f", "structvec2f.html", "structvec2f" ],
     [ "vec2u", "structvec2u.html", "structvec2u" ],
     [ "vec3f", "structvec3f.html", "structvec3f" ],
