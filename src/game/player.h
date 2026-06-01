@@ -2,17 +2,24 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include "core/types.h"
+
+#ifndef DEFAULT_PLAYER_SPEED
+#define DEFAULT_PLAYER_SPEED 1.0
+#endif
+
 typedef struct {
-    float x;
-    float y;
+    f64 x;
+    f64 y;
 
-    float move_speed;
+    f64 move_speed;
 
-    int width;
-    int height;
+    i32 width;
+    i32 height;
 } Player;
 
 void player_init(Player* player);
-void player_move(Player* player, float dx, float dy);
+void player_move(Player* player, i16 keys);
+void player_update(Player* player);
 
 #endif

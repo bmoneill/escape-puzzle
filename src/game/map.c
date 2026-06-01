@@ -18,12 +18,7 @@ void map_init(Map* map) {
             tile->solid      = 0;
 
             // Border walls
-            if (
-                x == 0 ||
-                y == 0 ||
-                x == MAP_WIDTH - 1 ||
-                y == MAP_HEIGHT - 1
-            ) {
+            if (x == 0 || y == 0 || x == MAP_WIDTH - 1 || y == MAP_HEIGHT - 1) {
                 tile->type       = TILE_WALL;
                 tile->texture_id = 1;
                 tile->solid      = 1;
@@ -32,19 +27,10 @@ void map_init(Map* map) {
     }
 }
 
-Tile* map_get_tile(
-    Map* map,
-    int x,
-    int y
-) {
+Tile* map_get_tile(Map* map, int x, int y) {
 
     // Out of bounds check
-    if (
-        x < 0 ||
-        y < 0 ||
-        x >= map->width ||
-        y >= map->height
-    ) {
+    if (x < 0 || y < 0 || x >= map->width || y >= map->height) {
         return 0;
     }
 

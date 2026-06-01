@@ -8,18 +8,14 @@
 #define MAP_HEIGHT 15
 
 typedef struct {
-    int width;
-    int height;
+    int  width;
+    int  height;
 
     Tile tiles[MAP_HEIGHT][MAP_WIDTH];
 } Map;
 
-void map_init(Map* map);
+void  map_init(Map* map);
 
-Tile* map_get_tile(
-    Map* map,
-    int x,
-    int y
-);
+Tile* map_get_tile(Map* map, int x, int y);
 
 #endif

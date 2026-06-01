@@ -23,6 +23,7 @@ void ui_init(UI* ui) {
             draw_main_menu(ui);
             break;
         case UI_STATE_IN_GAME:
+
             break;
         case UI_STATE_PAUSE:
             break;

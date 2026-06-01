@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 3.31.6)
 project("escapepuzzle" C)
 include(CTest)
 
+option(RAYLIB "Use Raylib for Graphics" ON)
 option(TEST "Enable tests" ON)
 
 # Get git commit hash for version

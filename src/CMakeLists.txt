@@ -34,9 +34,20 @@ set(SOURCES
   "core/log.c"
   "core/memory.c"
   "core/random.c"
-  "ui/main_menu.c"
-  "ui/ui.c"
+
+  "game/game.c"
+  "game/main_menu.c"
+  "game/map.c"
+  "game/player.c"
 )
+
+if (RAYLIB)
+  set(SOURCES ${SOURCES}
+    "graphics/raylib/input.c"
+    "graphics/raylib/menu.c"
+    "graphics/raylib/render.c"
+  )
+endif()
 
 add_executable(${PROJECT_NAME} ${SOURCES} "main.c")
 target_include_directories(${PROJECT_NAME} PUBLIC

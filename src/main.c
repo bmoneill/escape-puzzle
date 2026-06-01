@@ -4,8 +4,8 @@
 #include "core/log.h"
 #include "core/memory.h"
 #include "core/random.h"
-
-#include "ui/ui.h"
+#include "game/main_menu.h"
+#include "graphics/render.h"
 
 #include "escapepuzzle.h"
 
@@ -15,7 +15,7 @@ int main(void) {
     mem_init();
     locale_init(NULL);
     random_init();
-    UI ui;
+    render_init();
 
-    ui_init(&ui);
+    main_menu_init();
 }
