@@ -1,14 +1,16 @@
-// map.c
+/**
+ * @file game/map.c
+ * @brief Map implementation.
+ */
 #include "map.h"
 
 void map_init(Map* map) {
+    map->width  = MAX_MAP_WIDTH;
+    map->height = MAX_MAP_HEIGHT;
 
-    map->width  = MAP_WIDTH;
-    map->height = MAP_HEIGHT;
+    for (int y = 0; y < map->height; y++) {
 
-    for (int y = 0; y < MAP_HEIGHT; y++) {
-
-        for (int x = 0; x < MAP_WIDTH; x++) {
+        for (int x = 0; x < map->width; x++) {
 
             Tile* tile = &map->tiles[y][x];
 
@@ -18,7 +20,7 @@ void map_init(Map* map) {
             tile->solid      = 0;
 
             // Border walls
-            if (x == 0 || y == 0 || x == MAP_WIDTH - 1 || y == MAP_HEIGHT - 1) {
+            if (x == 0 || y == 0 || x == map->width - 1 || y == map->height - 1) {
                 tile->type       = TILE_WALL;
                 tile->texture_id = 1;
                 tile->solid      = 1;

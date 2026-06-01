@@ -1,5 +1,5 @@
 /**
- * @file render.h
+ * @file graphcis/render.h
  * @brief Graphics-library-agnostic rendering API.
  */
 #ifndef GRAPHICS_RENDER_H

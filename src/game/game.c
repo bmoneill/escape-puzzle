@@ -1,4 +1,7 @@
-// game.c
+/**
+ * @file game/game.c
+ * @brief Core game logic.
+ */
 #include "game.h"
 #include "graphics/render.h"
 
@@ -11,8 +14,6 @@ void game_init(GameState* game) {
     while (1) {
         player_update(&game->player);
         render_frame(game);
-
-        // TODO Render the game state here
     }
 }
 

@@ -1,4 +1,7 @@
-// player.c
+/**
+ * @file game/player.c
+ * @brief Player implementation.
+ */
 #include "player.h"
 
 #include "graphics/input.h"

@@ -1,6 +1,6 @@
 /**
  * @file graphics/input.h
- * @brief Graphics library-agnostic input handling for the escape puzzle game.
+ * @brief Graphics library-agnostic input handling.
  */
 #ifndef GRAPHICS_INPUT_H
 #define GRAPHICS_INPUT_H
@@ -17,6 +17,10 @@
 #define GAME_KEY_INTERACT 32
 #define GAME_KEY_EXIT     64
 
-i16 get_keys_pressed(void);
+/**
+ * @brief Retrieves the current state of key presses as a bitfield, where each bit corresponds to a specific key defined by the GAME_KEY_* constants.
+ * @return A 16-bit unsigned integer representing the current key states, with bits set accordingly.
+ */
+u16 get_keys_pressed(void);
 
 #endif
