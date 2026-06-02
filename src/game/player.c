@@ -8,8 +8,6 @@
 
 #include <stdlib.h>
 
-#define TILE_SIZE 32
-
 void player_init(Player* player) {
     player->x          = 64;
     player->y          = 64;

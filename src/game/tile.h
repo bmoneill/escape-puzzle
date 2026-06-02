@@ -7,6 +7,10 @@
 
 #include "core/types.h"
 
+#ifndef TILE_SIZE
+#define TILE_SIZE 32
+#endif
+
 /**
  * @brief Enumeration of different tile types in the game.
  */
