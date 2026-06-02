@@ -16,10 +16,11 @@
 #endif
 
 typedef struct {
-    int  width;
-    int  height;
+    int   width;
+    int   height;
+    vec2f playerStartPos;
 
-    Tile tiles[MAX_MAP_HEIGHT][MAX_MAP_WIDTH];
+    Tile  tiles[MAX_MAP_HEIGHT][MAX_MAP_WIDTH];
 } Map;
 
 /**
