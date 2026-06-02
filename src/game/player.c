@@ -31,8 +31,11 @@ void player_update(Player* player, Map* map) {
 }
 
 void player_move(Player* player, Map* map, i16 keys) {
-    float dx = 0;
-    float dy = 0;
+    f64  dx = 0;
+    f64  dy = 0;
+    f64  nextX, nextY;
+    i32  leftTileX, rightTileX, topTileY, bottomTileY;
+    bool canMoveX = true, canMoveY = true;
 
     if (keys & GAME_KEY_UP) {
         dy -= player->move_speed;
@@ -50,31 +53,42 @@ void player_move(Player* player, Map* map, i16 keys) {
         dx += player->move_speed;
     }
 
-    /*
-     * X movement
-     */
-    float nextX = player->x + dx;
-
-    int   tileX = (int) (nextX + player->width / 2) / TILE_SIZE;
-    int   tileY = (int) (player->y + player->height / 2) / TILE_SIZE;
-
-    Tile* tile  = map_get_tile(map, tileX, tileY);
-
-    if (tile && !tile->solid) {
-        player->x = nextX;
+    if (dx || dy) {
+        nextX       = (player->x + dx) / TILE_SIZE;
+        nextY       = (player->y + dy) / TILE_SIZE;
+        leftTileX   = (i32) nextX;
+        rightTileX  = (i32) (nextX + 1);
+        topTileY    = (i32) nextY;
+        bottomTileY = (i32) (nextY + 1);
     }
 
-    /*
-     * Y movement
-     */
-    float nextY = player->y + dy;
+    if (dx) {
+        i32 checkX = (dx > 0) ? rightTileX : leftTileX;
+        for (i32 tileY = topTileY; tileY <= bottomTileY; tileY++) {
+            Tile* tile = map_get_tile(map, checkX, tileY);
+            if (tile && tile->solid) {
+                canMoveX = false;
+                break;
+            }
+        }
 
-    tileX       = (int) (player->x + player->width / 2) / TILE_SIZE;
-    tileY       = (int) (nextY + player->height / 2) / TILE_SIZE;
+        if (canMoveX) {
+            player->x += dx;
+        }
+    }
 
-    tile        = map_get_tile(map, tileX, tileY);
+    if (dy) {
+        i32 checkY = (dy > 0) ? bottomTileY : topTileY;
+        for (i32 tileX = leftTileX; tileX <= rightTileX; tileX++) {
+            Tile* tile = map_get_tile(map, tileX, checkY);
+            if (tile && tile->solid) {
+                canMoveY = false;
+                break;
+            }
+        }
 
-    if (tile && !tile->solid) {
-        player->y = nextY;
+        if (canMoveY) {
+            player->y += dy;
+        }
     }
 }
