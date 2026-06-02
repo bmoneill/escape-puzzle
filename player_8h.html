@@ -100,7 +100,8 @@ $(document).ready(function(){initNavTree('player_8h.html',''); initResizable(); 
 
 <p><a class="el" href="structPlayer.html">Player</a> header.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="types_8h_source.html">core/types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="map_8h_source.html">map.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="types_8h_source.html">core/types.h</a>&quot;</code><br />
 </div>
 <p><a href="player_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -119,12 +120,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a204189692f22f1cbe1568f74d6a5d196"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8h.html#a204189692f22f1cbe1568f74d6a5d196">player_init</a> (<a class="el" href="structPlayer.html">Player</a> *player)</td></tr>
 <tr class="memdesc:a204189692f22f1cbe1568f74d6a5d196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the player with default values.  <br /></td></tr>
 <tr class="separator:a204189692f22f1cbe1568f74d6a5d196"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab05585d9cd5ebd558f6b9cad3050a1b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8h.html#ab05585d9cd5ebd558f6b9cad3050a1b8">player_move</a> (<a class="el" href="structPlayer.html">Player</a> *player, <a class="el" href="types_8h.html#a3e01dd59d72c4919aa21a46fa5299e23">i16</a> keys)</td></tr>
-<tr class="memdesc:ab05585d9cd5ebd558f6b9cad3050a1b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the player based on the current key inputs.  <br /></td></tr>
-<tr class="separator:ab05585d9cd5ebd558f6b9cad3050a1b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48aba35b16fec86de04d43d8bbf58d52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8h.html#a48aba35b16fec86de04d43d8bbf58d52">player_update</a> (<a class="el" href="structPlayer.html">Player</a> *player)</td></tr>
-<tr class="memdesc:a48aba35b16fec86de04d43d8bbf58d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the player's state, including movement and interactions.  <br /></td></tr>
-<tr class="separator:a48aba35b16fec86de04d43d8bbf58d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a513959949a7e5ad2de2aa13624122683"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8h.html#a513959949a7e5ad2de2aa13624122683">player_move</a> (<a class="el" href="structPlayer.html">Player</a> *player, <a class="el" href="structMap.html">Map</a> *map, <a class="el" href="types_8h.html#a3e01dd59d72c4919aa21a46fa5299e23">i16</a> keys)</td></tr>
+<tr class="memdesc:a513959949a7e5ad2de2aa13624122683"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the player based on the current key inputs.  <br /></td></tr>
+<tr class="separator:a513959949a7e5ad2de2aa13624122683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9ed28676ebc0323eb4ae54f3791e375"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8h.html#ab9ed28676ebc0323eb4ae54f3791e375">player_update</a> (<a class="el" href="structPlayer.html">Player</a> *player, <a class="el" href="structMap.html">Map</a> *map)</td></tr>
+<tr class="memdesc:ab9ed28676ebc0323eb4ae54f3791e375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the player's state, including movement and interactions.  <br /></td></tr>
+<tr class="separator:ab9ed28676ebc0323eb4ae54f3791e375"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structPlayer.html">Player</a> header. </p>
@@ -170,8 +171,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab05585d9cd5ebd558f6b9cad3050a1b8" name="ab05585d9cd5ebd558f6b9cad3050a1b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab05585d9cd5ebd558f6b9cad3050a1b8">&#9670;&#160;</a></span>player_move()</h2>
+<a id="a513959949a7e5ad2de2aa13624122683" name="a513959949a7e5ad2de2aa13624122683"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a513959949a7e5ad2de2aa13624122683">&#9670;&#160;</a></span>player_move()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -181,6 +182,12 @@ Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPlayer.html">Player</a> *&#160;</td>
           <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
+          <td class="paramname"><em>map</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -206,8 +213,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a48aba35b16fec86de04d43d8bbf58d52" name="a48aba35b16fec86de04d43d8bbf58d52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48aba35b16fec86de04d43d8bbf58d52">&#9670;&#160;</a></span>player_update()</h2>
+<a id="ab9ed28676ebc0323eb4ae54f3791e375" name="ab9ed28676ebc0323eb4ae54f3791e375"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9ed28676ebc0323eb4ae54f3791e375">&#9670;&#160;</a></span>player_update()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -216,8 +223,18 @@ Functions</h2></td></tr>
           <td class="memname">void player_update </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPlayer.html">Player</a> *&#160;</td>
-          <td class="paramname"><em>player</em></td><td>)</td>
+          <td class="paramname"><em>player</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
+          <td class="paramname"><em>map</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

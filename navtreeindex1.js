@@ -1,5 +1,7 @@
 var NAVTREEINDEX1 =
 {
+"structPlayer.html#a77d81161c5de2d0f98645e5584e5cc29":[1,0,9,1],
+"structPlayer.html#ab73ebb2a0e78ae5602971fca684535f0":[1,0,9,3],
 "structTile.html":[1,0,10],
 "structTile.html#a3a61dd869a984a2b19a5f892dbb27621":[1,0,10,1],
 "structTile.html#a97364c2752d8cecb3b08bf3ce8f24544":[1,0,10,0],
