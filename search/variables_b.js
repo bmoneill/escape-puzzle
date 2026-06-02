@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['seed_5fptr_0',['seed_ptr',['../random_8c.html#a831130bab15fab82397e216b99a28b74',1,'random.c']]],
-  ['selected_5fmenu_5fitem_1',['selected_menu_item',['../structMenu.html#a8b78121b590fc010172f9a1a88983143',1,'Menu']]],
-  ['solid_2',['solid',['../structTile.html#a97364c2752d8cecb3b08bf3ce8f24544',1,'Tile']]],
-  ['stats_3',['stats',['../structMemoryManager.html#a506ab849a6ca589b1f414d022d765564',1,'MemoryManager']]]
+  ['peak_0',['peak',['../structMemoryManager.html#a98f434f34d860b14fd6d903b7bec9759',1,'MemoryManager']]],
+  ['player_1',['player',['../structGameState.html#af61d6983a9396a11078805087518af88',1,'GameState']]],
+  ['playerstartpos_2',['playerStartPos',['../structMap.html#adfe868a177b75ccf49ffcb0aa89d8510',1,'Map']]]
 ];

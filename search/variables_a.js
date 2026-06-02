@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['peak_0',['peak',['../structMemoryManager.html#a98f434f34d860b14fd6d903b7bec9759',1,'MemoryManager']]],
-  ['player_1',['player',['../structGameState.html#af61d6983a9396a11078805087518af88',1,'GameState']]]
+  ['name_0',['name',['../structMenuItem.html#a8f8f80d37794cde9472343e4487ba3eb',1,'MenuItem']]],
+  ['num_5fitems_1',['num_items',['../structMenu.html#ad59331b02d78afbd7ff3f38408b4fd8d',1,'Menu']]]
 ];

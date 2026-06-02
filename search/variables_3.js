@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['glocale_0',['glocale',['../locale_8c.html#accb82a5e474ce7ed22659991b36afe19',1,'glocale():&#160;locale.c'],['../locale_8h.html#accb82a5e474ce7ed22659991b36afe19',1,'glocale():&#160;locale.c']]],
-  ['gmem_1',['gmem',['../memory_8c.html#a2811f0554487052a762c8dff4ef6aa2d',1,'gmem():&#160;memory.c'],['../memory_8h.html#a2811f0554487052a762c8dff4ef6aa2d',1,'gmem():&#160;memory.c']]]
+  ['entries_0',['entries',['../structHashTable.html#a712fa3f0ed8bb63d1c211dcb1f5785c4',1,'HashTable::entries()'],['../structLocale.html#a1229e816846161abb13e6d4c51eba575',1,'Locale::entries()']]]
 ];

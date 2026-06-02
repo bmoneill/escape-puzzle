@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['name_0',['name',['../structMenuItem.html#a8f8f80d37794cde9472343e4487ba3eb',1,'MenuItem']]],
-  ['num_5fitems_1',['num_items',['../structMenu.html#ad59331b02d78afbd7ff3f38408b4fd8d',1,'Menu']]]
+  ['map_0',['map',['../structGameState.html#ac9becb8e2f80125547c8cc8f9d56b7ab',1,'GameState']]],
+  ['move_5fspeed_1',['move_speed',['../structPlayer.html#a77d81161c5de2d0f98645e5584e5cc29',1,'Player']]]
 ];

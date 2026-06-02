@@ -7,5 +7,6 @@ var searchData=
   ['player_2eh_4',['player.h',['../player_8h.html',1,'']]],
   ['player_5finit_5',['player_init',['../player_8c.html#a204189692f22f1cbe1568f74d6a5d196',1,'player_init(Player *player):&#160;player.c'],['../player_8h.html#a204189692f22f1cbe1568f74d6a5d196',1,'player_init(Player *player):&#160;player.c']]],
   ['player_5fmove_6',['player_move',['../player_8c.html#a513959949a7e5ad2de2aa13624122683',1,'player_move(Player *player, Map *map, i16 keys):&#160;player.c'],['../player_8h.html#a513959949a7e5ad2de2aa13624122683',1,'player_move(Player *player, Map *map, i16 keys):&#160;player.c']]],
-  ['player_5fupdate_7',['player_update',['../player_8c.html#ab9ed28676ebc0323eb4ae54f3791e375',1,'player_update(Player *player, Map *map):&#160;player.c'],['../player_8h.html#ab9ed28676ebc0323eb4ae54f3791e375',1,'player_update(Player *player, Map *map):&#160;player.c']]]
+  ['player_5fupdate_7',['player_update',['../player_8c.html#ab9ed28676ebc0323eb4ae54f3791e375',1,'player_update(Player *player, Map *map):&#160;player.c'],['../player_8h.html#ab9ed28676ebc0323eb4ae54f3791e375',1,'player_update(Player *player, Map *map):&#160;player.c']]],
+  ['playerstartpos_8',['playerStartPos',['../structMap.html#adfe868a177b75ccf49ffcb0aa89d8510',1,'Map']]]
 ];

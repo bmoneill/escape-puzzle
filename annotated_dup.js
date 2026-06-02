@@ -6,6 +6,7 @@ var annotated_dup =
     [ "Locale", "structLocale.html", "structLocale" ],
     [ "LocaleEntry", "structLocaleEntry.html", "structLocaleEntry" ],
     [ "Map", "structMap.html", "structMap" ],
+    [ "MapParams", "structMapParams.html", "structMapParams" ],
     [ "MemoryManager", "structMemoryManager.html", "structMemoryManager" ],
     [ "Menu", "structMenu.html", "structMenu" ],
     [ "MenuItem", "structMenuItem.html", "structMenuItem" ],

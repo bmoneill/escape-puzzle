@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['x',['../structvec2u.html#a676e0da0ef83bbbdf42538e54b97506b',1,'vec2u::x()'],['../structvec2f.html#ad0da36b2558901e21e7a30f6c227a45e',1,'vec2f::x()'],['../structvec3u.html#a676e0da0ef83bbbdf42538e54b97506b',1,'vec3u::x()'],['../structvec3f.html#ad0da36b2558901e21e7a30f6c227a45e',1,'vec3f::x()'],['../structPlayer.html#ab73ebb2a0e78ae5602971fca684535f0',1,'Player::x()']]]
+  ['width_0',['width',['../structMap.html#a2474a5474cbff19523a51eb1de01cda4',1,'Map::width()'],['../structMapParams.html#a6b0242fbfd9e78862583c113001d5270',1,'MapParams::width()'],['../structPlayer.html#a5103232dda61eefd81b5b849643c5753',1,'Player::width()']]]
 ];
