@@ -4,7 +4,7 @@
  */
 #ifndef PLAYER_H
 #define PLAYER_H
-
+#include "map.h"
 #include "core/types.h"
 
 #ifndef DEFAULT_PLAYER_SPEED
@@ -31,12 +31,12 @@ void player_init(Player* player);
  * @brief Moves the player based on the current key inputs.
  * @param player Pointer to the Player to move.
  */
-void player_move(Player* player, i16 keys);
+void player_move(Player* player, Map*map, i16 keys);
 
 /**
  * @brief Updates the player's state, including movement and interactions.
  * @param player Pointer to the Player to update.
  */
-void player_update(Player* player);
+void player_update(Player* player, Map*map);
 
 #endif

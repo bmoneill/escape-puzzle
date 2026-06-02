@@ -12,7 +12,7 @@ void game_init(GameState* game) {
     player_init(&game->player);
 
     while (1) {
-        player_update(&game->player);
+        player_update(&game->player, &game->map);
         render_frame(game);
     }
 }
