@@ -6,7 +6,6 @@
 #define GRAPHICS_INPUT_H
 
 #include "core/types.h"
-#include "game/game.h"
 
 // Global key state bitfield. Each bit represents a key being pressed.
 #define GAME_KEY_DOWN     1

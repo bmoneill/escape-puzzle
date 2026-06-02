@@ -5,7 +5,6 @@
 #ifndef GRAPHICS_RENDER_H
 #define GRAPHICS_RENDER_H
 
-#include "core/types.h"
 #include "game/game.h"
 
 /**
