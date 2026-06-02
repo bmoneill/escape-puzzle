@@ -45,11 +45,29 @@ void random_seed(u64 seed);
 u8 random_u8(void);
 
 /**
+ * @brief Get a random u8 value in the specified range.
+ *
+ * @param min The minimum value (inclusive).
+ * @param max The maximum value (inclusive).
+ * @return A random u8 value in the range [min, max].
+ */
+u8 random_u8_range(u8 min, u8 max);
+
+/**
  * @brief Get a random u16 value.
  *
  * @return A random u16 value in the range [U16_MIN, U16_MAX].
  */
 u16 random_u16(void);
+
+/**
+ * @brief Get a random u16 value in the specified range.
+ *
+ * @param min The minimum value (inclusive).
+ * @param max The maximum value (inclusive).
+ * @return A random u16 value in the range [min, max].
+ */
+u16 random_u16_range(u16 min, u16 max);
 
 /**
  * @brief Get a random u32 value.
@@ -59,11 +77,29 @@ u16 random_u16(void);
 u32 random_u32(void);
 
 /**
+ * @brief Get a random u32 value in the specified range.
+ *
+ * @param min The minimum value (inclusive).
+ * @param max The maximum value (inclusive).
+ * @return A random u32 value in the range [min, max].
+ */
+u32 random_u32_range(u32 min, u32 max);
+
+/**
  * @brief Get a random u64 value.
  *
  * @return A random u64 value in the range [U64_MIN, U64_MAX].
  */
 u64 random_u64(void);
+
+/**
+ * @brief Get a random u64 value in the specified range.
+ *
+ * @param min The minimum value (inclusive).
+ * @param max The maximum value (inclusive).
+ * @return A random u64 value in the range [min, max].
+ */
+u64 random_u64_range(u64 min, u64 max);
 
 /**
  * @brief Get a random i8 value.
@@ -73,11 +109,29 @@ u64 random_u64(void);
 i8 random_i8(void);
 
 /**
+ * @brief Get a random i8 value in the specified range.
+ *
+ * @param min The minimum value (inclusive).
+ * @param max The maximum value (inclusive).
+ * @return A random i8 value in the range [min, max].
+ */
+i8 random_i8_range(i8 min, i8 max);
+
+/**
  * @brief Get a random i16 value.
  *
  * @return A random i16 value in the range [I16_MIN, I16_MAX].
  */
 i16 random_i16(void);
+
+/**
+ * @brief Get a random i16 value in the specified range.
+ *
+ * @param min The minimum value (inclusive).
+ * @param max The maximum value (inclusive).
+ * @return A random i16 value in the range [min, max].
+ */
+i16 random_i16_range(i16 min, i16 max);
 
 /**
  * @brief Get a random i32 value.
@@ -87,11 +141,29 @@ i16 random_i16(void);
 i32 random_i32(void);
 
 /**
+ * @brief Get a random i32 value in the specified range.
+ *
+ * @param min The minimum value (inclusive).
+ * @param max The maximum value (inclusive).
+ * @return A random i32 value in the range [min, max].
+ */
+i32 random_i32_range(i32 min, i32 max);
+
+/**
  * @brief Get a random i64 value.
  *
  * @return A random i64 value in the range [I64_MIN, I64_MAX].
  */
 i64 random_i64(void);
+
+/**
+ * @brief Get a random i64 value in the specified range.
+ *
+ * @param min The minimum value (inclusive).
+ * @param max The maximum value (inclusive).
+ * @return A random i64 value in the range [min, max].
+ */
+i64 random_i64_range(i64 min, i64 max);
 
 /**
  * @brief Get a random f32 value.
@@ -101,10 +173,28 @@ i64 random_i64(void);
 f32 random_f32(void);
 
 /**
+ * @brief Get a random f32 value in the specified range.
+ *
+ * @param min The minimum value (inclusive).
+ * @param max The maximum value (inclusive).
+ * @return A random f32 value in the range [min, max].
+ */
+f32 random_f32_range(f32 min, f32 max);
+
+/**
  * @brief Get a random f64 value.
  *
  * @return A random f64 value in the range [0.0, 1.0).
  */
 f64 random_f64(void);
+
+/**
+ * @brief Get a random f64 value in the specified range.
+ *
+ * @param min The minimum value (inclusive).
+ * @param max The maximum value (inclusive).
+ * @return A random f64 value in the range [min, max].
+ */
+f64 random_f64_range(f64 min, f64 max);
 
 #endif
