@@ -12,5 +12,6 @@ var searchData=
   ['u8_9',['u8',['../types_8h.html#af3b86d961da0a3575b4f99c9ffaf01fd',1,'types.h']]],
   ['u8_5fmax_10',['U8_MAX',['../types_8h.html#a1187e707402ca2fca73f06f7beb1e631',1,'types.h']]],
   ['u8_5fmin_11',['U8_MIN',['../types_8h.html#a50185cccc95df2269f9f4e400d1fa6ed',1,'types.h']]],
-  ['used_12',['used',['../structMemoryManager.html#a796338dad562facbdf929c29013086df',1,'MemoryManager']]]
+  ['update_12',['update',['../structPuzzle.html#a234091073e33b0d41dd310e4ca89aef5',1,'Puzzle']]],
+  ['used_13',['used',['../structMemoryManager.html#a796338dad562facbdf929c29013086df',1,'MemoryManager']]]
 ];

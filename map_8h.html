@@ -93,14 +93,17 @@ $(document).ready(function(){initNavTree('map_8h.html',''); initResizable(); });
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">map.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
 <p><a class="el" href="structMap.html">Map</a> header.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="tile_8h_source.html">tile.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="puzzle_8h_source.html">game/puzzle.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="tile_8h_source.html">game/tile.h</a>&quot;</code><br />
 </div>
 <p><a href="map_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -116,14 +119,31 @@ Macros</h2></td></tr>
 <tr class="memitem:abd6ea02554bef5847ae9eb90cf69037a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#abd6ea02554bef5847ae9eb90cf69037a">MAX_MAP_HEIGHT</a>&#160;&#160;&#160;15</td></tr>
 <tr class="separator:abd6ea02554bef5847ae9eb90cf69037a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a93137070672832a6fac39e59e6dfdbaf"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a93137070672832a6fac39e59e6dfdbaf">MapTheme</a> { <a class="el" href="map_8h.html#a93137070672832a6fac39e59e6dfdbafaa1d932b8317613fb4f349a60fa990abf">THEME_NONE</a>
+, <a class="el" href="map_8h.html#a93137070672832a6fac39e59e6dfdbafaf43de5c8ec73f2860b07743eb3213ae0">THEME_DUNGEON</a>
+, <a class="el" href="map_8h.html#a93137070672832a6fac39e59e6dfdbafa18176f4f33e59685b2a8fcc5a161ddbe">THEME_TEMPLE</a>
+, <a class="el" href="map_8h.html#a93137070672832a6fac39e59e6dfdbafa7ece4c76db09e2f722d705a1184b96d2">THEME_PYRAMID</a>
+ }</td></tr>
+<tr class="separator:a93137070672832a6fac39e59e6dfdbaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a50f105f8099b87e44a22eec8f0f2baa0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a50f105f8099b87e44a22eec8f0f2baa0">map_init</a> (<a class="el" href="structMap.html">Map</a> *map)</td></tr>
 <tr class="memdesc:a50f105f8099b87e44a22eec8f0f2baa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the map.  <br /></td></tr>
 <tr class="separator:a50f105f8099b87e44a22eec8f0f2baa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad135fe77e3eccaf2b9fca86daa37d88a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#ad135fe77e3eccaf2b9fca86daa37d88a">map_generate</a> (<a class="el" href="structMap.html">Map</a> *map)</td></tr>
+<tr class="memdesc:ad135fe77e3eccaf2b9fca86daa37d88a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the map layout, including rooms, walls, and puzzles.  <br /></td></tr>
+<tr class="separator:ad135fe77e3eccaf2b9fca86daa37d88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b77f91c44bb5f8d8122fb40253da239"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTile.html">Tile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a3b77f91c44bb5f8d8122fb40253da239">map_get_tile</a> (<a class="el" href="structMap.html">Map</a> *map, int x, int y)</td></tr>
 <tr class="memdesc:a3b77f91c44bb5f8d8122fb40253da239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a pointer to the tile at the specified coordinates.  <br /></td></tr>
 <tr class="separator:a3b77f91c44bb5f8d8122fb40253da239"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a3529ad176c499d01f3fddd110432c5a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMap.html">Map</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a3529ad176c499d01f3fddd110432c5a3">gmap</a></td></tr>
+<tr class="separator:a3529ad176c499d01f3fddd110432c5a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structMap.html">Map</a> header. </p>
@@ -156,7 +176,54 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a93137070672832a6fac39e59e6dfdbaf" name="a93137070672832a6fac39e59e6dfdbaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93137070672832a6fac39e59e6dfdbaf">&#9670;&#160;</a></span>MapTheme</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="map_8h.html#a93137070672832a6fac39e59e6dfdbaf">MapTheme</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a93137070672832a6fac39e59e6dfdbafaa1d932b8317613fb4f349a60fa990abf" name="a93137070672832a6fac39e59e6dfdbafaa1d932b8317613fb4f349a60fa990abf"></a>THEME_NONE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a93137070672832a6fac39e59e6dfdbafaf43de5c8ec73f2860b07743eb3213ae0" name="a93137070672832a6fac39e59e6dfdbafaf43de5c8ec73f2860b07743eb3213ae0"></a>THEME_DUNGEON&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a93137070672832a6fac39e59e6dfdbafa18176f4f33e59685b2a8fcc5a161ddbe" name="a93137070672832a6fac39e59e6dfdbafa18176f4f33e59685b2a8fcc5a161ddbe"></a>THEME_TEMPLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a93137070672832a6fac39e59e6dfdbafa7ece4c76db09e2f722d705a1184b96d2" name="a93137070672832a6fac39e59e6dfdbafa7ece4c76db09e2f722d705a1184b96d2"></a>THEME_PYRAMID&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ad135fe77e3eccaf2b9fca86daa37d88a" name="ad135fe77e3eccaf2b9fca86daa37d88a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad135fe77e3eccaf2b9fca86daa37d88a">&#9670;&#160;</a></span>map_generate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void map_generate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
+          <td class="paramname"><em>map</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Generates the map layout, including rooms, walls, and puzzles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>Pointer to the <a class="el" href="structMap.html">Map</a> to generate. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a3b77f91c44bb5f8d8122fb40253da239" name="a3b77f91c44bb5f8d8122fb40253da239"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3b77f91c44bb5f8d8122fb40253da239">&#9670;&#160;</a></span>map_get_tile()</h2>
 
@@ -222,6 +289,29 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a3529ad176c499d01f3fddd110432c5a3" name="a3529ad176c499d01f3fddd110432c5a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3529ad176c499d01f3fddd110432c5a3">&#9670;&#160;</a></span>gmap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMap.html">Map</a>* gmap</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
