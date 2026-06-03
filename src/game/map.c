@@ -67,7 +67,9 @@ static void generate_puzzles(Map* map) {
         do {
             x = random_i32_range(1, map->width - 2);
             y = random_i32_range(1, map->height - 2);
-        } while (map->tiles[y][x].type != TILE_FLOOR && tries < 10);
+        } while ((map->tiles[y][x].type != TILE_FLOOR || x == map->playerStartPos.x
+                  || y == map->playerStartPos.y)
+                 && tries < 10);
 
         if (tries == 10) {
             failures++;

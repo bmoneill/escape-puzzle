@@ -12,13 +12,16 @@
 #include "graphics/render.h"
 
 #include <stdlib.h>
+#include <time.h>
 
 void game_init(GameState* game) {
-    game->map.seed   = 12345;
+    game->map.seed   = time(NULL);
     game->map.width  = MAX_MAP_WIDTH;
     game->map.height = MAX_MAP_HEIGHT;
     map_init(&game->map);
     player_init(&game->player);
+    game->player.x = game->map.playerStartPos.x * TILE_SIZE;
+    game->player.y = game->map.playerStartPos.y * TILE_SIZE;
 
     while (1) {
         i16 keys_pressed = get_keys_pressed();
