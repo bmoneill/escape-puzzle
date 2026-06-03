@@ -18,9 +18,7 @@ void player_init(Player* player) {
     player->height     = 32;
 }
 
-void player_update(Player* player, Map* map) {
-    i16 keys_pressed = get_keys_pressed();
-
+void player_update(Player* player, Map* map, i16 keys_pressed) {
     if (keys_pressed & GAME_KEY_EXIT) {
         exit(0);
     }

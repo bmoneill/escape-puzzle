@@ -11,6 +11,9 @@
 #define DEFAULT_PLAYER_SPEED 1.0
 #endif
 
+#define PLAYER_TILE_COORD(player)                                                                  \
+    (vec2u) { .x = (i32) ((player)->x / TILE_SIZE), .y = (i32) ((player)->y / TILE_SIZE) }
+
 typedef struct {
     f64 x; //!< Player's x-coordinate.
     f64 y; //!< Player's y-coordinate.
@@ -36,7 +39,9 @@ void player_move(Player* player, Map* map, i16 keys);
 /**
  * @brief Updates the player's state, including movement and interactions.
  * @param player Pointer to the Player to update.
+ * @param map Pointer to the Map.
+ * @param keys_pressed The current key inputs for player movement and actions.
  */
-void player_update(Player* player, Map* map);
+void player_update(Player* player, Map* map, i16 keys_pressed);
 
 #endif

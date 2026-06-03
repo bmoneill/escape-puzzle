@@ -48,7 +48,7 @@ u8 random_u8_range(u8 min, u8 max) {
         log_error_f("Invalid range: min (%u) is greater than max (%u)", min, max);
         return 0;
     }
-    return (u8) (rand() % (max - min + 1)) + min;
+    return min + (u8) (random_u8() % ((u8) (max - min) + 1));
 }
 
 u16 random_u16(void) { return (u16) (rand() % U16_MAX) + U16_MIN; }
@@ -58,7 +58,7 @@ u16 random_u16_range(u16 min, u16 max) {
         log_error_f("Invalid range: min (%u) is greater than max (%u)", min, max);
         return 0;
     }
-    return (u16) (rand() % (max - min + 1)) + min;
+    return min + (u16) (random_u16() % ((u16) (max - min) + 1));
 }
 
 u32 random_u32(void) {
@@ -73,7 +73,7 @@ u32 random_u32_range(u32 min, u32 max) {
         log_error_f("Invalid range: min (%u) is greater than max (%u)", min, max);
         return 0;
     }
-    return (random_u32() % (max - min + 1)) + min;
+    return min + (random_u32() % ((u32) (max - min) + 1));
 }
 
 u64 random_u64(void) {
@@ -88,27 +88,27 @@ u64 random_u64_range(u64 min, u64 max) {
         log_error_f("Invalid range: min (%llu) is greater than max (%llu)", min, max);
         return 0;
     }
-    return (random_u64() % (max - min + 1)) + min;
+    return min + (random_u64() % ((u64) (max - min) + 1));
 }
 
-i8 random_i8(void) { return (i8) (rand() % (I8_MAX)) + I8_MIN; }
+i8 random_i8(void) { return (i8) (rand() % (I8_MAX * 2 + 2)) + I8_MIN; }
 
 i8 random_i8_range(i8 min, i8 max) {
     if (min > max) {
         log_error_f("Invalid range: min (%d) is greater than max (%d)", min, max);
         return 0;
     }
-    return (i8) (rand() % (max - min + 1)) + min;
+    return min + (i8) (random_u8() % ((u8) (max - min) + 1));
 }
 
-i16 random_i16(void) { return (i16) (rand() % (I16_MAX)) + I16_MIN; }
+i16 random_i16(void) { return (i16) (rand() % (I16_MAX * 2 + 2)) + I16_MIN; }
 
 i16 random_i16_range(i16 min, i16 max) {
     if (min > max) {
         log_error_f("Invalid range: min (%d) is greater than max (%d)", min, max);
         return 0;
     }
-    return (i16) (rand() % (max - min + 1)) + min;
+    return min + (i16) (random_u16() % ((u16) (max - min) + 1));
 }
 
 i32 random_i32(void) {
@@ -122,7 +122,7 @@ i32 random_i32_range(i32 min, i32 max) {
         log_error_f("Invalid range: min (%d) is greater than max (%d)", min, max);
         return 0;
     }
-    return (random_i32() % (max - min + 1)) + min;
+    return min + (i32) (random_u32() % ((u32) (max - min) + 1));
 }
 
 i64 random_i64(void) {
@@ -136,7 +136,7 @@ i64 random_i64_range(i64 min, i64 max) {
         log_error_f("Invalid range: min (%lld) is greater than max (%lld)", min, max);
         return 0;
     }
-    return (random_i64() % (max - min + 1)) + min;
+    return min + (i64) (random_u64() % ((u64) (max - min) + 1));
 }
 
 f32 random_f32(void) { return (f32) rand() / (f32) RAND_MAX; }

@@ -2,18 +2,41 @@
  * @file game/game.c
  * @brief Core game logic.
  */
-#include "game.h"
+#include "game/game.h"
+
+#include "core/log.h"
+#include "core/memory.h"
+#include "game/map.h"
+#include "game/puzzle.h"
+#include "graphics/input.h"
 #include "graphics/render.h"
 
 #include <stdlib.h>
 
 void game_init(GameState* game) {
+    game->map.seed   = 12345;
+    game->map.width  = MAX_MAP_WIDTH;
+    game->map.height = MAX_MAP_HEIGHT;
     map_init(&game->map);
     player_init(&game->player);
 
     while (1) {
-        player_update(&game->player, &game->map);
+        i16 keys_pressed = get_keys_pressed();
+        i32 num_puzzle_events;
+
+        player_update(&game->player, &game->map, keys_pressed);
+        PuzzleEvent* events = puzzle_generate_events(game->player.x / TILE_SIZE,
+                                                     game->player.y / TILE_SIZE,
+                                                     keys_pressed,
+                                                     game->map.puzzles,
+                                                     game->map.num_puzzles,
+                                                     &num_puzzle_events);
+        if (puzzle_update(game->map.puzzles, game->map.num_puzzles, events, num_puzzle_events)) {
+            log_info_f("You won!");
+            game_exit(game);
+        }
         render_frame(game);
+        mem_reset_frame();
     }
 }
 

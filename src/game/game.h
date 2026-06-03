@@ -7,6 +7,7 @@
 
 #include "map.h"
 #include "player.h"
+#include "puzzle.h"
 
 /**
  * @brief Represents the entire state of the game, including the map and player.
