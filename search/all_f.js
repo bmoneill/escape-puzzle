@@ -23,6 +23,6 @@ var searchData=
   ['tiletextureid_20',['TileTextureID',['../tile_8h.html#abc26137979d4816fca454c8249dc5076',1,'tile.h']]],
   ['tiletype_21',['TileType',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1',1,'tile.h']]],
   ['tombstones_22',['tombstones',['../structHashTable.html#a7fbdec2f98050eb26811d65b84795e43',1,'HashTable']]],
-  ['type_23',['type',['../structTile.html#a97d14167d3a1ce734215dba8b98ea9f9',1,'Tile::type()'],['../structPuzzleEvent.html#a65f4698f812653d4ac4c4c32f9db0df0',1,'PuzzleEvent::type()'],['../structPuzzle.html#ae56f1406501e96e75184243e721dda7b',1,'Puzzle::type()']]],
+  ['type_23',['type',['../structPuzzle.html#ae56f1406501e96e75184243e721dda7b',1,'Puzzle::type()'],['../structPuzzleEvent.html#a65f4698f812653d4ac4c4c32f9db0df0',1,'PuzzleEvent::type()'],['../structTile.html#a97d14167d3a1ce734215dba8b98ea9f9',1,'Tile::type()']]],
   ['types_2eh_24',['types.h',['../types_8h.html',1,'']]]
 ];

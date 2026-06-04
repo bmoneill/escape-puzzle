@@ -8,7 +8,5 @@ var dir_1699be727a800b1d059c6f7f2b91d2ee =
     [ "map.h", "map_8h.html", "map_8h" ],
     [ "player.c", "player_8c.html", "player_8c" ],
     [ "player.h", "player_8h.html", "player_8h" ],
-    [ "puzzle.c", "puzzle_8c.html", "puzzle_8c" ],
-    [ "puzzle.h", "puzzle_8h.html", "puzzle_8h" ],
     [ "tile.h", "tile_8h.html", "tile_8h" ]
 ];

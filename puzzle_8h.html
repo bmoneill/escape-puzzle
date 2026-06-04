@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PROJECTNAME: src/game/puzzle.h File Reference</title>
+<title>PROJECTNAME: src/puzzles/puzzle.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -104,11 +104,11 @@ $(document).ready(function(){initNavTree('puzzle_8h.html',''); initResizable(); 
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPuzzle.html">Puzzle</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPuzzleEvent.html">PuzzleEvent</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents an event related to a puzzle, such as the player interacting with it.  <a href="structPuzzleEvent.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structLeverTogglePuzzleState.html">LeverTogglePuzzleState</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPuzzle.html">Puzzle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents a puzzle in the game, including its position, completion state, type, and update function.  <a href="structPuzzle.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -120,9 +120,11 @@ Macros</h2></td></tr>
 Enumerations</h2></td></tr>
 <tr class="memitem:a3c9afc800a22beb03c84b55fc3198d8d"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puzzle_8h.html#a3c9afc800a22beb03c84b55fc3198d8d">PuzzleType</a> { <a class="el" href="puzzle_8h.html#a3c9afc800a22beb03c84b55fc3198d8da4bbe9d4e584bc7dd26382fb8c24dbb0e">PUZZLE_LEVER_TOGGLE</a>
  }</td></tr>
+<tr class="memdesc:a3c9afc800a22beb03c84b55fc3198d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the different types of puzzles in the game.  <a href="puzzle_8h.html#a3c9afc800a22beb03c84b55fc3198d8d">More...</a><br /></td></tr>
 <tr class="separator:a3c9afc800a22beb03c84b55fc3198d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff31559031054a464ad41838d7158058"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puzzle_8h.html#aff31559031054a464ad41838d7158058">PuzzleEventType</a> { <a class="el" href="puzzle_8h.html#aff31559031054a464ad41838d7158058a8a8ea3b3bce53eefa6000d842eaab940">PUZZLE_EVENT_PLAYER_INTERACT</a>
  }</td></tr>
+<tr class="memdesc:aff31559031054a464ad41838d7158058"><td class="mdescLeft">&#160;</td><td class="mdescRight">Defines the different types of events that can occur related to puzzles.  <a href="puzzle_8h.html#aff31559031054a464ad41838d7158058">More...</a><br /></td></tr>
 <tr class="separator:aff31559031054a464ad41838d7158058"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
@@ -133,9 +135,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ac0d75812eab9bd904c9b92f0175c7972"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puzzle_8h.html#ac0d75812eab9bd904c9b92f0175c7972">puzzle_update</a> (<a class="el" href="structPuzzle.html">Puzzle</a> *puzzles, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> num_puzzles, <a class="el" href="structPuzzleEvent.html">PuzzleEvent</a> *events, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> num_events)</td></tr>
 <tr class="memdesc:ac0d75812eab9bd904c9b92f0175c7972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the state of all puzzles based on the generated events.  <br /></td></tr>
 <tr class="separator:ac0d75812eab9bd904c9b92f0175c7972"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2a8349e7d52b53282b93734d2b2fe30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puzzle_8h.html#ab2a8349e7d52b53282b93734d2b2fe30">lever_toggle_puzzle_update</a> (void *self, void *state)</td></tr>
-<tr class="memdesc:ab2a8349e7d52b53282b93734d2b2fe30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update function for a lever toggle puzzle, which toggles the puzzle's completion state based on the provided state.  <br /></td></tr>
-<tr class="separator:ab2a8349e7d52b53282b93734d2b2fe30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a34f8ed3ff01b668a0e623b68808b0855" name="a34f8ed3ff01b668a0e623b68808b0855"></a>
@@ -164,6 +163,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Defines the different types of events that can occur related to puzzles. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aff31559031054a464ad41838d7158058a8a8ea3b3bce53eefa6000d842eaab940" name="aff31559031054a464ad41838d7158058a8a8ea3b3bce53eefa6000d842eaab940"></a>PUZZLE_EVENT_PLAYER_INTERACT&#160;</td><td class="fielddoc"></td></tr>
 </table>
@@ -181,6 +182,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Defines the different types of puzzles in the game. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3c9afc800a22beb03c84b55fc3198d8da4bbe9d4e584bc7dd26382fb8c24dbb0e" name="a3c9afc800a22beb03c84b55fc3198d8da4bbe9d4e584bc7dd26382fb8c24dbb0e"></a>PUZZLE_LEVER_TOGGLE&#160;</td><td class="fielddoc"></td></tr>
 </table>
@@ -188,43 +191,6 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab2a8349e7d52b53282b93734d2b2fe30" name="ab2a8349e7d52b53282b93734d2b2fe30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2a8349e7d52b53282b93734d2b2fe30">&#9670;&#160;</a></span>lever_toggle_puzzle_update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lever_toggle_puzzle_update </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>state</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Update function for a lever toggle puzzle, which toggles the puzzle's completion state based on the provided state. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">self</td><td>Pointer to the <a class="el" href="structPuzzle.html">Puzzle</a> instance being updated. </td></tr>
-    <tr><td class="paramname">state</td><td>Pointer to the <a class="el" href="structLeverTogglePuzzleState.html">LeverTogglePuzzleState</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a75d86767a8e5ec66eb52753f50acf65d" name="a75d86767a8e5ec66eb52753f50acf65d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75d86767a8e5ec66eb52753f50acf65d">&#9670;&#160;</a></span>puzzle_generate_events()</h2>
 
@@ -287,7 +253,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>An array of <a class="el" href="structPuzzleEvent.html">PuzzleEvent</a> structures representing the events that occurred. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An array of <a class="el" href="structPuzzleEvent.html" title="Represents an event related to a puzzle, such as the player interacting with it.">PuzzleEvent</a> structures representing the events that occurred. </dd></dl>
 
 </div>
 </div>
@@ -334,7 +300,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">puzzles</td><td>The array of puzzles to update. </td></tr>
     <tr><td class="paramname">num_puzzles</td><td>The number of puzzles in the array. </td></tr>
-    <tr><td class="paramname">events</td><td>The array of <a class="el" href="structPuzzleEvent.html">PuzzleEvent</a> structures representing the events that occurred. </td></tr>
+    <tr><td class="paramname">events</td><td>The array of <a class="el" href="structPuzzleEvent.html" title="Represents an event related to a puzzle, such as the player interacting with it.">PuzzleEvent</a> structures representing the events that occurred. </td></tr>
     <tr><td class="paramname">num_events</td><td>The number of events in the array. </td></tr>
   </table>
   </dd>
@@ -348,7 +314,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1699be727a800b1d059c6f7f2b91d2ee.html">game</a></li><li class="navelem"><a class="el" href="puzzle_8h.html">puzzle.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_9d444ab7c8a2a05d82bfe563c485cc92.html">puzzles</a></li><li class="navelem"><a class="el" href="puzzle_8h.html">puzzle.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

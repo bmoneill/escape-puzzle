@@ -96,20 +96,32 @@ $(document).ready(function(){initNavTree('structPuzzle.html',''); initResizable(
 </div><!--header-->
 <div class="contents">
 
+<p>Represents a puzzle in the game, including its position, completion state, type, and update function.  
+ <a href="structPuzzle.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="puzzle_8h_source.html">puzzle.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
 <tr class="memitem:a2cd4b9784aaf1a7b32a8deefadcb2c1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structvec2u.html">vec2u</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPuzzle.html#a2cd4b9784aaf1a7b32a8deefadcb2c1e">position</a></td></tr>
+<tr class="memdesc:a2cd4b9784aaf1a7b32a8deefadcb2c1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The position of the puzzle in tile coordinates.  <br /></td></tr>
 <tr class="separator:a2cd4b9784aaf1a7b32a8deefadcb2c1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c06e370b709d689e392a4b7b53b47c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPuzzle.html#a8c06e370b709d689e392a4b7b53b47c5">completed</a></td></tr>
+<tr class="memdesc:a8c06e370b709d689e392a4b7b53b47c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the puzzle has been completed or not.  <br /></td></tr>
 <tr class="separator:a8c06e370b709d689e392a4b7b53b47c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae56f1406501e96e75184243e721dda7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="puzzle_8h.html#a3c9afc800a22beb03c84b55fc3198d8d">PuzzleType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPuzzle.html#ae56f1406501e96e75184243e721dda7b">type</a></td></tr>
+<tr class="memdesc:ae56f1406501e96e75184243e721dda7b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of the puzzle, which determines its behavior and update logic.  <br /></td></tr>
 <tr class="separator:ae56f1406501e96e75184243e721dda7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a234091073e33b0d41dd310e4ca89aef5"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPuzzle.html#a234091073e33b0d41dd310e4ca89aef5">update</a> )(void *self, void *state)</td></tr>
-<tr class="separator:a234091073e33b0d41dd310e4ca89aef5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a441a9214dea76f74bf9d8b392cf4d355"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPuzzle.html#a441a9214dea76f74bf9d8b392cf4d355">state</a></td></tr>
+<tr class="memdesc:a441a9214dea76f74bf9d8b392cf4d355"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optional state data for the puzzle, can be used for more complex puzzles.  <br /></td></tr>
+<tr class="separator:a441a9214dea76f74bf9d8b392cf4d355"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a477a70f818683ed6a9af8251597d6d9d"><td class="memItemLeft" align="right" valign="top">void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structPuzzle.html#a477a70f818683ed6a9af8251597d6d9d">update</a> )(void *self, <a class="el" href="structPuzzleEvent.html">PuzzleEvent</a> *event)</td></tr>
+<tr class="memdesc:a477a70f818683ed6a9af8251597d6d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update function.  <br /></td></tr>
+<tr class="separator:a477a70f818683ed6a9af8251597d6d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents a puzzle in the game, including its position, completion state, type, and update function. </p>
+</div><h2 class="groupheader">Field Documentation</h2>
 <a id="a8c06e370b709d689e392a4b7b53b47c5" name="a8c06e370b709d689e392a4b7b53b47c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c06e370b709d689e392a4b7b53b47c5">&#9670;&#160;</a></span>completed</h2>
 
@@ -121,6 +133,8 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Whether the puzzle has been completed or not. </p>
 
 </div>
 </div>
@@ -136,6 +150,24 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The position of the puzzle in tile coordinates. </p>
+
+</div>
+</div>
+<a id="a441a9214dea76f74bf9d8b392cf4d355" name="a441a9214dea76f74bf9d8b392cf4d355"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a441a9214dea76f74bf9d8b392cf4d355">&#9670;&#160;</a></span>state</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* state</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Optional state data for the puzzle, can be used for more complex puzzles. </p>
+
 </div>
 </div>
 <a id="ae56f1406501e96e75184243e721dda7b" name="ae56f1406501e96e75184243e721dda7b"></a>
@@ -150,24 +182,28 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>The type of the puzzle, which determines its behavior and update logic. </p>
+
 </div>
 </div>
-<a id="a234091073e33b0d41dd310e4ca89aef5" name="a234091073e33b0d41dd310e4ca89aef5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a234091073e33b0d41dd310e4ca89aef5">&#9670;&#160;</a></span>update</h2>
+<a id="a477a70f818683ed6a9af8251597d6d9d" name="a477a70f818683ed6a9af8251597d6d9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a477a70f818683ed6a9af8251597d6d9d">&#9670;&#160;</a></span>update</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void(* update) (void *self, void *state)</td>
+          <td class="memname">void(* update) (void *self, <a class="el" href="structPuzzleEvent.html">PuzzleEvent</a> *event)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Update function. </p>
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>src/game/<a class="el" href="puzzle_8h_source.html">puzzle.h</a></li>
+<li>src/puzzles/<a class="el" href="puzzle_8h_source.html">puzzle.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

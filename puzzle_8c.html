@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.6"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PROJECTNAME: src/game/puzzle.c File Reference</title>
+<title>PROJECTNAME: src/puzzles/puzzle.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('puzzle_8c.html',''); initResizable(); 
   <div class="headertitle"><div class="title">puzzle.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="puzzle_8h_source.html">game/puzzle.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="puzzle_8h_source.html">puzzles/puzzle.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="log_8h_source.html">core/log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="memory_8h_source.html">core/memory.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="map_8h_source.html">game/map.h</a>&quot;</code><br />
@@ -103,9 +103,6 @@ $(document).ready(function(){initNavTree('puzzle_8c.html',''); initResizable(); 
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab2a8349e7d52b53282b93734d2b2fe30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puzzle_8c.html#ab2a8349e7d52b53282b93734d2b2fe30">lever_toggle_puzzle_update</a> (void *self, void *state)</td></tr>
-<tr class="memdesc:ab2a8349e7d52b53282b93734d2b2fe30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update function for a lever toggle puzzle, which toggles the puzzle's completion state based on the provided state.  <br /></td></tr>
-<tr class="separator:ab2a8349e7d52b53282b93734d2b2fe30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75d86767a8e5ec66eb52753f50acf65d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPuzzleEvent.html">PuzzleEvent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puzzle_8c.html#a75d86767a8e5ec66eb52753f50acf65d">puzzle_generate_events</a> (<a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> playerX, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> playerY, <a class="el" href="types_8h.html#a3e01dd59d72c4919aa21a46fa5299e23">i16</a> keys_pressed, <a class="el" href="structPuzzle.html">Puzzle</a> *puzzles, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> num_puzzles, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> *out_num_events)</td></tr>
 <tr class="memdesc:a75d86767a8e5ec66eb52753f50acf65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates puzzle events based on the player's position and interactions.  <br /></td></tr>
 <tr class="separator:a75d86767a8e5ec66eb52753f50acf65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -114,43 +111,6 @@ Functions</h2></td></tr>
 <tr class="separator:ac0d75812eab9bd904c9b92f0175c7972"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab2a8349e7d52b53282b93734d2b2fe30" name="ab2a8349e7d52b53282b93734d2b2fe30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2a8349e7d52b53282b93734d2b2fe30">&#9670;&#160;</a></span>lever_toggle_puzzle_update()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lever_toggle_puzzle_update </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>state</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Update function for a lever toggle puzzle, which toggles the puzzle's completion state based on the provided state. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">self</td><td>Pointer to the <a class="el" href="structPuzzle.html">Puzzle</a> instance being updated. </td></tr>
-    <tr><td class="paramname">state</td><td>Pointer to the <a class="el" href="structLeverTogglePuzzleState.html">LeverTogglePuzzleState</a>. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a75d86767a8e5ec66eb52753f50acf65d" name="a75d86767a8e5ec66eb52753f50acf65d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a75d86767a8e5ec66eb52753f50acf65d">&#9670;&#160;</a></span>puzzle_generate_events()</h2>
 
@@ -213,7 +173,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>An array of <a class="el" href="structPuzzleEvent.html">PuzzleEvent</a> structures representing the events that occurred. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>An array of <a class="el" href="structPuzzleEvent.html" title="Represents an event related to a puzzle, such as the player interacting with it.">PuzzleEvent</a> structures representing the events that occurred. </dd></dl>
 
 </div>
 </div>
@@ -260,7 +220,7 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">puzzles</td><td>The array of puzzles to update. </td></tr>
     <tr><td class="paramname">num_puzzles</td><td>The number of puzzles in the array. </td></tr>
-    <tr><td class="paramname">events</td><td>The array of <a class="el" href="structPuzzleEvent.html">PuzzleEvent</a> structures representing the events that occurred. </td></tr>
+    <tr><td class="paramname">events</td><td>The array of <a class="el" href="structPuzzleEvent.html" title="Represents an event related to a puzzle, such as the player interacting with it.">PuzzleEvent</a> structures representing the events that occurred. </td></tr>
     <tr><td class="paramname">num_events</td><td>The number of events in the array. </td></tr>
   </table>
   </dd>
@@ -274,7 +234,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1699be727a800b1d059c6f7f2b91d2ee.html">game</a></li><li class="navelem"><a class="el" href="puzzle_8c.html">puzzle.c</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_9d444ab7c8a2a05d82bfe563c485cc92.html">puzzles</a></li><li class="navelem"><a class="el" href="puzzle_8c.html">puzzle.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>
