@@ -7,9 +7,9 @@
 #include "core/log.h"
 #include "core/memory.h"
 #include "game/map.h"
-#include "game/puzzle.h"
 #include "graphics/input.h"
 #include "graphics/render.h"
+#include "puzzles/puzzle.h"
 
 #include <stdlib.h>
 #include <time.h>

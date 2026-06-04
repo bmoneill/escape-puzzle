@@ -39,7 +39,9 @@ set(SOURCES
   "game/main_menu.c"
   "game/map.c"
   "game/player.c"
-  "game/puzzle.c"
+
+  "puzzles/lever.c"
+  "puzzles/puzzle.c"
 )
 
 if (RAYLIB)

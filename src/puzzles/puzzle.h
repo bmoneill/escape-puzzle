@@ -7,28 +7,37 @@
 #define MAX_PUZZLES 10
 #endif
 
+/**
+ * @brief Defines the different types of puzzles in the game.
+ */
 typedef enum { PUZZLE_LEVER_TOGGLE } PuzzleType;
 
+/**
+ * @brief Defines the different types of events that can occur related to puzzles.
+ */
 typedef enum {
     PUZZLE_EVENT_PLAYER_INTERACT,
 } PuzzleEventType;
 
+/**
+ * @brief Represents an event related to a puzzle, such as the player interacting with it.
+ */
 typedef struct {
-    vec2u      position;
-    bool       completed;
-    PuzzleType type;
-
-    void (*update)(void* self, void* state);
-} Puzzle;
-
-typedef struct {
-    i32             puzzleIdx;
-    PuzzleEventType type;
+    i32             puzzleIdx; //!< The index of the puzzle this event is related to
+    PuzzleEventType type; //!< The type of event that occurred
+    void* data; //!< Optional data for the event, can be used for more complex interactions
 } PuzzleEvent;
 
+/**
+ * @brief Represents a puzzle in the game, including its position, completion state, type, and update function.
+ */
 typedef struct {
-    bool isOn;
-} LeverTogglePuzzleState;
+    vec2u      position; //!< The position of the puzzle in tile coordinates
+    bool       completed; //!< Whether the puzzle has been completed or not
+    PuzzleType type; //!< The type of the puzzle, which determines its behavior and update logic
+    void*      state; //!< Optional state data for the puzzle, can be used for more complex puzzles
+    void (*update)(void* self, PuzzleEvent* event); //!< Update function
+} Puzzle;
 
 /**
  * @brief Generates puzzle events based on the player's position and interactions.
@@ -57,10 +66,4 @@ PuzzleEvent* puzzle_generate_events(i32     playerX,
  */
 bool puzzle_update(Puzzle* puzzles, i32 num_puzzles, PuzzleEvent* events, i32 num_events);
 
-/**
- * @brief Update function for a lever toggle puzzle, which toggles the puzzle's completion state based on the provided state.
- * @param self Pointer to the Puzzle instance being updated.
- * @param state Pointer to the LeverTogglePuzzleState.
- */
-void lever_toggle_puzzle_update(void* self, void* state);
 #endif

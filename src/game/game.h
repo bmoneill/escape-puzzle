@@ -5,9 +5,9 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "map.h"
-#include "player.h"
-#include "puzzle.h"
+#include "game/map.h"
+#include "game/player.h"
+#include "puzzles/puzzle.h"
 
 /**
  * @brief Represents the entire state of the game, including the map and player.

@@ -5,8 +5,8 @@
 #ifndef GAME_MAP_H
 #define GAME_MAP_H
 
-#include "game/puzzle.h"
 #include "game/tile.h"
+#include "puzzles/puzzle.h"
 
 #ifndef MAX_MAP_WIDTH
 #define MAX_MAP_WIDTH 20

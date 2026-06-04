@@ -6,6 +6,7 @@
 
 #include "core/log.h"
 #include "core/random.h"
+#include "puzzles/lever.h"
 
 Map*        gmap = NULL;
 
@@ -79,12 +80,9 @@ static void generate_puzzles(Map* map) {
         map->tiles[y][x].type       = TILE_LEVER;
         map->tiles[y][x].texture_id = TILE_TEXTURE_LEVER_OFF;
         map->tiles[y][x].solid      = 1;
-        map->puzzles[i - failures]  = (Puzzle) {
-             .position  = { .x = x, .y = y },
-             .type      = PUZZLE_LEVER_TOGGLE,
-             .completed = false,
-             .update    = lever_toggle_puzzle_update,
-        };
+
+        // TODO When new puzzle types are added, this will need to be updated to randomly select a type of puzzle to place
+        lever_puzzle_init(&map->puzzles[i - failures], x, y);
         map->num_puzzles++;
     }
 }

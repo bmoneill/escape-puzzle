@@ -1,20 +1,9 @@
-#include "game/puzzle.h"
+#include "puzzles/puzzle.h"
 
 #include "core/log.h"
 #include "core/memory.h"
 #include "game/map.h"
 #include "graphics/input.h"
-
-void lever_toggle_puzzle_update(void* self, void* state) {
-    Puzzle*                 puzzle      = (Puzzle*) self;
-    LeverTogglePuzzleState* puzzleState = (LeverTogglePuzzleState*) state;
-
-    if (puzzleState->isOn) {
-        puzzle->completed                                              = true;
-        gmap->tiles[puzzle->position.y][puzzle->position.x].texture_id = TILE_TEXTURE_LEVER_ON;
-        log_info_f("Puzzle at (%d, %d) is complete", puzzle->position.x, puzzle->position.y);
-    }
-}
 
 PuzzleEvent* puzzle_generate_events(i32     playerX,
                                     i32     playerY,
@@ -60,17 +49,12 @@ bool puzzle_update(Puzzle* puzzles, i32 num_puzzles, PuzzleEvent* events, i32 nu
             continue;
         }
 
-        LeverTogglePuzzleState state = { .isOn = false };
-
         for (i32 j = 0; j < num_events; j++) {
             PuzzleEvent* event = &events[j];
-
             if (event->type == PUZZLE_EVENT_PLAYER_INTERACT && event->puzzleIdx == i) {
-                state.isOn = true;
+                puzzle->update(puzzle, event);
             }
         }
-
-        puzzle->update(puzzle, &state);
     }
 
     if (num_completed == num_puzzles) {
