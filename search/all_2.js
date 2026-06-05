@@ -6,5 +6,10 @@ var searchData=
   ['default_5fplayer_5fspeed_3',['DEFAULT_PLAYER_SPEED',['../player_8h.html#a125290a32f2a96a434109f5ab49125d1',1,'player.h']]],
   ['default_5fwindow_5fheight_4',['DEFAULT_WINDOW_HEIGHT',['../config_8h.html#a030ebc610fddb0a18d62829ab376bf85',1,'config.h']]],
   ['default_5fwindow_5fwidth_5',['DEFAULT_WINDOW_WIDTH',['../config_8h.html#a6ca4df6b9e1495a80a2929a5187cb9b9',1,'config.h']]],
-  ['difficulty_6',['difficulty',['../structMap.html#a95dfedb57effc34a4fa68bb9f23151e1',1,'Map']]]
+  ['difficulty_6',['difficulty',['../structMap.html#a95dfedb57effc34a4fa68bb9f23151e1',1,'Map']]],
+  ['door_7',['Door',['../structDoor.html',1,'']]],
+  ['door_2ec_8',['door.c',['../door_8c.html',1,'']]],
+  ['door_2eh_9',['door.h',['../door_8h.html',1,'']]],
+  ['door_5fspawn_10',['door_spawn',['../door_8c.html#a6bfa2fea5255c4a4631874b7d5296764',1,'door_spawn(Map *map, i32 x, i32 y):&#160;door.c'],['../door_8h.html#a6bfa2fea5255c4a4631874b7d5296764',1,'door_spawn(Map *map, i32 x, i32 y):&#160;door.c']]],
+  ['door_5ftry_5fopen_11',['door_try_open',['../door_8c.html#a079bf19745af546946553f9368f0f92f',1,'door_try_open(Map *map, Player *player):&#160;door.c'],['../door_8h.html#a079bf19745af546946553f9368f0f92f',1,'door_try_open(Map *map, Player *player):&#160;door.c']]]
 ];

@@ -1,0 +1,5 @@
+var door_8c =
+[
+    [ "door_spawn", "door_8c.html#a6bfa2fea5255c4a4631874b7d5296764", null ],
+    [ "door_try_open", "door_8c.html#a079bf19745af546946553f9368f0f92f", null ]
+];

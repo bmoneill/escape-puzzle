@@ -1,8 +1,10 @@
 var annotated_dup =
 [
+    [ "Door", "structDoor.html", "structDoor" ],
     [ "GameState", "structGameState.html", "structGameState" ],
     [ "HashEntry", "structHashEntry.html", "structHashEntry" ],
     [ "HashTable", "structHashTable.html", "structHashTable" ],
+    [ "Key", "structKey.html", "structKey" ],
     [ "LeverTogglePuzzleState", "structLeverTogglePuzzleState.html", "structLeverTogglePuzzleState" ],
     [ "Locale", "structLocale.html", "structLocale" ],
     [ "LocaleEntry", "structLocaleEntry.html", "structLocaleEntry" ],

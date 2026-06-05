@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['player_0',['Player',['../structPlayer.html',1,'']]],
-  ['puzzle_1',['Puzzle',['../structPuzzle.html',1,'']]],
-  ['puzzleevent_2',['PuzzleEvent',['../structPuzzleEvent.html',1,'']]]
+  ['levertogglepuzzlestate_0',['LeverTogglePuzzleState',['../structLeverTogglePuzzleState.html',1,'']]],
+  ['locale_1',['Locale',['../structLocale.html',1,'']]],
+  ['localeentry_2',['LocaleEntry',['../structLocaleEntry.html',1,'']]]
 ];

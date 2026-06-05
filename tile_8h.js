@@ -7,11 +7,15 @@ var tile_8h =
       [ "TILE_TEXTURE_WALL", "tile_8h.html#abc26137979d4816fca454c8249dc5076aaef84a7b162d92f983bdf648362182e8", null ],
       [ "TILE_TEXTURE_LEVER_OFF", "tile_8h.html#abc26137979d4816fca454c8249dc5076a806585dd714819bd8b57575dc6f7776f", null ],
       [ "TILE_TEXTURE_LEVER_ON", "tile_8h.html#abc26137979d4816fca454c8249dc5076a1f7db8112dbbe8698d01dda15cf4edc7", null ],
+      [ "TILE_TEXTURE_KEY", "tile_8h.html#abc26137979d4816fca454c8249dc5076a1d9d4a07e3a0144252b7baadc5282ff0", null ],
+      [ "TILE_TEXTURE_DOOR", "tile_8h.html#abc26137979d4816fca454c8249dc5076a9d6c0b179f96cf3000a64c8709d6bd01", null ],
       [ "TILE_TEXTURE_EXIT", "tile_8h.html#abc26137979d4816fca454c8249dc5076aa825d016772a2d1425edbf6648027639", null ]
     ] ],
     [ "TileType", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1", [
       [ "TILE_FLOOR", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a64d39aaa6c7946a2afff0c301daa1724", null ],
       [ "TILE_WALL", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1afc3e42901752d92e55d61c1a5caec31b", null ],
+      [ "TILE_KEY", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a421c27efc7cfedce8cdc3b95f813717d", null ],
+      [ "TILE_DOOR", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1ab1e49f8314d164b8aaca6e390f0adec4", null ],
       [ "TILE_LEVER", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1ae13fe0f1294ff3a5df8dac7bbec79655", null ],
       [ "TILE_EXIT", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1aea496f253cb69969788c51bf22580e7c", null ]
     ] ]
