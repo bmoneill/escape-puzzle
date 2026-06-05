@@ -42,6 +42,8 @@ set(SOURCES
 
   "puzzles/lever.c"
   "puzzles/puzzle.c"
+  "puzzles/key.c"
+  "puzzles/door.c"
 )
 
 if (RAYLIB)

@@ -22,6 +22,8 @@ typedef struct {
 
     u16 width; //!< Player's width in pixels.
     u16 height; //!< Player's height in pixels.
+
+    i32 keys; // inventory
 } Player;
 
 /**

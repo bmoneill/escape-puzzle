@@ -3,6 +3,8 @@
  * @brief Player implementation.
  */
 #include "player.h"
+#include "puzzles/key.h"
+#include "puzzles/door.h"
 
 #include "graphics/input.h"
 
@@ -21,6 +23,10 @@ void player_init(Player* player) {
 void player_update(Player* player, Map* map, i16 keys_pressed) {
     if (keys_pressed & GAME_KEY_EXIT) {
         exit(0);
+    }
+     if (keys_pressed & GAME_KEY_INTERACT) {
+        key_try_pickup(map, player);
+        door_try_open(map, player);
     }
 
     player_move(player, map, keys_pressed);

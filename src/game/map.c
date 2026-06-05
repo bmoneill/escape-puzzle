@@ -7,6 +7,8 @@
 #include "core/log.h"
 #include "core/random.h"
 #include "puzzles/lever.h"
+#include "puzzles/key.h"
+#include "puzzles/door.h"
 
 Map*        gmap = NULL;
 
@@ -59,6 +61,39 @@ static void generate_walls(Map* map) {
 }
 
 static void generate_puzzles(Map* map) {
+
+// keys
+      for (int i = 0; i < 3; i++) {
+
+        while (1) {
+            i32 x = random_i32_range(1, map->width - 2);
+            i32 y = random_i32_range(1, map->height - 2);
+
+            Tile* t = map_get_tile(map, x, y);
+
+            if (t && t->type == TILE_FLOOR && t->texture_id == TILE_TEXTURE_FLOOR) {
+                key_spawn(map, x, y);
+                break;
+            }
+        }
+    }
+
+    // doors
+ for (int i = 0; i < 3; i++) {
+
+        while (1) {
+            i32 x = random_i32_range(1, map->width - 2);
+            i32 y = random_i32_range(1, map->height - 2);
+
+            Tile* t = map_get_tile(map, x, y);
+
+            if (t && t->type == TILE_FLOOR && t->texture_id == TILE_TEXTURE_FLOOR) {
+                door_spawn(map, x, y);
+                break;
+            }
+        }
+    }
+// levers
     i16 failures = 0;
     for (i16 i = 0; i < 5; i++) {
 

@@ -41,11 +41,17 @@ void render_frame(GameState* game) {
                 tileColor = RED;
             } else if (tile->texture_id == TILE_TEXTURE_LEVER_ON) {
                 tileColor = GREEN;
+            } else if  (tile->texture_id == TILE_TEXTURE_DOOR) {
+                tileColor = PURPLE;
+            } else if  (tile->texture_id == TILE_TEXTURE_KEY) {
+                tileColor = YELLOW;
             }
 
             DrawRectangle(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, tileColor);
 
             DrawRectangleLines(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, GRAY);
+
+            DrawText(TextFormat ("Keys: %d", game->player.keys), 10, 10, 20, WHITE);
         }
     }
 
