@@ -60,10 +60,18 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 )
 target_link_libraries(${PROJECT_NAME} raylib arena)
 
+if(LINUX)
+  target_link_libraries(${PROJECT_NAME} m)
+endif()
+
 if(TEST)
   add_library(lib${PROJECT_NAME} STATIC ${SOURCES})
   target_include_directories(lib${PROJECT_NAME} PUBLIC
     "${CMAKE_CURRENT_SOURCE_DIR}"
   )
   target_link_libraries(lib${PROJECT_NAME} raylib arena)
+
+  if(LINUX)
+    target_link_libraries(lib${PROJECT_NAME} m)
+  endif()
 endif()
