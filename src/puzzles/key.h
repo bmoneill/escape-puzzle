@@ -5,8 +5,8 @@
 #include "game/player.h"
 
 typedef struct {
-    i32 x;
-    i32 y;
+    i32  x;
+    i32  y;
     bool collected;
 } Key;
 
