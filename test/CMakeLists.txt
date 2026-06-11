@@ -1,5 +1,5 @@
-function(add_escapepuzzle_test name)
-  set(test_src "${CMAKE_CURRENT_SOURCE_DIR}/test_${name}.c")
+function(add_escapepuzzle_test dir name)
+  set(test_src "${CMAKE_CURRENT_SOURCE_DIR}/${dir}/test_${name}.c")
   set(runner_src "${CMAKE_CURRENT_BINARY_DIR}/test_${name}_runner.c")
 
   add_custom_command(
@@ -20,9 +20,8 @@ function(add_escapepuzzle_test name)
   add_test(NAME ${name} COMMAND ${name}_tests)
 endfunction()
 
-file(GLOB TEST_FILES "test_*.c")
-foreach(test_file ${TEST_FILES})
-  get_filename_component(test_name ${test_file} NAME_WE)
-  string(REPLACE "test_" "" test_name ${test_name})
-  add_escapepuzzle_test(${test_name})
-endforeach()
+# CORE TESTS
+add_escapepuzzle_test(core ht)
+add_escapepuzzle_test(core locale)
+add_escapepuzzle_test(core memory)
+add_escapepuzzle_test(core random)
