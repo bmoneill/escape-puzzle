@@ -23,6 +23,9 @@ void        map_init(Map* map) {
 void map_generate(Map* map) {
     random_seed(map->seed);
 
+    map->num_puzzles = 0;
+    map->currentLeverOrder = 0;
+
     // Fill up map with floors and bordering walls to start
     for (i32 y = 0; y < map->height; y++) {
         for (i32 x = 0; x < map->width; x++) {
@@ -62,8 +65,10 @@ static void generate_walls(Map* map) {
 
 static void generate_puzzles(Map* map) {
 
+     const int puzzle_count = 5;
+
 // keys
-      for (int i = 0; i < 3; i++) {
+      for (int i = 0; i < puzzle_count; i++) {
 
         while (1) {
             i32 x = random_i32_range(1, map->width - 2);
@@ -79,7 +84,7 @@ static void generate_puzzles(Map* map) {
     }
 
     // doors
- for (int i = 0; i < 3; i++) {
+ for (int i = 0; i < puzzle_count; i++)  {
 
         while (1) {
             i32 x = random_i32_range(1, map->width - 2);
@@ -95,7 +100,7 @@ static void generate_puzzles(Map* map) {
     }
 // levers
     i16 failures = 0;
-    for (i16 i = 0; i < 5; i++) {
+    for (i16 i = 0; i < puzzle_count; i++) {
 
         // Try 10 times to find a random floor tile to place the lever on, otherwise just skip it
         i32 x, y;
@@ -117,7 +122,10 @@ static void generate_puzzles(Map* map) {
         map->tiles[y][x].solid      = 1;
 
         // TODO When new puzzle types are added, this will need to be updated to randomly select a type of puzzle to place
-        lever_puzzle_init(&map->puzzles[i - failures], x, y);
+        Puzzle* puzzle = &map->puzzles[i - failures];
+        lever_puzzle_init(puzzle, x, y);
+        LeverState* state = (LeverState*)puzzle->state;
+        state->order = (i - failures) + 1;
         map->num_puzzles++;
     }
 }

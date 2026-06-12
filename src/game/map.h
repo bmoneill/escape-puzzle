@@ -34,6 +34,7 @@ typedef struct {
     Tile     tiles[MAX_MAP_HEIGHT][MAX_MAP_WIDTH];
     Puzzle   puzzles[MAX_PUZZLES];
     i32      num_puzzles;
+    i32      currentLeverOrder;
 } Map;
 
 /**

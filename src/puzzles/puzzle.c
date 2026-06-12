@@ -15,6 +15,9 @@ PuzzleEvent* puzzle_generate_events(i32     playerX,
     i32          count  = 0;
 
     if (keys_pressed & GAME_KEY_INTERACT) {
+        static i16 last_keys = 0;
+        i16 pressed = keys_pressed & ~last_keys;
+        last_keys = keys_pressed;
         for (i32 i = 0; i < num_puzzles; i++) {
             Puzzle* puzzle = &puzzles[i];
             i32     dx     = playerX - puzzle->position.x;
@@ -51,7 +54,7 @@ bool puzzle_update(Puzzle* puzzles, i32 num_puzzles, PuzzleEvent* events, i32 nu
 
         for (i32 j = 0; j < num_events; j++) {
             PuzzleEvent* event = &events[j];
-            if (event->type == PUZZLE_EVENT_PLAYER_INTERACT && event->puzzleIdx == i) {
+            if (!event->handled && event->type == PUZZLE_EVENT_PLAYER_INTERACT && event->puzzleIdx == i) {
                 puzzle->update(puzzle, event);
             }
         }

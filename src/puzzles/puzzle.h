@@ -26,7 +26,17 @@ typedef struct {
     i32             puzzleIdx; //!< The index of the puzzle this event is related to
     PuzzleEventType type; //!< The type of event that occurred
     void* data; //!< Optional data for the event, can be used for more complex interactions
+    bool  handled;
 } PuzzleEvent;
+
+/**
+ * @brief Lever specific state
+ */
+
+typedef struct {
+    i32 order;
+    bool activated;
+} LeverState;
 
 /**
  * @brief Represents a puzzle in the game, including its position, completion state, type, and update function.

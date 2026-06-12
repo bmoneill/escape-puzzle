@@ -7,7 +7,8 @@
 #include "game/game.h"
 #include "game/map.h"
 #include "game/tile.h"
-
+#include "puzzles/puzzle.h"
+#include "puzzles/lever.h"
 #include "raylib.h"
 
 #define TILE_SIZE 32
@@ -16,6 +17,37 @@ void render_init(void) {
     InitWindow(800, 600, "Escape Puzzle");
     SetTargetFPS(60);
 }
+
+static void draw_lever_number(GameState* game, int x, int y) {
+    Tile* tile = &game->map.tiles[y][x];
+
+    if (tile->texture_id != TILE_TEXTURE_LEVER_OFF &&
+        tile->texture_id != TILE_TEXTURE_LEVER_ON) {
+        return;
+    }
+
+    // find matching puzzle
+    for (int i = 0; i < game->map.num_puzzles; i++) {
+
+        Puzzle* p = &game->map.puzzles[i];
+
+        if (p->position.x == (unsigned int)x && p->position.y == (unsigned int)y) {
+
+            LeverState* state = (LeverState*)p->state;
+
+            if (state) {
+                DrawText(
+                    TextFormat("%d", state->order),
+                    x * TILE_SIZE + 10,
+                    y * TILE_SIZE + 8,
+                    20,
+                    WHITE
+                );
+            }
+        }
+    }
+}
+
 
 void render_frame(GameState* game) {
     if (WindowShouldClose()) {
@@ -50,6 +82,8 @@ void render_frame(GameState* game) {
             DrawRectangle(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, tileColor);
 
             DrawRectangleLines(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, GRAY);
+
+             draw_lever_number(game, x, y);
 
             DrawText(TextFormat ("Keys: %d", game->player.keys), 10, 10, 20, WHITE);
         }
