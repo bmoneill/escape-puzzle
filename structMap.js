@@ -1,5 +1,6 @@
 var structMap =
 [
+    [ "currentLeverOrder", "structMap.html#ad008638581e388e19b3466c5b34a50da", null ],
     [ "difficulty", "structMap.html#a95dfedb57effc34a4fa68bb9f23151e1", null ],
     [ "height", "structMap.html#a64b6c9eac5e2b51ae846d7c68028dbf4", null ],
     [ "num_puzzles", "structMap.html#ad31202e418df3018a7214022f5f1a3a4", null ],

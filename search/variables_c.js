@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['seed_0',['seed',['../structMap.html#afecec688b637c2e60bddd76fd37d799c',1,'Map']]],
-  ['seed_5fptr_1',['seed_ptr',['../random_8c.html#a831130bab15fab82397e216b99a28b74',1,'random.c']]],
-  ['selected_5fmenu_5fitem_2',['selected_menu_item',['../structMenu.html#a8b78121b590fc010172f9a1a88983143',1,'Menu']]],
-  ['solid_3',['solid',['../structTile.html#a97364c2752d8cecb3b08bf3ce8f24544',1,'Tile']]],
-  ['state_4',['state',['../structPuzzle.html#a441a9214dea76f74bf9d8b392cf4d355',1,'Puzzle']]],
-  ['stats_5',['stats',['../structMemoryManager.html#a506ab849a6ca589b1f414d022d765564',1,'MemoryManager']]]
+  ['peak_0',['peak',['../structMemoryManager.html#a98f434f34d860b14fd6d903b7bec9759',1,'MemoryManager']]],
+  ['player_1',['player',['../structGameState.html#af61d6983a9396a11078805087518af88',1,'GameState']]],
+  ['playerstartpos_2',['playerStartPos',['../structMap.html#adfe868a177b75ccf49ffcb0aa89d8510',1,'Map']]],
+  ['position_3',['position',['../structPuzzle.html#a2cd4b9784aaf1a7b32a8deefadcb2c1e',1,'Puzzle']]],
+  ['puzzleidx_4',['puzzleIdx',['../structPuzzleEvent.html#a070e1909f979c4234cfe1b07d8f64bde',1,'PuzzleEvent']]],
+  ['puzzles_5',['puzzles',['../structMap.html#a9c7b4265722e5d85a8c10cc7eceb59f8',1,'Map']]]
 ];

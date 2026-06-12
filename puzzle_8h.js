@@ -1,6 +1,7 @@
 var puzzle_8h =
 [
     [ "PuzzleEvent", "structPuzzleEvent.html", "structPuzzleEvent" ],
+    [ "LeverState", "structLeverState.html", "structLeverState" ],
     [ "Puzzle", "structPuzzle.html", "structPuzzle" ],
     [ "MAX_PUZZLES", "puzzle_8h.html#a34f8ed3ff01b668a0e623b68808b0855", null ],
     [ "PuzzleEventType", "puzzle_8h.html#aff31559031054a464ad41838d7158058", [
