@@ -5,6 +5,7 @@
 #include "puzzles/puzzle.h"
 
 static i32 g_expected_lever = 1;
+static i8 g_wrong_message_shown = 0;
 
 void lever_puzzle_init(Puzzle* puzzle, i32 x, i32 y) {
     puzzle->position  = (vec2u) { .x = x, .y = y };
@@ -18,7 +19,7 @@ void lever_puzzle_init(Puzzle* puzzle, i32 x, i32 y) {
 }
 
 void lever_puzzle_update(void* self, PuzzleEvent* event) {
-    static i8 g_reset_lock = 0;
+
       Puzzle* puzzle = (Puzzle*)self;
 
     if (event->type != PUZZLE_EVENT_PLAYER_INTERACT)
@@ -26,27 +27,30 @@ void lever_puzzle_update(void* self, PuzzleEvent* event) {
 
     LeverState* state = (LeverState*)puzzle->state;
 
-    if (g_reset_lock)
-         return;
 
     if (state->order == g_expected_lever) {
 
 
-        puzzle->completed = true;
+       g_wrong_message_shown = 0;
 
-        gmap->tiles[puzzle->position.y][puzzle->position.x].texture_id =
-            TILE_TEXTURE_LEVER_ON;
+    puzzle->completed = true;
 
-        g_expected_lever++;
+    gmap->tiles[puzzle->position.y][puzzle->position.x].texture_id =
+        TILE_TEXTURE_LEVER_ON;
 
-        log_info_f(
-            "Correct lever %d activated",
-            state->order
-        );
+    g_expected_lever++;
+
+    log_info_f("Correct lever %d activated",state->order);
     }
     else {
 
-        log_info_f("Wrong lever activated. Resetting sequence.");
+       if (g_expected_lever == 1) {
+
+        log_info_f("Wrong lever. Try again.");
+
+    } else {
+
+        log_info_f("Wrong lever. Resetting sequence.");
 
         g_expected_lever = 1;
 
@@ -61,4 +65,5 @@ void lever_puzzle_update(void* self, PuzzleEvent* event) {
         }
     }
      
-    }
+}
+}

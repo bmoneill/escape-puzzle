@@ -11,13 +11,14 @@ PuzzleEvent* puzzle_generate_events(i32     playerX,
                                     Puzzle* puzzles,
                                     i32     num_puzzles,
                                     i32*    out_num_events) {
-    PuzzleEvent* events = MEM_FRAME(sizeof(PuzzleEvent) * num_puzzles);
-    i32          count  = 0;
 
-    if (keys_pressed & GAME_KEY_INTERACT) {
         static i16 last_keys = 0;
         i16 pressed = keys_pressed & ~last_keys;
         last_keys = keys_pressed;
+    PuzzleEvent* events = MEM_FRAME(sizeof(PuzzleEvent) * num_puzzles);
+    i32          count  = 0;
+
+    if (pressed & GAME_KEY_INTERACT) {
         for (i32 i = 0; i < num_puzzles; i++) {
             Puzzle* puzzle = &puzzles[i];
             i32     dx     = playerX - puzzle->position.x;

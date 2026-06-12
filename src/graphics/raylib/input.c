@@ -12,10 +12,18 @@ u16 get_keys_pressed(void) {
     u16        pressed   = 0;
 
     for (i16 i = 0; i < key_count; i++) {
-        if (IsKeyDown(key_map[i])) {
-            pressed |= (1 << i);
+        if (i == GAME_KEY_INTERACT || i == GAME_KEY_EXIT) {
+
+            if (IsKeyPressed(key_map[i])) {
+                pressed |= (1 << i);
+            }
+
+        } else {
+
+            if (IsKeyDown(key_map[i])) {
+                pressed |= (1 << i);
+            }
         }
     }
-
     return pressed;
 }
