@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['y_0',['y',['../structvec2u.html#ac30de26db5f6d1c18c63913729adca7d',1,'vec2u::y()'],['../structvec2f.html#aa4f0d3eebc3c443f9be81bf48561a217',1,'vec2f::y()'],['../structvec3u.html#ac30de26db5f6d1c18c63913729adca7d',1,'vec3u::y()'],['../structvec3f.html#aa4f0d3eebc3c443f9be81bf48561a217',1,'vec3f::y()'],['../structPlayer.html#a08acd89289a2a5ba59df2ba21bc5dff5',1,'Player::y()'],['../structDoor.html#a3ee2230b581a3bb430260bf3ef74820d',1,'Door::y()'],['../structKey.html#a3ee2230b581a3bb430260bf3ef74820d',1,'Key::y()']]]
+  ['x_0',['x',['../structvec2u.html#a676e0da0ef83bbbdf42538e54b97506b',1,'vec2u::x()'],['../structvec2f.html#ad0da36b2558901e21e7a30f6c227a45e',1,'vec2f::x()'],['../structvec3u.html#a676e0da0ef83bbbdf42538e54b97506b',1,'vec3u::x()'],['../structvec3f.html#ad0da36b2558901e21e7a30f6c227a45e',1,'vec3f::x()'],['../structCorridor.html#af59ec92c1930b63ed6067ba4ef04b409',1,'Corridor::x()'],['../structPlayer.html#ab73ebb2a0e78ae5602971fca684535f0',1,'Player::x()'],['../structDoor.html#af59ec92c1930b63ed6067ba4ef04b409',1,'Door::x()'],['../structKey.html#af59ec92c1930b63ed6067ba4ef04b409',1,'Key::x()']]],
+  ['x1_1',['x1',['../structMapRoom.html#a27c55201cd3901f7da2f4cda312b2268',1,'MapRoom']]],
+  ['x2_2',['x2',['../structMapRoom.html#a37d116af8a69648f79fc07aef4a876c8',1,'MapRoom']]]
 ];

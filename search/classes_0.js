@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['door_0',['Door',['../structDoor.html',1,'']]]
+  ['corridor_0',['Corridor',['../structCorridor.html',1,'']]]
 ];
