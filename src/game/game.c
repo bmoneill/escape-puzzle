@@ -7,6 +7,7 @@
 #include "core/log.h"
 #include "core/memory.h"
 #include "game/map.h"
+#include "game/tile.h"
 #include "graphics/input.h"
 #include "graphics/render.h"
 #include "puzzles/puzzle.h"
@@ -34,8 +35,15 @@ void game_init(GameState* game) {
                                                      game->map.puzzles,
                                                      game->map.num_puzzles,
                                                      &num_puzzle_events);
-        if (puzzle_update(game->map.puzzles, game->map.num_puzzles, events, num_puzzle_events)) {
-            log_info_f("You won!");
+        // Update lever puzzles (optional content — does not trigger win)
+        puzzle_update(game->map.puzzles, game->map.num_puzzles, events, num_puzzle_events);
+
+        // Win condition: player steps onto the exit tile
+        i32   px       = (i32) (game->player.x / TILE_SIZE);
+        i32   py       = (i32) (game->player.y / TILE_SIZE);
+        Tile* cur_tile = map_get_tile(&game->map, px, py);
+        if (cur_tile && cur_tile->type == TILE_EXIT) {
+            log_info_f("You escaped! Level complete!");
             game_exit(game);
         }
         render_frame(game);

@@ -3,8 +3,8 @@
  * @brief Player implementation.
  */
 #include "player.h"
-#include "puzzles/key.h"
 #include "puzzles/door.h"
+#include "puzzles/key.h"
 
 #include "graphics/input.h"
 
@@ -16,15 +16,16 @@ void player_init(Player* player) {
 
     player->move_speed = DEFAULT_PLAYER_SPEED;
 
-    player->width      = 32;
-    player->height     = 32;
+    player->width      = 20;
+    player->height     = 20;
+    player->keys       = 0;
 }
 
 void player_update(Player* player, Map* map, i16 keys_pressed) {
     if (keys_pressed & GAME_KEY_EXIT) {
         exit(0);
     }
-     if (keys_pressed & GAME_KEY_INTERACT) {
+    if (keys_pressed & GAME_KEY_INTERACT) {
         key_try_pickup(map, player);
         door_try_open(map, player);
     }
@@ -33,64 +34,60 @@ void player_update(Player* player, Map* map, i16 keys_pressed) {
 }
 
 void player_move(Player* player, Map* map, i16 keys) {
-    f64  dx = 0;
-    f64  dy = 0;
-    f64  nextX, nextY;
-    i32  leftTileX, rightTileX, topTileY, bottomTileY;
-    bool canMoveX = true, canMoveY = true;
+    f64 dx = 0;
+    f64 dy = 0;
 
-    if (keys & GAME_KEY_UP) {
+    if (keys & GAME_KEY_UP)
         dy -= player->move_speed;
-    }
-
-    if (keys & GAME_KEY_DOWN) {
+    if (keys & GAME_KEY_DOWN)
         dy += player->move_speed;
-    }
-
-    if (keys & GAME_KEY_LEFT) {
+    if (keys & GAME_KEY_LEFT)
         dx -= player->move_speed;
-    }
-
-    if (keys & GAME_KEY_RIGHT) {
+    if (keys & GAME_KEY_RIGHT)
         dx += player->move_speed;
-    }
 
-    if (dx || dy) {
-        nextX       = (player->x + dx) / TILE_SIZE;
-        nextY       = (player->y + dy) / TILE_SIZE;
-        leftTileX   = (i32) nextX;
-        rightTileX  = (i32) (nextX + 1);
-        topTileY    = (i32) nextY;
-        bottomTileY = (i32) (nextY + 1);
-    }
-
+    // Horizontal movement ---------------------------------------------------
+    // Check the leading X edge of the moved bounding box against every tile
+    // row the player currently occupies.  Using the *current* Y (not moved Y)
+    // keeps the two axes independent and prevents corner-clipping artifacts.
     if (dx) {
-        i32 checkX = (dx > 0) ? rightTileX : leftTileX;
-        for (i32 tileY = topTileY; tileY <= bottomTileY; tileY++) {
-            Tile* tile = map_get_tile(map, checkX, tileY);
+        f64  nextLeft  = player->x + dx;
+        f64  nextRight = player->x + dx + player->width - 1;
+        i32  checkX    = (dx > 0) ? (i32) (nextRight / TILE_SIZE) : (i32) (nextLeft / TILE_SIZE);
+        i32  topTile   = (i32) (player->y / TILE_SIZE);
+        i32  botTile   = (i32) ((player->y + player->height - 1) / TILE_SIZE);
+
+        bool blocked   = false;
+        for (i32 ty = topTile; ty <= botTile; ty++) {
+            Tile* tile = map_get_tile(map, checkX, ty);
             if (tile && tile->solid) {
-                canMoveX = false;
+                blocked = true;
                 break;
             }
         }
-
-        if (canMoveX) {
+        if (!blocked)
             player->x += dx;
-        }
     }
 
+    // Vertical movement -----------------------------------------------------
+    // Check the leading Y edge against every tile column the player currently
+    // occupies (after the X move has already been applied above).
     if (dy) {
-        i32 checkY = (dy > 0) ? bottomTileY : topTileY;
-        for (i32 tileX = leftTileX; tileX <= rightTileX; tileX++) {
-            Tile* tile = map_get_tile(map, tileX, checkY);
+        f64  nextTop   = player->y + dy;
+        f64  nextBot   = player->y + dy + player->height - 1;
+        i32  checkY    = (dy > 0) ? (i32) (nextBot / TILE_SIZE) : (i32) (nextTop / TILE_SIZE);
+        i32  leftTile  = (i32) (player->x / TILE_SIZE);
+        i32  rightTile = (i32) ((player->x + player->width - 1) / TILE_SIZE);
+
+        bool blocked   = false;
+        for (i32 tx = leftTile; tx <= rightTile; tx++) {
+            Tile* tile = map_get_tile(map, tx, checkY);
             if (tile && tile->solid) {
-                canMoveY = false;
+                blocked = true;
                 break;
             }
         }
-
-        if (canMoveY) {
+        if (!blocked)
             player->y += dy;
-        }
     }
 }
