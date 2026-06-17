@@ -11,6 +11,8 @@ typedef struct {
 } Door;
 
 void door_spawn(Map* map, i32 x, i32 y);
+void riddle_door_spawn(Map* map, i32 x, i32 y);
 void door_try_open(Map* map, Player* player);
+void door_try_riddle(Map* map, Player* player);
 
 #endif

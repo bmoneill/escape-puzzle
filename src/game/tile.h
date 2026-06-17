@@ -14,7 +14,7 @@
 /**
  * @brief Enumeration of different tile types in the game.
  */
-typedef enum { TILE_FLOOR, TILE_WALL, TILE_KEY, TILE_DOOR, TILE_LEVER, TILE_EXIT } TileType;
+typedef enum { TILE_FLOOR, TILE_WALL, TILE_KEY, TILE_DOOR,TILE_RIDDLE_DOOR, TILE_LEVER, TILE_EXIT } TileType;
 
 typedef enum {
     TILE_TEXTURE_FLOOR,

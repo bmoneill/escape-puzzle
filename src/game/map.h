@@ -55,6 +55,12 @@ void map_generate(Map* map);
  */
 Tile*       map_get_tile(Map* map, int x, int y);
 
+/**
+ * @brief Returns true if all lever puzzles have been activated.
+ * @param map Pointer to the Map.
+ */
+bool map_all_levers_active(Map* map);
+
 extern Map* gmap;
 
 #endif

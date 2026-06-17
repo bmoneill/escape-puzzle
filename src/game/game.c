@@ -29,12 +29,14 @@ void game_init(GameState* game) {
         i32 num_puzzle_events;
 
         player_update(&game->player, &game->map, keys_pressed);
+
         PuzzleEvent* events = puzzle_generate_events(game->player.x / TILE_SIZE,
                                                      game->player.y / TILE_SIZE,
                                                      keys_pressed,
                                                      game->map.puzzles,
                                                      game->map.num_puzzles,
                                                      &num_puzzle_events);
+
         // Update lever puzzles (optional content — does not trigger win)
         puzzle_update(game->map.puzzles, game->map.num_puzzles, events, num_puzzle_events);
 
@@ -42,10 +44,24 @@ void game_init(GameState* game) {
         i32   px       = (i32) (game->player.x / TILE_SIZE);
         i32   py       = (i32) (game->player.y / TILE_SIZE);
         Tile* cur_tile = map_get_tile(&game->map, px, py);
+
+        static bool exit_warning_shown = false;
+
         if (cur_tile && cur_tile->type == TILE_EXIT) {
-            log_info_f("You escaped! Level complete!");
-            game_exit(game);
+
+            if (map_all_levers_active(&game->map)){
+                log_info_f("At exit tile");
+                log_info_f("All levers active = %d", map_all_levers_active(&game->map));
+                log_info_f("You escaped! Level complete!");
+                game_exit(game);
+            } else if (!exit_warning_shown) {
+                log_info_f("All levers must be activated before you can escape!");
+                exit_warning_shown = true;
+            }
+        } else {
+            exit_warning_shown = false;
         }
+
         render_frame(game);
         mem_reset_frame();
     }

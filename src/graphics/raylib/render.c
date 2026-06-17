@@ -77,6 +77,8 @@ void render_frame(GameState* game) {
                 tileColor = PURPLE;
             } else if  (tile->texture_id == TILE_TEXTURE_KEY) {
                 tileColor = YELLOW;
+            } else if (tile->texture_id == TILE_TEXTURE_EXIT) {
+                tileColor = ORANGE;
             }
 
             DrawRectangle(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, tileColor);

@@ -358,12 +358,26 @@ static void generate_walls(Map* map) {
         if (corr_idx < 0 || corridors[corr_idx].locked)
             continue;
 
-        corridors[corr_idx].locked = true;
-        locked_count++;
+       corridors[corr_idx].locked = true;
+locked_count++;
 
-        // Place a locked door at the corridor gap
-        door_spawn(map, corridors[corr_idx].x, corridors[corr_idx].y);
+// riddle door spawn
 
+if (locked_count == 1) {
+    riddle_door_spawn(
+        map,
+        corridors[corr_idx].x,
+        corridors[corr_idx].y
+    );
+}
+else {
+    // Place a locked door at the corridor gap
+    door_spawn(
+        map,
+        corridors[corr_idx].x,
+        corridors[corr_idx].y
+    );
+}
         // Place the matching key somewhere on the floor of the parent room
         MapRoom pr = rooms[bfs_parent[room]];
         for (;;) {
@@ -429,4 +443,21 @@ static void generate_puzzles(Map* map) {
         state->order      = (i - failures) + 1;
         map->num_puzzles++;
     }
+}
+
+bool map_all_levers_active(Map* map) {
+    for (i32 i = 0; i < map->num_puzzles; i++) {
+
+        Puzzle* puzzle = &map->puzzles[i];
+
+        if (puzzle->type != PUZZLE_LEVER_TOGGLE)
+            continue;
+
+        LeverState* state = (LeverState*)puzzle->state;
+
+        if (!state->activated)
+            return false;
+    }
+
+    return true;
 }
