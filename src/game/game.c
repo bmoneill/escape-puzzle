@@ -50,8 +50,6 @@ void game_init(GameState* game) {
         if (cur_tile && cur_tile->type == TILE_EXIT) {
 
             if (map_all_levers_active(&game->map)){
-                log_info_f("At exit tile");
-                log_info_f("All levers active = %d", map_all_levers_active(&game->map));
                 log_info_f("You escaped! Level complete!");
                 game_exit(game);
             } else if (!exit_warning_shown) {
