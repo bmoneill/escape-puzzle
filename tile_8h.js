@@ -16,6 +16,7 @@ var tile_8h =
       [ "TILE_WALL", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1afc3e42901752d92e55d61c1a5caec31b", null ],
       [ "TILE_KEY", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a421c27efc7cfedce8cdc3b95f813717d", null ],
       [ "TILE_DOOR", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1ab1e49f8314d164b8aaca6e390f0adec4", null ],
+      [ "TILE_RIDDLE_DOOR", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a81bdb803e168f8196b1c374dfb8c6d5d", null ],
       [ "TILE_LEVER", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1ae13fe0f1294ff3a5df8dac7bbec79655", null ],
       [ "TILE_EXIT", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1aea496f253cb69969788c51bf22580e7c", null ]
     ] ]

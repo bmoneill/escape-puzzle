@@ -9,6 +9,7 @@ var map_8h =
       [ "THEME_TEMPLE", "map_8h.html#a93137070672832a6fac39e59e6dfdbafa18176f4f33e59685b2a8fcc5a161ddbe", null ],
       [ "THEME_PYRAMID", "map_8h.html#a93137070672832a6fac39e59e6dfdbafa7ece4c76db09e2f722d705a1184b96d2", null ]
     ] ],
+    [ "map_all_levers_active", "map_8h.html#a2177f1b234ef152a6930a767ab0c80f3", null ],
     [ "map_generate", "map_8h.html#ad135fe77e3eccaf2b9fca86daa37d88a", null ],
     [ "map_get_tile", "map_8h.html#a3b77f91c44bb5f8d8122fb40253da239", null ],
     [ "map_init", "map_8h.html#a50f105f8099b87e44a22eec8f0f2baa0", null ],

@@ -9,12 +9,13 @@ var searchData=
   ['tile_5ffloor_6',['TILE_FLOOR',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a64d39aaa6c7946a2afff0c301daa1724',1,'tile.h']]],
   ['tile_5fkey_7',['TILE_KEY',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a421c27efc7cfedce8cdc3b95f813717d',1,'tile.h']]],
   ['tile_5flever_8',['TILE_LEVER',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1ae13fe0f1294ff3a5df8dac7bbec79655',1,'tile.h']]],
-  ['tile_5ftexture_5fdoor_9',['TILE_TEXTURE_DOOR',['../tile_8h.html#abc26137979d4816fca454c8249dc5076a9d6c0b179f96cf3000a64c8709d6bd01',1,'tile.h']]],
-  ['tile_5ftexture_5fexit_10',['TILE_TEXTURE_EXIT',['../tile_8h.html#abc26137979d4816fca454c8249dc5076aa825d016772a2d1425edbf6648027639',1,'tile.h']]],
-  ['tile_5ftexture_5ffloor_11',['TILE_TEXTURE_FLOOR',['../tile_8h.html#abc26137979d4816fca454c8249dc5076aef579e7b3f5a4c1d9990a40c7270ba0d',1,'tile.h']]],
-  ['tile_5ftexture_5fkey_12',['TILE_TEXTURE_KEY',['../tile_8h.html#abc26137979d4816fca454c8249dc5076a1d9d4a07e3a0144252b7baadc5282ff0',1,'tile.h']]],
-  ['tile_5ftexture_5flever_5foff_13',['TILE_TEXTURE_LEVER_OFF',['../tile_8h.html#abc26137979d4816fca454c8249dc5076a806585dd714819bd8b57575dc6f7776f',1,'tile.h']]],
-  ['tile_5ftexture_5flever_5fon_14',['TILE_TEXTURE_LEVER_ON',['../tile_8h.html#abc26137979d4816fca454c8249dc5076a1f7db8112dbbe8698d01dda15cf4edc7',1,'tile.h']]],
-  ['tile_5ftexture_5fwall_15',['TILE_TEXTURE_WALL',['../tile_8h.html#abc26137979d4816fca454c8249dc5076aaef84a7b162d92f983bdf648362182e8',1,'tile.h']]],
-  ['tile_5fwall_16',['TILE_WALL',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1afc3e42901752d92e55d61c1a5caec31b',1,'tile.h']]]
+  ['tile_5friddle_5fdoor_9',['TILE_RIDDLE_DOOR',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a81bdb803e168f8196b1c374dfb8c6d5d',1,'tile.h']]],
+  ['tile_5ftexture_5fdoor_10',['TILE_TEXTURE_DOOR',['../tile_8h.html#abc26137979d4816fca454c8249dc5076a9d6c0b179f96cf3000a64c8709d6bd01',1,'tile.h']]],
+  ['tile_5ftexture_5fexit_11',['TILE_TEXTURE_EXIT',['../tile_8h.html#abc26137979d4816fca454c8249dc5076aa825d016772a2d1425edbf6648027639',1,'tile.h']]],
+  ['tile_5ftexture_5ffloor_12',['TILE_TEXTURE_FLOOR',['../tile_8h.html#abc26137979d4816fca454c8249dc5076aef579e7b3f5a4c1d9990a40c7270ba0d',1,'tile.h']]],
+  ['tile_5ftexture_5fkey_13',['TILE_TEXTURE_KEY',['../tile_8h.html#abc26137979d4816fca454c8249dc5076a1d9d4a07e3a0144252b7baadc5282ff0',1,'tile.h']]],
+  ['tile_5ftexture_5flever_5foff_14',['TILE_TEXTURE_LEVER_OFF',['../tile_8h.html#abc26137979d4816fca454c8249dc5076a806585dd714819bd8b57575dc6f7776f',1,'tile.h']]],
+  ['tile_5ftexture_5flever_5fon_15',['TILE_TEXTURE_LEVER_ON',['../tile_8h.html#abc26137979d4816fca454c8249dc5076a1f7db8112dbbe8698d01dda15cf4edc7',1,'tile.h']]],
+  ['tile_5ftexture_5fwall_16',['TILE_TEXTURE_WALL',['../tile_8h.html#abc26137979d4816fca454c8249dc5076aaef84a7b162d92f983bdf648362182e8',1,'tile.h']]],
+  ['tile_5fwall_17',['TILE_WALL',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1afc3e42901752d92e55d61c1a5caec31b',1,'tile.h']]]
 ];
