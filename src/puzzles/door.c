@@ -44,32 +44,34 @@ void door_try_open(Map* map, Player* player) {
             /* Riddle door */
             if (tile->type == TILE_RIDDLE_DOOR) {
 
-                char answer[64];
+    char answer[64];
 
-                printf("\n");
-                printf("====================================\n");
-                printf("RIDDLE:\n");
-                printf("What has keys but can't open locks?\n");
-                printf("Answer: ");
+    printf("\n");
+    printf("====================================\n");
+    printf("RIDDLE:\n");
+    printf("What has keys but can't open locks?\n");
 
-                scanf("%63s", answer);
+    while (1) {
+        printf("Answer: ");
+        scanf("%63s", answer);
 
-                if (strcmp(answer, "keyboard") == 0 ||
-                    strcmp(answer, "Keyboard") == 0) {
+        if (strcmp(answer, "keyboard") == 0 ||
+            strcmp(answer, "Keyboard") == 0) {
 
-                    printf("Correct! Door opened.\n");
+            printf("Correct! Door opened.\n");
 
-                    tile->type       = TILE_FLOOR;
-                    tile->solid      = 0;
-                    tile->texture_id = TILE_TEXTURE_FLOOR;
-                } else {
-                    printf("Wrong answer.\n");
-                }
+            tile->type       = TILE_FLOOR;
+            tile->solid      = 0;
+            tile->texture_id = TILE_TEXTURE_FLOOR;
 
-                return;
+            return; // exit once solved
+        }
+
+        printf("Wrong answer. Try again.\n");
             }
         }
     }
+}
 }
 
 void riddle_door_spawn(Map* map, i32 x, i32 y) {
