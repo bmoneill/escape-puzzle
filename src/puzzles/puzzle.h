@@ -7,6 +7,10 @@
 #define MAX_PUZZLES 10
 #endif
 
+#ifndef RIDDLE_COUNT
+#define RIDDLE_COUNT 10 // Defined sequentially in assets/locale/en_us.txt
+#endif
+
 /**
  * @brief Defines the different types of puzzles in the game.
  */
@@ -34,7 +38,7 @@ typedef struct {
  */
 
 typedef struct {
-    i32 order;
+    i32  order;
     bool activated;
 } LeverState;
 

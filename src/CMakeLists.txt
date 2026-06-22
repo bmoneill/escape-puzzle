@@ -34,6 +34,7 @@ set(SOURCES
   "core/log.c"
   "core/memory.c"
   "core/random.c"
+  "core/strings.c"
 
   "game/game.c"
   "game/main_menu.c"
