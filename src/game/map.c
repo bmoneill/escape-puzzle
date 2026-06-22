@@ -65,6 +65,29 @@ Tile* map_get_tile(Map* map, int x, int y) {
     return &map->tiles[y][x];
 }
 
+bool tile_adjacent_to(Map* map, int x, int y, TileType type) {
+    Tile* t = map_get_tile(map, x + 1, y);
+    if (t->type == type) {
+        return true;
+    }
+
+    t = map_get_tile(map, x - 1, y);
+    if (t->type == type) {
+        return true;
+    }
+
+    t = map_get_tile(map, x, y + 1);
+    if (t->type == type) {
+        return true;
+    }
+
+    t = map_get_tile(map, x, y - 1);
+    if (t->type == type) {
+        return true;
+    }
+    return false;
+}
+
 // ---------------------------------------------------------------------------
 // Room and wall generation
 // ---------------------------------------------------------------------------
@@ -358,26 +381,17 @@ static void generate_walls(Map* map) {
         if (corr_idx < 0 || corridors[corr_idx].locked)
             continue;
 
-       corridors[corr_idx].locked = true;
-locked_count++;
+        corridors[corr_idx].locked = true;
+        locked_count++;
 
-// riddle door spawn
+        // riddle door spawn
 
-if (locked_count == 1) {
-    riddle_door_spawn(
-        map,
-        corridors[corr_idx].x,
-        corridors[corr_idx].y
-    );
-}
-else {
-    // Place a locked door at the corridor gap
-    door_spawn(
-        map,
-        corridors[corr_idx].x,
-        corridors[corr_idx].y
-    );
-}
+        if (locked_count == 1) {
+            riddle_door_spawn(map, corridors[corr_idx].x, corridors[corr_idx].y);
+        } else {
+            // Place a locked door at the corridor gap
+            door_spawn(map, corridors[corr_idx].x, corridors[corr_idx].y);
+        }
         // Place the matching key somewhere on the floor of the parent room
         MapRoom pr = rooms[bfs_parent[room]];
         for (;;) {
@@ -426,7 +440,7 @@ static void generate_puzzles(Map* map) {
             tries++;
         } while ((map->tiles[y][x].type != TILE_FLOOR
                   || ((i32) map->playerStartPos.x == x && (i32) map->playerStartPos.y == y))
-                 && tries < 20);
+                 && !tile_adjacent_to(map, x, y, TILE_DOOR) && tries < 20);
 
         if (tries >= 20) {
             failures++;
@@ -453,7 +467,7 @@ bool map_all_levers_active(Map* map) {
         if (puzzle->type != PUZZLE_LEVER_TOGGLE)
             continue;
 
-        LeverState* state = (LeverState*)puzzle->state;
+        LeverState* state = (LeverState*) puzzle->state;
 
         if (!state->activated)
             return false;

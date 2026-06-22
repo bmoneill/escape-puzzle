@@ -53,13 +53,22 @@ void map_generate(Map* map);
  * @brief Retrieves a pointer to the tile at the specified coordinates.
  * @param map Pointer to the Map.
  */
-Tile*       map_get_tile(Map* map, int x, int y);
+Tile* map_get_tile(Map* map, int x, int y);
 
 /**
  * @brief Returns true if all lever puzzles have been activated.
  * @param map Pointer to the Map.
  */
 bool map_all_levers_active(Map* map);
+
+/**
+ * @brief Returns true if tile at coords is adjacent to a tile of type type
+ * @param map map to check
+ * @param x x coord of tile to check
+ * @param y y coord of tile to check
+ * @param type Tile type to check if (x,y) is adjacent to it
+ */
+bool        tile_adjacent_to(Map* map, int x, int y, TileType type);
 
 extern Map* gmap;
 
