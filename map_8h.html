@@ -142,6 +142,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a2177f1b234ef152a6930a767ab0c80f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#a2177f1b234ef152a6930a767ab0c80f3">map_all_levers_active</a> (<a class="el" href="structMap.html">Map</a> *map)</td></tr>
 <tr class="memdesc:a2177f1b234ef152a6930a767ab0c80f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if all lever puzzles have been activated.  <br /></td></tr>
 <tr class="separator:a2177f1b234ef152a6930a767ab0c80f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3929b12254c1d753b7e6451935aee36"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8h.html#ae3929b12254c1d753b7e6451935aee36">tile_adjacent_to</a> (<a class="el" href="structMap.html">Map</a> *map, int x, int y, <a class="el" href="tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1">TileType</a> type)</td></tr>
+<tr class="memdesc:ae3929b12254c1d753b7e6451935aee36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if tile at coords is adjacent to a tile of type type.  <br /></td></tr>
+<tr class="separator:ae3929b12254c1d753b7e6451935aee36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -315,6 +318,57 @@ Variables</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">map</td><td>Pointer to the <a class="el" href="structMap.html">Map</a> to initialize. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae3929b12254c1d753b7e6451935aee36" name="ae3929b12254c1d753b7e6451935aee36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3929b12254c1d753b7e6451935aee36">&#9670;&#160;</a></span>tile_adjacent_to()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool tile_adjacent_to </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
+          <td class="paramname"><em>map</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1">TileType</a>&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if tile at coords is adjacent to a tile of type type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">map</td><td>map to check </td></tr>
+    <tr><td class="paramname">x</td><td>x coord of tile to check </td></tr>
+    <tr><td class="paramname">y</td><td>y coord of tile to check </td></tr>
+    <tr><td class="paramname">type</td><td><a class="el" href="structTile.html" title="Represents a single tile in the game map, including its type, texture, and solidity.">Tile</a> type to check if (x,y) is adjacent to it </td></tr>
   </table>
   </dd>
 </dl>
