@@ -88,7 +88,6 @@ static void do_riddle(Tile* tile) {
 
     printf("\n");
     printf("====================================\n");
-    printf("Riddle number: %d", riddleIdx);
     printf("RIDDLE: %s\n", question);
 
     while (1) {
