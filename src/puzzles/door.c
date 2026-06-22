@@ -76,12 +76,14 @@ static void do_riddle(Tile* tile) {
     snprintf(locale_key_buf, 64, "RIDDLE%d_QUESTION", riddleIdx);
     if (!locale_get(locale_key_buf, question, 128)) {
         log_error_f("Failed to load riddle.\n");
+        return;
     }
 
     snprintf(locale_key_buf, 64, "RIDDLE%d_ANSWER", riddleIdx);
 
     if (!locale_get(locale_key_buf, correct_answer, 64)) {
         log_error_f("Failed to load riddle answer.\n");
+        return;
     }
 
     s_tolower(correct_answer);
