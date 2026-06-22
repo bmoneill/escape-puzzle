@@ -96,6 +96,10 @@ $(document).ready(function(){initNavTree('door_8c.html',''); initResizable(); })
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="door_8h_source.html">door.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="locale_8h_source.html">core/locale.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="log_8h_source.html">core/log.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="random_8h_source.html">core/random.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="strings_8h_source.html">core/strings.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="tile_8h_source.html">game/tile.h</a>&quot;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
@@ -108,8 +112,6 @@ Functions</h2></td></tr>
 <tr class="separator:a079bf19745af546946553f9368f0f92f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a641ae619fff5bdc85550c7303e741ca4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="door_8c.html#a641ae619fff5bdc85550c7303e741ca4">riddle_door_spawn</a> (<a class="el" href="structMap.html">Map</a> *map, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> x, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> y)</td></tr>
 <tr class="separator:a641ae619fff5bdc85550c7303e741ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36fa33761c824288d5f1299c71eae8d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="door_8c.html#a36fa33761c824288d5f1299c71eae8d0">door_try_riddle</a> (<a class="el" href="structMap.html">Map</a> *map, <a class="el" href="structPlayer.html">Player</a> *player)</td></tr>
-<tr class="separator:a36fa33761c824288d5f1299c71eae8d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a6bfa2fea5255c4a4631874b7d5296764" name="a6bfa2fea5255c4a4631874b7d5296764"></a>
@@ -154,34 +156,6 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">void door_try_open </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
-          <td class="paramname"><em>map</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structPlayer.html">Player</a> *&#160;</td>
-          <td class="paramname"><em>player</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a36fa33761c824288d5f1299c71eae8d0" name="a36fa33761c824288d5f1299c71eae8d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36fa33761c824288d5f1299c71eae8d0">&#9670;&#160;</a></span>door_try_riddle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void door_try_riddle </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
           <td class="paramname"><em>map</em>, </td>

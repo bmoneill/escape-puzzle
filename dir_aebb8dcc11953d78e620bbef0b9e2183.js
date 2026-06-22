@@ -11,5 +11,7 @@ var dir_aebb8dcc11953d78e620bbef0b9e2183 =
     [ "memory.h", "memory_8h.html", "memory_8h" ],
     [ "random.c", "random_8c.html", "random_8c" ],
     [ "random.h", "random_8h.html", "random_8h" ],
+    [ "strings.c", "strings_8c.html", "strings_8c" ],
+    [ "strings.h", "strings_8h.html", "strings_8h" ],
     [ "types.h", "types_8h.html", "types_8h" ]
 ];

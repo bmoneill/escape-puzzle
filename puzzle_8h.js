@@ -4,6 +4,7 @@ var puzzle_8h =
     [ "LeverState", "structLeverState.html", "structLeverState" ],
     [ "Puzzle", "structPuzzle.html", "structPuzzle" ],
     [ "MAX_PUZZLES", "puzzle_8h.html#a34f8ed3ff01b668a0e623b68808b0855", null ],
+    [ "RIDDLE_COUNT", "puzzle_8h.html#a0c10344d2ae6ba7f0edf9aa4bce199f7", null ],
     [ "PuzzleEventType", "puzzle_8h.html#aff31559031054a464ad41838d7158058", [
       [ "PUZZLE_EVENT_PLAYER_INTERACT", "puzzle_8h.html#aff31559031054a464ad41838d7158058a8a8ea3b3bce53eefa6000d842eaab940", null ]
     ] ],
