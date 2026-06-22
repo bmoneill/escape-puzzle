@@ -41,15 +41,15 @@ void game_init(GameState* game) {
         puzzle_update(game->map.puzzles, game->map.num_puzzles, events, num_puzzle_events);
 
         // Win condition: player steps onto the exit tile
-        i32   px       = (i32) (game->player.x / TILE_SIZE);
-        i32   py       = (i32) (game->player.y / TILE_SIZE);
-        Tile* cur_tile = map_get_tile(&game->map, px, py);
+        i32         px                 = (i32) (game->player.x / TILE_SIZE);
+        i32         py                 = (i32) (game->player.y / TILE_SIZE);
+        Tile*       cur_tile           = map_get_tile(&game->map, px, py);
 
         static bool exit_warning_shown = false;
 
         if (cur_tile && cur_tile->type == TILE_EXIT) {
 
-            if (map_all_levers_active(&game->map)){
+            if (map_all_levers_active(&game->map)) {
                 log_info_f("You escaped! Level complete!");
                 game_exit(game);
             } else if (!exit_warning_shown) {
