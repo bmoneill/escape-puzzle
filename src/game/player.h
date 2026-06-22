@@ -8,7 +8,7 @@
 #include "map.h"
 
 #ifndef DEFAULT_PLAYER_SPEED
-#define DEFAULT_PLAYER_SPEED 1.0
+#define DEFAULT_PLAYER_SPEED 3.0
 #endif
 
 #define PLAYER_TILE_COORD(player)                                                                  \
