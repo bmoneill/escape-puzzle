@@ -4,6 +4,7 @@
 #include "core/random.h"
 #include "core/strings.h"
 #include "game/tile.h"
+#include "graphics/textinput.h"
 #include "puzzles/cipher.h"
 #include <stdio.h>
 #include <string.h>
@@ -94,26 +95,21 @@ static void do_riddle(Tile* tile) {
 
     s_tolower(correct_answer);
 
-    printf("\n");
-    printf("====================================\n");
-    printf("RIDDLE: %s\n", question);
+    char prompt[192];
+    snprintf(prompt, sizeof(prompt), "RIDDLE\n\n%s", question);
 
+    const char* feedback = NULL;
     while (1) {
-        printf("Answer: ");
-        scanf("%63s", answer_buf);
+        textinput_show(prompt, NULL, feedback, answer_buf, sizeof(answer_buf));
         s_tolower(answer_buf);
 
         if (strcmp(answer_buf, correct_answer) == 0) {
-
-            printf("Correct! Door opened.\n");
-
             tile->type       = TILE_FLOOR;
             tile->solid      = 0;
             tile->texture_id = TILE_TEXTURE_FLOOR;
-
-            return; // exit once solved
+            return;
         }
 
-        printf("Wrong answer. Try again.\n");
+        feedback = "Wrong answer. Try again.";
     }
 }

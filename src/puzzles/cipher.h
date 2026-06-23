@@ -9,6 +9,10 @@
 #ifndef PUZZLES_CIPHER_H
 #define PUZZLES_CIPHER_H
 
+#ifndef CIPHER_KEY_COUNT
+#define CIPHER_KEY_COUNT 50
+#endif
+
 #include "game/map.h"
 
 /**

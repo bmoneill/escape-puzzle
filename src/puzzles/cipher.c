@@ -16,6 +16,7 @@
 #include "core/random.h"
 #include "core/strings.h"
 #include "game/tile.h"
+#include "graphics/textinput.h"
 #include "puzzles/puzzle.h"
 
 #include <stdio.h>
@@ -36,9 +37,8 @@ static void do_cipher(Tile* tile) {
     char encoded[32];
     char answer_buf[32];
 
-    /* Pick a random riddle answer as the plaintext word. */
-    i8 riddle_idx = random_i8_range(1, RIDDLE_COUNT);
-    snprintf(locale_key_buf, sizeof(locale_key_buf), "RIDDLE%d_ANSWER", riddle_idx);
+    i8   riddle_idx = random_i8_range(1, CIPHER_KEY_COUNT);
+    snprintf(locale_key_buf, sizeof(locale_key_buf), "CIPHER%d_KEY", riddle_idx);
     if (!locale_get(locale_key_buf, plaintext, sizeof(plaintext))) {
         log_error_f("Cipher puzzle: failed to load word from locale.\n");
         return;
@@ -71,51 +71,52 @@ static void do_cipher(Tile* tile) {
     }
     encoded[len] = '\0';
 
-    /* Display the puzzle.
+    /* Build the prompt: puzzle title + encoded word. */
+    char prompt[96];
+    snprintf(prompt,
+             sizeof(prompt),
+             "CIPHER: Decode the following message.\n\nEncoded: %s",
+             encoded);
+
+    /* Build the body: substitution key table.
      *
-     * The player reads the encoded word, locates each uppercase letter in the
-     * CIPHER row, then reads the corresponding letter from the PLAIN row above
-     * it to recover the plaintext.
-     *
-     * Example (encode_map = QWERTYU...):
-     *
-     *   Encoded: LQBF
+     * The plain row is always "a b c ... z" (constant).
+     * The cipher row is the shuffled uppercase equivalent.
+     * Together they let the player reverse-look-up each encoded letter.
      *
      *   Key (plain -> cipher):
      *   a b c d e f g h i j k l m n o p q r s t u v w x y z
      *   Q W E R T Y U I O P A S D F G H J K L Z X C V B N M
      */
-    printf("\n");
-    printf("====================================\n");
-    printf("CIPHER: Decode the following message.\n");
-    printf("\n");
-    printf("Encoded: %s\n", encoded);
-    printf("\n");
-    printf("Key (plain -> cipher):\n");
-
+    char cipher_row[53]; /* 26 pairs "X " = 52 chars + null */
+    i32  pos = 0;
     for (i32 i = 0; i < 26; i++) {
-        printf("%c ", (char) ('a' + i));
+        cipher_row[pos++] = (char) (encode_map[i] - ('a' - 'A'));
+        cipher_row[pos++] = ' ';
     }
-    printf("\n");
-    for (i32 i = 0; i < 26; i++) {
-        printf("%c ", (char) (encode_map[i] - ('a' - 'A')));
-    }
-    printf("\n\n");
+    cipher_row[pos - 1] = '\0'; /* trim trailing space */
 
+    char body[200];
+    snprintf(body,
+             sizeof(body),
+             "Key (plain -> cipher):\n"
+             "a b c d e f g h i j k l m n o p q r s t u v w x y z\n"
+             "%s",
+             cipher_row);
+
+    const char* feedback = NULL;
     while (1) {
-        printf("Answer: ");
-        scanf("%31s", answer_buf);
+        textinput_show(prompt, body, feedback, answer_buf, sizeof(answer_buf));
         s_tolower(answer_buf);
 
         if (strcmp(answer_buf, plaintext) == 0) {
-            printf("Correct! Door opened.\n");
             tile->type       = TILE_FLOOR;
             tile->solid      = 0;
             tile->texture_id = TILE_TEXTURE_FLOOR;
             return;
         }
 
-        printf("Wrong answer. Try again.\n");
+        feedback = "Wrong answer. Try again.";
     }
 }
 

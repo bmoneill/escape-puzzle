@@ -53,6 +53,7 @@ if (RAYLIB)
     "graphics/raylib/input.c"
     "graphics/raylib/menu.c"
     "graphics/raylib/render.c"
+    "graphics/raylib/textinput.c"
   )
 endif()
 
