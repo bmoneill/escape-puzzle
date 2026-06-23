@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tile_5fsize_0',['TILE_SIZE',['../tile_8h.html#a62ecd70800687eb2d625af180c4210d7',1,'TILE_SIZE():&#160;tile.h'],['../render_8c.html#a62ecd70800687eb2d625af180c4210d7',1,'TILE_SIZE():&#160;render.c']]]
+  ['riddle_5fcount_0',['RIDDLE_COUNT',['../puzzle_8h.html#a0c10344d2ae6ba7f0edf9aa4bce199f7',1,'puzzle.h']]]
 ];

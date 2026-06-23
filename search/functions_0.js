@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['door_5fspawn_0',['door_spawn',['../door_8c.html#a6bfa2fea5255c4a4631874b7d5296764',1,'door_spawn(Map *map, i32 x, i32 y):&#160;door.c'],['../door_8h.html#a6bfa2fea5255c4a4631874b7d5296764',1,'door_spawn(Map *map, i32 x, i32 y):&#160;door.c']]],
-  ['door_5ftry_5fopen_1',['door_try_open',['../door_8c.html#a079bf19745af546946553f9368f0f92f',1,'door_try_open(Map *map, Player *player):&#160;door.c'],['../door_8h.html#a079bf19745af546946553f9368f0f92f',1,'door_try_open(Map *map, Player *player):&#160;door.c']]],
-  ['door_5ftry_5friddle_2',['door_try_riddle',['../door_8h.html#a36fa33761c824288d5f1299c71eae8d0',1,'door.h']]]
+  ['cipher_5fdoor_5fspawn_0',['cipher_door_spawn',['../cipher_8c.html#aa2b8b3ff8b33d8c3740009053ccffddd',1,'cipher_door_spawn(Map *map, i32 x, i32 y):&#160;cipher.c'],['../cipher_8h.html#aa2b8b3ff8b33d8c3740009053ccffddd',1,'cipher_door_spawn(Map *map, i32 x, i32 y):&#160;cipher.c']]],
+  ['cipher_5fdoor_5ftry_1',['cipher_door_try',['../cipher_8c.html#a4ecc0f237d2e1537ea0771f11855e7e2',1,'cipher_door_try(Tile *tile):&#160;cipher.c'],['../cipher_8h.html#a4ecc0f237d2e1537ea0771f11855e7e2',1,'cipher_door_try(Tile *tile):&#160;cipher.c']]]
 ];

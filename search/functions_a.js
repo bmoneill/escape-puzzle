@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tile_5fadjacent_5fto_0',['tile_adjacent_to',['../map_8c.html#ae3929b12254c1d753b7e6451935aee36',1,'tile_adjacent_to(Map *map, int x, int y, TileType type):&#160;map.c'],['../map_8h.html#ae3929b12254c1d753b7e6451935aee36',1,'tile_adjacent_to(Map *map, int x, int y, TileType type):&#160;map.c']]]
+  ['s_5ftolower_0',['s_tolower',['../strings_8c.html#a708f62bb45d36c39a169429fa49fc06d',1,'s_tolower(char *s):&#160;strings.c'],['../strings_8h.html#a197c15d65f09ee4c311438bc986a3cb3',1,'s_tolower(char *):&#160;strings.c']]]
 ];
