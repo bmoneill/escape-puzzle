@@ -6,6 +6,7 @@
 
 #include "core/log.h"
 #include "core/random.h"
+#include "puzzles/cipher.h"
 #include "puzzles/door.h"
 #include "puzzles/key.h"
 #include "puzzles/lever.h"
@@ -387,7 +388,11 @@ static void generate_walls(Map* map) {
         // riddle door spawn
 
         if (locked_count == 1) {
-            riddle_door_spawn(map, corridors[corr_idx].x, corridors[corr_idx].y);
+            if (random_u8_range(0, 1) == 0) {
+                riddle_door_spawn(map, corridors[corr_idx].x, corridors[corr_idx].y);
+            } else {
+                cipher_door_spawn(map, corridors[corr_idx].x, corridors[corr_idx].y);
+            }
         } else {
             // Place a locked door at the corridor gap
             door_spawn(map, corridors[corr_idx].x, corridors[corr_idx].y);

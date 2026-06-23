@@ -41,6 +41,7 @@ set(SOURCES
   "game/map.c"
   "game/player.c"
 
+  "puzzles/cipher.c"
   "puzzles/lever.c"
   "puzzles/puzzle.c"
   "puzzles/key.c"

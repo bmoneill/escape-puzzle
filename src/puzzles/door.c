@@ -4,6 +4,7 @@
 #include "core/random.h"
 #include "core/strings.h"
 #include "game/tile.h"
+#include "puzzles/cipher.h"
 #include <stdio.h>
 #include <string.h>
 
@@ -50,6 +51,11 @@ void door_try_open(Map* map, Player* player) {
             /* Riddle door */
             if (tile->type == TILE_RIDDLE_DOOR) {
                 do_riddle(tile);
+            }
+
+            /* Cipher door */
+            if (tile->type == TILE_CIPHER_DOOR) {
+                cipher_door_try(tile);
             }
         }
     }
