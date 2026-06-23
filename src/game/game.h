@@ -15,6 +15,7 @@
 typedef struct {
     Map    map; //!< The current game map, including layout and objects.
     Player player; //!< The player character, including position and state.
+    i64    seed; //!< Optional seed parameter (default 0)
 } GameState;
 
 /**
@@ -28,6 +29,9 @@ void game_init(GameState* game);
  * @brief Exits the game, performing any necessary cleanup.
  * @param game Pointer to the GameState.
  */
-void game_exit(GameState* game);
+void        game_exit(GameState* game);
+
+extern i64  seed;
+extern bool level1;
 
 #endif

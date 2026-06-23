@@ -6,17 +6,68 @@
 
 #include "core/log.h"
 #include "core/memory.h"
+#include "core/random.h"
 #include "game/map.h"
 #include "game/tile.h"
 #include "graphics/input.h"
+#include "graphics/menu.h"
 #include "graphics/render.h"
 #include "puzzles/puzzle.h"
 
 #include <stdlib.h>
 #include <time.h>
 
+i64  seed   = 0;
+bool level1 = true;
+
+/* -------------------------------------------------------------------------
+ * Static helpers for the level-complete menu
+ * ---------------------------------------------------------------------- */
+
+/**
+ * MenuItem action wrapper: starts a new random level.
+ * Passes seed=0 so game_init picks a fresh random seed.
+ */
+static void start_next_level(GameState* game) { game_init(game); }
+
+/**
+ * Shows the level-complete modal menu and blocks until the player chooses.
+ *
+ * "Next Level" → menu_init allocates a fresh GameState and calls
+ *   start_next_level, which runs a brand-new game_init loop.
+ * "Quit"       → game_exit terminates the process.
+ *
+ * If the player closes the window or presses Escape, menu_init returns
+ * without selecting an item and game_init unwinds back to the main menu.
+ */
+static void game_level_complete(GameState* game) {
+    (void) game;
+    menu_init(
+        (MenuItem[]) {
+            { "Next Level", start_next_level },
+            { "Quit", game_exit },
+        },
+        2);
+}
+
+/* -------------------------------------------------------------------------
+ * Public API
+ * ---------------------------------------------------------------------- */
+
 void game_init(GameState* game) {
-    game->map.seed   = time(NULL);
+    if (level1) {
+        if (seed) {
+            random_seed((u64) seed);
+        } else {
+            random_seed((u64) time(NULL));
+        }
+
+        level1 = false;
+    }
+
+    game->map.seed = random_i64();
+
+    log_info_f("Level seed: %lld\n", game->map.seed);
     game->map.width  = MAX_MAP_WIDTH;
     game->map.height = MAX_MAP_HEIGHT;
     map_init(&game->map);
@@ -51,7 +102,8 @@ void game_init(GameState* game) {
 
             if (map_all_levers_active(&game->map)) {
                 log_info_f("You escaped! Level complete!");
-                game_exit(game);
+                game_level_complete(game);
+                return;
             } else if (!exit_warning_shown) {
                 log_info_f("All levers must be activated before you can escape!");
                 exit_warning_shown = true;
@@ -67,5 +119,6 @@ void game_init(GameState* game) {
 
 void game_exit(GameState* game) {
     // TODO Perform any necessary cleanup here
+    (void) game;
     exit(0);
 }
