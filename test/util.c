@@ -12,9 +12,9 @@ static const char* paths[] = {
     ASSET_DIR_3,
     ASSET_DIR_4,
 };
-static char        path_buffer[64];
+static char path_buffer[64];
 
-char*              get_path(const char* filename) {
+char*       get_path(const char* filename) {
     for (int i = 0; i < 4; i++) {
         sprintf(path_buffer, "%s%s", paths[i], filename);
         if (access(path_buffer, F_OK) == 0) {
