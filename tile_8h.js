@@ -7,6 +7,7 @@ var tile_8h =
       [ "TILE_TEXTURE_WALL", "tile_8h.html#abc26137979d4816fca454c8249dc5076aaef84a7b162d92f983bdf648362182e8", null ],
       [ "TILE_TEXTURE_LEVER_OFF", "tile_8h.html#abc26137979d4816fca454c8249dc5076a806585dd714819bd8b57575dc6f7776f", null ],
       [ "TILE_TEXTURE_LEVER_ON", "tile_8h.html#abc26137979d4816fca454c8249dc5076a1f7db8112dbbe8698d01dda15cf4edc7", null ],
+      [ "TILE_TEXTURE_HIDDEN_LEVER", "tile_8h.html#abc26137979d4816fca454c8249dc5076a13a3332a892eaa75af373d7053f120da", null ],
       [ "TILE_TEXTURE_KEY", "tile_8h.html#abc26137979d4816fca454c8249dc5076a1d9d4a07e3a0144252b7baadc5282ff0", null ],
       [ "TILE_TEXTURE_DOOR", "tile_8h.html#abc26137979d4816fca454c8249dc5076a9d6c0b179f96cf3000a64c8709d6bd01", null ],
       [ "TILE_TEXTURE_EXIT", "tile_8h.html#abc26137979d4816fca454c8249dc5076aa825d016772a2d1425edbf6648027639", null ]
@@ -19,6 +20,7 @@ var tile_8h =
       [ "TILE_RIDDLE_DOOR", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a81bdb803e168f8196b1c374dfb8c6d5d", null ],
       [ "TILE_CIPHER_DOOR", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1aa4c5b8f489c44916f1ccd5f7d2eb8898", null ],
       [ "TILE_LEVER", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1ae13fe0f1294ff3a5df8dac7bbec79655", null ],
+      [ "TILE_HIDDEN_LEVER", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a52ad9e13eede4ab822456078a529d199", null ],
       [ "TILE_EXIT", "tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1aea496f253cb69969788c51bf22580e7c", null ]
     ] ]
 ];
