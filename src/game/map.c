@@ -439,22 +439,40 @@ static void generate_puzzles(Map* map) {
         i32 x = 0, y = 0;
         i32 tries = 0;
 
-        do {
-            x = random_i32_range(1, map->width - 2);
-            y = random_i32_range(1, map->height - 2);
-            tries++;
-        } while ((map->tiles[y][x].type != TILE_FLOOR
-                  || ((i32) map->playerStartPos.x == x && (i32) map->playerStartPos.y == y))
-                 && !tile_adjacent_to(map, x, y, TILE_DOOR) && tries < 20);
+do {
+    x = random_i32_range(1, map->width - 2);
+    y = random_i32_range(1, map->height - 2);
+    tries++;
 
-        if (tries >= 20) {
-            failures++;
-            continue;
-        }
+    bool invalid =
+        (i == 0
+            ? (map->tiles[y][x].type != TILE_WALL)
+            : (map->tiles[y][x].type != TILE_FLOOR))
+        || ((i32)map->playerStartPos.x == x && (i32)map->playerStartPos.y == y)
+        || tile_adjacent_to(map, x, y, TILE_DOOR);
 
+    if (!invalid)
+        break;
+
+} while (tries < 20);
+
+if (tries >= 20) {
+    failures++;
+    continue;
+}
+
+        bool make_hidden = (i == 0);
+
+        if (make_hidden) {
+            map->tiles[y][x].type       = TILE_HIDDEN_LEVER;
+            map->tiles[y][x].texture_id = TILE_TEXTURE_HIDDEN_LEVER; // temporary
+              map->tiles[y][x].solid      = 1;
+
+        } else {
         map->tiles[y][x].type       = TILE_LEVER;
         map->tiles[y][x].texture_id = TILE_TEXTURE_LEVER_OFF;
         map->tiles[y][x].solid      = 1;
+        }
 
         Puzzle* puzzle              = &map->puzzles[i - failures];
         lever_puzzle_init(puzzle, x, y);
