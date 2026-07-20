@@ -4,8 +4,8 @@
     <a href="https://github.com/bmoneill/escape-puzzle/actions/workflows/ci-linux.yml"><img src="https://github.com/bmoneill/escape-puzzle/actions/workflows/ci-linux.yml/badge.svg?branch=main" alt="Linux CI status" /></a>
     <a href="https://github.com/bmoneill/escape-puzzle/actions/workflows/ci-macos.yml"><img src="https://github.com/bmoneill/escape-puzzle/actions/workflows/ci-macos.yml/badge.svg?branch=main" alt="macOS CI status" /></a>
     <a href="https://github.com/bmoneill/escape-puzzle/actions/workflows/ci-windows.yml"><img src="https://github.com/bmoneill/escape-puzzle/actions/workflows/ci-windows.yml/badge.svg?branch=main" alt="Windows CI status" /></a>
-    <a href="https://bmoneill.github.io/escape-puzzle"><img src="https://github.com/bmoneill/escape-puzzle/actions/workflows/doxygen.yml/badge.svg?branch=main" alt="Doxygen Status" /></a>
-    <a href="https://github.com/bmoneill/escape-puzzle/actions/workflows/clang-format.yml"><img src="https://github.com/bmoneill/escape-puzzle/actions/workflows/clang-format.yml/badge.svg?branch=main" alt="Clang-format status" /></a>
+    <a href="https://bmoneill.github.io/escape-puzzle"><img src="https://github.com/bmoneill/escape-puzzle/actions/workflows/docs.yml/badge.svg?branch=main" alt="Doxygen Status" /></a>
+    <a href="https://github.com/bmoneill/escape-puzzle/actions/workflows/linting.yml"><img src="https://github.com/bmoneill/escape-puzzle/actions/workflows/linting.yml/badge.svg?branch=main" alt="Clang-format status" /></a>
 </div>
 
 ## Table of Contents
@@ -15,7 +15,7 @@
 - [Testing](#testing)
 - [Documentation](#documentation)
 - [Further Reading](#further-reading)
-- [Bugs](#bugs
+- [Bugs](#bugs)
 - [License](#license)
 
 ## Overview
