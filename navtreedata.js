@@ -25,8 +25,15 @@
 var NAVTREE =
 [
   [ "PROJECTNAME", "index.html", [
-    [ "AI Escape Puzzle Game", "index.html", "index" ],
     [ "Data Structures", "annotated.html", [
+      [ "Table of Contents", "index.html#autotoc_md2", null ],
+      [ "Overview", "index.html#autotoc_md3", null ],
+      [ "Building", "index.html#autotoc_md4", null ],
+      [ "Testing", "index.html#autotoc_md5", null ],
+      [ "Documentation", "index.html#autotoc_md6", null ],
+      [ "Further Reading", "index.html#autotoc_md7", null ],
+      [ "Bugs", "index.html#autotoc_md8", null ],
+      [ "License", "index.html#autotoc_md9", null ],
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
       [ "Data Fields", "functions.html", [
@@ -51,7 +58,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"puzzle_8h.html#a3c9afc800a22beb03c84b55fc3198d8d"
+"puzzle_8c.html",
+"types_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
