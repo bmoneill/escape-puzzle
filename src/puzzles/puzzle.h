@@ -8,7 +8,7 @@
 #endif
 
 #ifndef RIDDLE_COUNT
-#define RIDDLE_COUNT 10 // Defined sequentially in assets/locale/en_us.txt
+#define RIDDLE_COUNT 20 // Defined sequentially in assets/locale/en_us.txt
 #endif
 
 /**
