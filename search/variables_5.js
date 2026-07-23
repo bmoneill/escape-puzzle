@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['handled_0',['handled',['../structPuzzleEvent.html#a9717cdc9686288a05a62714ff4fa6e12',1,'PuzzleEvent']]],
-  ['height_1',['height',['../structMap.html#a64b6c9eac5e2b51ae846d7c68028dbf4',1,'Map::height()'],['../structPlayer.html#a46a3d4708b9b955a65540f1c7f9d47b5',1,'Player::height()']]]
+  ['glocale_0',['glocale',['../locale_8c.html#accb82a5e474ce7ed22659991b36afe19',1,'glocale():&#160;locale.c'],['../locale_8h.html#accb82a5e474ce7ed22659991b36afe19',1,'glocale():&#160;locale.c']]],
+  ['gmap_1',['gmap',['../map_8c.html#a3529ad176c499d01f3fddd110432c5a3',1,'gmap():&#160;map.c'],['../map_8h.html#a3529ad176c499d01f3fddd110432c5a3',1,'gmap():&#160;map.c']]],
+  ['gmem_2',['gmem',['../memory_8c.html#a2811f0554487052a762c8dff4ef6aa2d',1,'gmem():&#160;memory.c'],['../memory_8h.html#a2811f0554487052a762c8dff4ef6aa2d',1,'gmem():&#160;memory.c']]]
 ];

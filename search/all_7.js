@@ -15,6 +15,7 @@ var searchData=
   ['input_2ec_12',['input.c',['../input_8c.html',1,'']]],
   ['input_2eh_13',['input.h',['../input_8h.html',1,'']]],
   ['input_5fh_14',['INPUT_H',['../textinput_8c.html#a3124ba59577e5a4c41023f9360aa1458',1,'textinput.c']]],
-  ['ison_15',['isOn',['../structLeverTogglePuzzleState.html#ae530c5af75c42fc2bd1fb588c38aa332',1,'LeverTogglePuzzleState']]],
-  ['items_16',['items',['../structMenu.html#aee2984e8dd262940b44b53608fc9fa69',1,'Menu']]]
+  ['is_5fmoving_15',['is_moving',['../structPlayer.html#aff4d1531b25f3014778ea4d68779d8ce',1,'Player']]],
+  ['ison_16',['isOn',['../structLeverTogglePuzzleState.html#ae530c5af75c42fc2bd1fb588c38aa332',1,'LeverTogglePuzzleState']]],
+  ['items_17',['items',['../structMenu.html#aee2984e8dd262940b44b53608fc9fa69',1,'Menu']]]
 ];

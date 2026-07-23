@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['room_5fa_0',['room_a',['../structCorridor.html#a5861b81272901c38a18acdab77745ea5',1,'Corridor']]],
-  ['room_5fb_1',['room_b',['../structCorridor.html#a12d90462f77ba8a293a290b5418998c2',1,'Corridor']]]
+  ['peak_0',['peak',['../structMemoryManager.html#a98f434f34d860b14fd6d903b7bec9759',1,'MemoryManager']]],
+  ['player_1',['player',['../structGameState.html#af61d6983a9396a11078805087518af88',1,'GameState']]],
+  ['playerstartpos_2',['playerStartPos',['../structMap.html#adfe868a177b75ccf49ffcb0aa89d8510',1,'Map']]],
+  ['position_3',['position',['../structPuzzle.html#a2cd4b9784aaf1a7b32a8deefadcb2c1e',1,'Puzzle']]],
+  ['puzzleidx_4',['puzzleIdx',['../structPuzzleEvent.html#a070e1909f979c4234cfe1b07d8f64bde',1,'PuzzleEvent']]],
+  ['puzzles_5',['puzzles',['../structMap.html#a9c7b4265722e5d85a8c10cc7eceb59f8',1,'Map']]]
 ];
