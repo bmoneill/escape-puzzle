@@ -16,12 +16,12 @@
 #define SPRITE_SIZE          48
 #define ANIM_FRAMES_PER_STEP 10
 
-static Texture2D player_spritesheet;
+static Texture2D spritesheet;
 
 void render_init(void) {
     InitWindow(800, 600, "Escape Puzzle");
     SetTargetFPS(60);
-    player_spritesheet = LoadTexture("assets/spritesheet.png");
+    spritesheet = LoadTexture("assets/spritesheet.png");
 }
 
 static void draw_lever_number(GameState* game, int x, int y) {
@@ -108,7 +108,7 @@ static void draw_player(const Player* player) {
     float draw_x = (float) player->x - (SPRITE_SIZE - player->width) / 2.0f;
     float draw_y = (float) player->y - (SPRITE_SIZE - player->height) / 2.0f;
 
-    DrawTextureRec(player_spritesheet, src, (Vector2){ draw_x, draw_y }, WHITE);
+    DrawTextureRec(spritesheet, src, (Vector2){ draw_x, draw_y }, WHITE);
 }
 
 void render_frame(GameState* game) {
@@ -145,7 +145,14 @@ void render_frame(GameState* game) {
                 tileColor = WHITE; // temporary
             }
 
-            DrawRectangle(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, tileColor);
+            if (tile->texture_id == TILE_TEXTURE_FLOOR) {
+                // Floor texture lives at col 2, row 0 of the spritesheet
+                Rectangle src = { 2 * SPRITE_SIZE, 0, SPRITE_SIZE, SPRITE_SIZE };
+                Rectangle dst = { x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE };
+                DrawTexturePro(spritesheet, src, dst, (Vector2){ 0, 0 }, 0.0f, WHITE);
+            } else {
+                DrawRectangle(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, tileColor);
+            }
 
             DrawRectangleLines(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, GRAY);
 
