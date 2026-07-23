@@ -7,6 +7,13 @@
 #include "core/types.h"
 #include "map.h"
 
+typedef enum {
+    PLAYER_DIR_DOWN,
+    PLAYER_DIR_UP,
+    PLAYER_DIR_LEFT,
+    PLAYER_DIR_RIGHT,
+} PlayerDirection;
+
 #ifndef DEFAULT_PLAYER_SPEED
 #define DEFAULT_PLAYER_SPEED 3.0
 #endif
@@ -24,6 +31,10 @@ typedef struct {
     u16 height; //!< Player's height in pixels.
 
     i32 keys; // inventory
+
+    PlayerDirection facing;   //!< Direction the player is currently facing.
+    bool            is_moving; //!< Whether the player moved this frame.
+    u32             anim_tick; //!< Increments each frame while moving; resets on stop.
 } Player;
 
 /**

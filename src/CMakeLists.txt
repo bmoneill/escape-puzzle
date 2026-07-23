@@ -63,6 +63,13 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 )
 target_link_libraries(${PROJECT_NAME} raylib arena)
 
+# Copy assets next to the executable so LoadTexture() can find them at runtime
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        "${CMAKE_SOURCE_DIR}/assets"
+        "$<TARGET_FILE_DIR:${PROJECT_NAME}>/assets"
+)
+
 if(LINUX)
   target_link_libraries(${PROJECT_NAME} m)
 endif()

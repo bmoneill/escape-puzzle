@@ -19,6 +19,10 @@ void player_init(Player* player) {
     player->width      = 20;
     player->height     = 20;
     player->keys       = 0;
+
+    player->facing    = PLAYER_DIR_DOWN;
+    player->is_moving = false;
+    player->anim_tick = 0;
 }
 
 void player_update(Player* player, Map* map, i16 keys_pressed) {
@@ -45,6 +49,25 @@ void player_move(Player* player, Map* map, i16 keys) {
         dx -= player->move_speed;
     if (keys & GAME_KEY_RIGHT)
         dx += player->move_speed;
+
+    // Update facing direction (vertical takes priority over horizontal)
+    if (dy < 0)
+        player->facing = PLAYER_DIR_UP;
+    else if (dy > 0)
+        player->facing = PLAYER_DIR_DOWN;
+    else if (dx < 0)
+        player->facing = PLAYER_DIR_LEFT;
+    else if (dx > 0)
+        player->facing = PLAYER_DIR_RIGHT;
+
+    // Advance animation tick while moving; reset to 0 when idle
+    if (dx != 0 || dy != 0) {
+        player->is_moving = true;
+        player->anim_tick++;
+    } else {
+        player->is_moving = false;
+        player->anim_tick = 0;
+    }
 
     // Horizontal movement ---------------------------------------------------
     // Check the leading X edge of the moved bounding box against every tile
