@@ -107,6 +107,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a8fcb8829187320915938630df00488ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="textinput_8h.html#a8fcb8829187320915938630df00488ea">textinput_show</a> (const char *prompt, const char *body, const char *feedback, char *out_buf, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> buf_size)</td></tr>
 <tr class="memdesc:a8fcb8829187320915938630df00488ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Displays a modal text-input overlay and blocks until the player presses Enter.  <br /></td></tr>
 <tr class="separator:a8fcb8829187320915938630df00488ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5453f357c38aa84b221f8d363f416483"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="textinput_8h.html#a5453f357c38aa84b221f8d363f416483">textinput_flash_incorrect</a> (void)</td></tr>
+<tr class="memdesc:a5453f357c38aa84b221f8d363f416483"><td class="mdescLeft">&#160;</td><td class="mdescRight">Briefly displays an "Incorrect!" overlay, then returns.  <br /></td></tr>
+<tr class="separator:a5453f357c38aa84b221f8d363f416483"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Graphics-library-agnostic modal text-input interface. </p>
@@ -117,9 +120,31 @@ Functions</h2></td></tr>
 <div class="line">    <span class="keywordflow">if</span> (correct(buf)) { open_door(); <span class="keywordflow">break</span>; }</div>
 <div class="line">    feedback = <span class="stringliteral">&quot;Wrong answer. Try again.&quot;</span>;</div>
 <div class="line">}</div>
-<div class="ttc" id="atextinput_8c_html_a8fcb8829187320915938630df00488ea"><div class="ttname"><a href="textinput_8c.html#a8fcb8829187320915938630df00488ea">textinput_show</a></div><div class="ttdeci">void textinput_show(const char *prompt, const char *body, const char *feedback, char *out_buf, i32 buf_size)</div><div class="ttdoc">Displays a modal text-input overlay and blocks until the player presses Enter.</div><div class="ttdef"><b>Definition:</b> textinput.c:59</div></div>
+<div class="ttc" id="atextinput_8c_html_a8fcb8829187320915938630df00488ea"><div class="ttname"><a href="textinput_8c.html#a8fcb8829187320915938630df00488ea">textinput_show</a></div><div class="ttdeci">void textinput_show(const char *prompt, const char *body, const char *feedback, char *out_buf, i32 buf_size)</div><div class="ttdoc">Displays a modal text-input overlay and blocks until the player presses Enter.</div><div class="ttdef"><b>Definition:</b> textinput.c:96</div></div>
 <div class="ttc" id="atypes_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="types_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> types.h:54</div></div>
 </div><!-- fragment --> </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a5453f357c38aa84b221f8d363f416483" name="a5453f357c38aa84b221f8d363f416483"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5453f357c38aa84b221f8d363f416483">&#9670;&#160;</a></span>textinput_flash_incorrect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void textinput_flash_incorrect </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Briefly displays an "Incorrect!" overlay, then returns. </p>
+<p>Renders a centered panel with "Incorrect!" in red for a short fixed duration. The render loop runs normally during this time, so stale key-press state from the previous Enter keypress is cleared before the caller shows the input panel again.</p>
+<p>Call this after a failed attempt, before re-invoking textinput_show. </p>
+
+</div>
+</div>
 <a id="a8fcb8829187320915938630df00488ea" name="a8fcb8829187320915938630df00488ea"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fcb8829187320915938630df00488ea">&#9670;&#160;</a></span>textinput_show()</h2>
 
