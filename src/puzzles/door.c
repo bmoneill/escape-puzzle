@@ -98,9 +98,8 @@ static void do_riddle(Tile* tile) {
     char prompt[192];
     snprintf(prompt, sizeof(prompt), "RIDDLE\n\n%s", question);
 
-    const char* feedback = NULL;
     while (1) {
-        textinput_show(prompt, NULL, feedback, answer_buf, sizeof(answer_buf));
+        textinput_show(prompt, NULL, NULL, answer_buf, sizeof(answer_buf));
         s_tolower(answer_buf);
 
         if (strcmp(answer_buf, correct_answer) == 0) {
@@ -110,6 +109,6 @@ static void do_riddle(Tile* tile) {
             return;
         }
 
-        feedback = "Wrong answer. Try again.";
+        textinput_flash_incorrect();
     }
 }

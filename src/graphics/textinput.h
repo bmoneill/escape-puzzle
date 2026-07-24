@@ -40,4 +40,16 @@
 void textinput_show(
     const char* prompt, const char* body, const char* feedback, char* out_buf, i32 buf_size);
 
+/**
+ * @brief Briefly displays an "Incorrect!" overlay, then returns.
+ *
+ * Renders a centered panel with "Incorrect!" in red for a short fixed
+ * duration.  The render loop runs normally during this time, so stale
+ * key-press state from the previous Enter keypress is cleared before
+ * the caller shows the input panel again.
+ *
+ * Call this after a failed attempt, before re-invoking textinput_show.
+ */
+void textinput_flash_incorrect(void);
+
 #endif

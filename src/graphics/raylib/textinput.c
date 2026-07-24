@@ -44,6 +44,11 @@
 #define LINE_GAP    5 /* extra pixels between successive text lines     */
 #define WRAP_FUDGE  2 /* extra logical lines budgeted for word-wrapping */
 
+#define FLASH_PANEL_W  300 /* width of the "Incorrect!" flash panel         */
+#define FLASH_PANEL_H   80 /* height of the "Incorrect!" flash panel        */
+#define FONT_FLASH      28 /* font size for the flash message               */
+#define FLASH_DURATION 1.2f /* seconds the flash panel stays visible        */
+
 /* -------------------------------------------------------------------------
  * Forward declarations for static helpers
  * ---------------------------------------------------------------------- */
@@ -55,6 +60,38 @@ draw_text_multiline(const char* text, i32 x, i32 y, i32 max_w, i32 font_size, Co
 /* -------------------------------------------------------------------------
  * Public API
  * ---------------------------------------------------------------------- */
+
+void textinput_flash_incorrect(void) {
+    i32   screen_w = GetScreenWidth();
+    i32   screen_h = GetScreenHeight();
+    i32   panel_x  = (screen_w - FLASH_PANEL_W) / 2;
+    i32   panel_y  = (screen_h - FLASH_PANEL_H) / 2;
+    float elapsed  = 0.0f;
+
+    while (elapsed < FLASH_DURATION) {
+        if (WindowShouldClose()) {
+            CloseWindow();
+            exit(0);
+        }
+
+        elapsed += GetFrameTime();
+
+        BeginDrawing();
+        ClearBackground((Color){ 20, 20, 20, 255 });
+
+        DrawRectangle(panel_x, panel_y, FLASH_PANEL_W, FLASH_PANEL_H, WHITE);
+        DrawRectangleLines(panel_x, panel_y, FLASH_PANEL_W, FLASH_PANEL_H, DARKGRAY);
+
+        i32 text_w = MeasureText("Incorrect!", FONT_FLASH);
+        DrawText("Incorrect!",
+                 panel_x + (FLASH_PANEL_W - text_w) / 2,
+                 panel_y + (FLASH_PANEL_H - FONT_FLASH) / 2,
+                 FONT_FLASH,
+                 RED);
+
+        EndDrawing();
+    }
+}
 
 void textinput_show(
     const char* prompt, const char* body, const char* feedback, char* out_buf, i32 buf_size) {
