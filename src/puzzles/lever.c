@@ -9,8 +9,7 @@
 #include "puzzles/puzzle.h"
 #include <stdlib.h>
 
-static i32                g_expected_lever      = 1;
-static i8                 g_wrong_message_shown = 0;
+static i32                g_expected_lever = 1;
 
 EMSCRIPTEN_KEEPALIVE void lever_puzzle_init(Puzzle* puzzle, i32 x, i32 y) {
     puzzle->position  = (vec2u){ .x = x, .y = y };
@@ -35,8 +34,6 @@ EMSCRIPTEN_KEEPALIVE void lever_puzzle_update(void* self, PuzzleEvent* event) {
     LeverState* state = (LeverState*) puzzle->state;
 
     if (state->order == g_expected_lever) {
-
-        g_wrong_message_shown = 0;
 
         // FIX: logical activation state (this was missing before)
         state->activated                                               = true;

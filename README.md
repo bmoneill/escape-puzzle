@@ -44,6 +44,38 @@ cmake -S . -B build
 cmake --build build
 ```
 
+## WebAssembly (WASM) Build
+
+The game can be compiled to WebAssembly and deployed as a static webpage.
+[Emscripten](https://emscripten.org/docs/getting_started/downloads.html) must be
+installed and its environment activated (`source emsdk_env.sh`) before building.
+
+```bash
+# Quick build via the helper script:
+./build_webdemo.sh
+
+# Or manually:
+emcmake cmake -S . -B build-wasm -DWASM=ON -DCMAKE_BUILD_TYPE=Release
+cmake --build build-wasm
+```
+
+The output lives in `build-wasm/src/` and contains:
+
+| File                | Description                                  |
+| ------------------- | -------------------------------------------- |
+| `escapepuzzle.html` | Self-contained page — open this in a browser |
+| `escapepuzzle.js`   | Emscripten JS glue code                      |
+| `escapepuzzle.wasm` | Compiled WebAssembly module                  |
+| `escapepuzzle.data` | Preloaded asset bundle (sprites, locale)     |
+
+Because the browser blocks file:// access to `.wasm` files, the page must be
+served over HTTP:
+
+```bash
+python3 -m http.server 8080 --directory build-wasm/src
+# then open http://localhost:8080/escapepuzzle.html
+```
+
 ## Testing
 
 ```bash

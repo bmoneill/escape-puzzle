@@ -115,6 +115,7 @@ EMSCRIPTEN_KEEPALIVE void game_init(GameState* game) {
 
         render_frame(game);
         mem_reset_frame();
+        WASM_YIELD();
     }
 }
 

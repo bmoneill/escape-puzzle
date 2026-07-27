@@ -63,6 +63,31 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 )
 target_link_libraries(${PROJECT_NAME} raylib arena)
 
+if(WASM)
+    # Output a self-contained HTML page ready for web deployment.
+    set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".html")
+
+    # Preload all game assets into the Emscripten virtual filesystem so that
+    # fopen()/LoadTexture() calls resolve correctly inside the browser sandbox.
+    set(WASM_ASSETS_FLAG "--preload-file=${CMAKE_SOURCE_DIR}/assets@assets")
+    set(WASM_SHELL_FLAG  "--shell-file=${CMAKE_SOURCE_DIR}/external/raylib/src/minshell.html")
+
+    target_link_options(${PROJECT_NAME} PRIVATE
+        # Asyncify lets the existing while(1) game loops yield to the browser
+        # each frame via WASM_YIELD() without requiring a full state-machine
+        # refactor.  The stack size is increased from the default 4 KiB because
+        # the menu -> game -> menu call chain can be several frames deep.
+        -sASYNCIFY=1
+        -sASYNCIFY_STACK_SIZE=131072
+
+        -sUSE_GLFW=3           # Emscripten's built-in GLFW emulation for raylib
+        -sWASM=1
+        -sALLOW_MEMORY_GROWTH=1
+        "${WASM_ASSETS_FLAG}"
+        "${WASM_SHELL_FLAG}"
+    )
+endif()
+
 # Copy assets next to the executable so LoadTexture() can find them at runtime
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory

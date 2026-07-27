@@ -24,12 +24,12 @@ Map* gmap = NULL;
 #define MAX_CORRIDORS 8
 
 // Axis-aligned bounds of a room's floor area (tile coords, inclusive)
-EMSCRIPTEN_KEEPALIVE typedef struct {
+typedef struct {
     i32 x1, y1, x2, y2;
 } MapRoom;
 
 // A carved gap in a shared wall that connects two rooms
-EMSCRIPTEN_KEEPALIVE typedef struct {
+typedef struct {
     i32  room_a, room_b; // indices into rooms[]
     i32  x, y; // tile position of the gap
     bool locked; // true when a locked door sits here
@@ -440,7 +440,7 @@ EMSCRIPTEN_KEEPALIVE static void generate_puzzles(Map* map) {
         i32 x = 0, y = 0;
         i32 tries = 0;
 
-        EMSCRIPTEN_KEEPALIVE do {
+        do {
             x = random_i32_range(1, map->width - 2);
             y = random_i32_range(1, map->height - 2);
             tries++;
@@ -452,11 +452,9 @@ EMSCRIPTEN_KEEPALIVE static void generate_puzzles(Map* map) {
 
             if (!invalid)
                 break;
-        }
-        while (tries < 20)
-            ;
+        } while (tries < 20);
 
-        EMSCRIPTEN_KEEPALIVE if (tries >= 20) {
+        if (tries >= 20) {
             failures++;
             continue;
         }

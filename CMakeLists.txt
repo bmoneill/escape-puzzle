@@ -4,6 +4,12 @@ include(CTest)
 
 option(RAYLIB "Use Raylib for Graphics" ON)
 option(TEST "Enable tests" ON)
+option(WASM "Build for WebAssembly with Emscripten" OFF)
+
+if(WASM)
+    # Tests cannot run in the browser; disable them for WASM builds.
+    set(TEST OFF CACHE BOOL "Disabled for WASM builds" FORCE)
+endif()
 
 # Get git commit hash for version
 execute_process(

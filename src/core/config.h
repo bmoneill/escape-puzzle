@@ -10,6 +10,16 @@
 #define EMSCRIPTEN_KEEPALIVE
 #endif
 
+// Yield to the browser event loop once per frame when running as WASM.
+// Requires -sASYNCIFY=1 at link time.  Compiles to a no-op on all other
+// platforms so callers do not need any conditional compilation.
+#ifdef __EMSCRIPTEN__
+#include <emscripten.h>
+#define WASM_YIELD() emscripten_sleep(0)
+#else
+#define WASM_YIELD() ((void) 0)
+#endif
+
 // =============================================================================
 // Window and Input Configuration
 // =============================================================================
