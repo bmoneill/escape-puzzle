@@ -6,5 +6,6 @@ var config_8h =
     [ "EMSCRIPTEN_KEEPALIVE", "config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5", null ],
     [ "MENU_DOWN_KEY", "config_8h.html#a42fda11ff28c7aa4195b42e3a9f1234e", null ],
     [ "MENU_SELECT_KEY", "config_8h.html#a7d7f2bbff7ebaa74a4ccfa5e1abda9b2", null ],
-    [ "MENU_UP_KEY", "config_8h.html#a4dc3457eca13d4157a114b2c34f7c5f8", null ]
+    [ "MENU_UP_KEY", "config_8h.html#a4dc3457eca13d4157a114b2c34f7c5f8", null ],
+    [ "WASM_YIELD", "config_8h.html#a4534d09aa10bc4b00d01ca1165c58fe8", null ]
 ];

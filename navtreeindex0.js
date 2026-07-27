@@ -1,6 +1,6 @@
 var NAVTREEINDEX0 =
 {
-"annotated.html":[0,8],
+"annotated.html":[0,9],
 "cipher_8c.html":[1,0,0,3,0],
 "cipher_8c.html#a459b34ffcbea659eca8e9ed16e368be2":[1,0,0,3,0,1],
 "cipher_8c.html#abf601de6a3c4db7018a24803c8941f2f":[1,0,0,3,0,0],
@@ -9,10 +9,11 @@ var NAVTREEINDEX0 =
 "cipher_8h.html#aa2b8b3ff8b33d8c3740009053ccffddd":[1,0,0,3,1,1],
 "cipher_8h.html#aec00b6ca62b1b1fbe60d0fdaf5b06c90":[1,0,0,3,1,0],
 "cipher_8h_source.html":[1,0,0,3,1],
-"classes.html":[0,9],
+"classes.html":[0,10],
 "config_8h.html":[1,0,0,0,0],
 "config_8h.html#a030ebc610fddb0a18d62829ab376bf85":[1,0,0,0,0,1],
 "config_8h.html#a42fda11ff28c7aa4195b42e3a9f1234e":[1,0,0,0,0,4],
+"config_8h.html#a4534d09aa10bc4b00d01ca1165c58fe8":[1,0,0,0,0,7],
 "config_8h.html#a4dc3457eca13d4157a114b2c34f7c5f8":[1,0,0,0,0,6],
 "config_8h.html#a6ca4df6b9e1495a80a2929a5187cb9b9":[1,0,0,0,0,2],
 "config_8h.html#a7d7f2bbff7ebaa74a4ccfa5e1abda9b2":[1,0,0,0,0,5],
@@ -42,8 +43,8 @@ var NAVTREEINDEX0 =
 "escapepuzzle_8h.html#ad24be0a0927b5f966a5dab885a972a4a":[1,0,0,5,1],
 "escapepuzzle_8h_source.html":[1,0,0,5],
 "files.html":[1,0],
-"functions.html":[0,10,0],
-"functions_vars.html":[0,10,1],
+"functions.html":[0,11,0],
+"functions_vars.html":[0,11,1],
 "game_8c.html":[1,0,0,1,0],
 "game_8c.html#a2321a09765eae204becc99ef2938983c":[1,0,0,1,0,1],
 "game_8c.html#a3d16bcb43af1912bc301d5807a8eddbc":[1,0,0,1,0,2],
@@ -100,6 +101,7 @@ var NAVTREEINDEX0 =
 "ht_8h.html#af085884649e55086462646826f42da29":[1,0,0,0,2,9],
 "ht_8h_source.html":[1,0,0,0,2],
 "index.html":[],
+"index.html#autotoc_md10":[8],
 "index.html#autotoc_md2":[0],
 "index.html#autotoc_md3":[1],
 "index.html#autotoc_md4":[2],
@@ -247,7 +249,5 @@ var NAVTREEINDEX0 =
 "player_8h.html":[1,0,0,1,7],
 "player_8h.html#a039b7e2dd52d25430103c10cb2d25d44":[1,0,0,1,7,6],
 "player_8h.html#a125290a32f2a96a434109f5ab49125d1":[1,0,0,1,7,1],
-"player_8h.html#a204189692f22f1cbe1568f74d6a5d196":[1,0,0,1,7,4],
-"player_8h.html#a513959949a7e5ad2de2aa13624122683":[1,0,0,1,7,5],
-"player_8h.html#a77d701b49344944e63e643ae12ae276c":[1,0,0,1,7,2]
+"player_8h.html#a204189692f22f1cbe1568f74d6a5d196":[1,0,0,1,7,4]
 };

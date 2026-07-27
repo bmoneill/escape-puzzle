@@ -29,11 +29,12 @@ var NAVTREE =
       [ "Table of Contents", "index.html#autotoc_md2", null ],
       [ "Overview", "index.html#autotoc_md3", null ],
       [ "Building", "index.html#autotoc_md4", null ],
-      [ "Testing", "index.html#autotoc_md5", null ],
-      [ "Documentation", "index.html#autotoc_md6", null ],
-      [ "Further Reading", "index.html#autotoc_md7", null ],
-      [ "Bugs", "index.html#autotoc_md8", null ],
-      [ "License", "index.html#autotoc_md9", null ],
+      [ "WebAssembly (WASM) Build", "index.html#autotoc_md5", null ],
+      [ "Testing", "index.html#autotoc_md6", null ],
+      [ "Documentation", "index.html#autotoc_md7", null ],
+      [ "Further Reading", "index.html#autotoc_md8", null ],
+      [ "Bugs", "index.html#autotoc_md9", null ],
+      [ "License", "index.html#autotoc_md10", null ],
       [ "Data Structures", "annotated.html", "annotated_dup" ],
       [ "Data Structure Index", "classes.html", null ],
       [ "Data Fields", "functions.html", [
@@ -58,8 +59,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"player_8h.html#af5420be377752b383864a169dfd7ba10",
-"types_8h.html#a5f660b55f835b170812ab67f556e9a5a"
+"player_8h.html#a513959949a7e5ad2de2aa13624122683",
+"types_8h.html#a50b6c3c5a46f347eb58da649285ddaa8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

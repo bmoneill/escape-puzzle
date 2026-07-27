@@ -118,22 +118,47 @@ Building</h2>
 <div class="line">cmake -S . -B build</div>
 <div class="line">cmake --build build</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
+WebAssembly (WASM) Build</h2>
+<p>The game can be compiled to WebAssembly and deployed as a static webpage. <a href="https://emscripten.org/docs/getting_started/downloads.html">Emscripten</a> must be installed and its environment activated (<code>source emsdk_env.sh</code>) before building.</p>
+<div class="fragment"><div class="line"># Quick build via the helper script:</div>
+<div class="line">./build_webdemo.sh</div>
+<div class="line"> </div>
+<div class="line"># Or manually:</div>
+<div class="line">emcmake cmake -S . -B build-wasm -DWASM=ON -DCMAKE_BUILD_TYPE=Release</div>
+<div class="line">cmake --build build-wasm</div>
+</div><!-- fragment --><p>The output lives in <code>build-wasm/src/</code> and contains:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">File   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>escapepuzzle.html</code>   </td><td class="markdownTableBodyNone">Self-contained page — open this in a browser    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>escapepuzzle.js</code>   </td><td class="markdownTableBodyNone">Emscripten JS glue code    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><code>escapepuzzle.wasm</code>   </td><td class="markdownTableBodyNone">Compiled WebAssembly module    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><code>escapepuzzle.data</code>   </td><td class="markdownTableBodyNone">Preloaded asset bundle (sprites, locale)   </td></tr>
+</table>
+<p>Because the browser blocks <a href="file://">file://</a> access to <code>.wasm</code> files, the page must be served over HTTP:</p>
+<div class="fragment"><div class="line">python3 -m http.server 8080 --directory build-wasm/src</div>
+<div class="line"># then open http://localhost:8080/escapepuzzle.html</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
 Testing</h2>
 <div class="fragment"><div class="line">cmake -S . -B build -DTEST=ON</div>
 <div class="line">cd build &amp;&amp; ctest</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
 Documentation</h2>
 <p>Online documentation is available <a href="https://bmoneill.github.io/escape-puzzle">here</a>.</p>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Further Reading</h2>
 <ul>
 <li><a href="https://kentpawson123.medium.com/procedural-generation-an-overview-1b054a0f8d41">Procedural Generation: An Overview</a></li>
 <li><a href="https://www.raylib.com/cheatsheet/cheatsheet.html">raylib docs</a></li>
 </ul>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Bugs</h2>
 <p>If you find a bug, submit an issue, PR, or email Ben at <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'@o'+'nei'+'ll'+'.sh'; return false;">ben@o<span class="obfuscator">.nosp@m.</span>neil<span class="obfuscator">.nosp@m.</span>l.sh</a> with a description and/or patch.</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 License</h2>
 <p>Copyright (c) 2026 Ben O'Neill <a href="#" onclick="location.href='mai'+'lto:'+'ben'+'@o'+'nei'+'ll'+'.sh'; return false;">ben@o<span class="obfuscator">.nosp@m.</span>neil<span class="obfuscator">.nosp@m.</span>l.sh</a> and Danny Quang. This work is released under the terms of the MIT License. See [LICENSE](LICENSE) for the license terms. </p>
 </div></div><!-- PageDoc -->
