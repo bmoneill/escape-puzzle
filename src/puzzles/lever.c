@@ -2,16 +2,18 @@
  * @file puzzles/lever.c
  */
 #include "puzzles/lever.h"
+
+#include "core/config.h"
 #include "core/log.h"
 #include "game/map.h"
 #include "puzzles/puzzle.h"
 #include <stdlib.h>
 
-static i32 g_expected_lever      = 1;
-static i8  g_wrong_message_shown = 0;
+static i32                g_expected_lever      = 1;
+static i8                 g_wrong_message_shown = 0;
 
-void       lever_puzzle_init(Puzzle* puzzle, i32 x, i32 y) {
-    puzzle->position  = (vec2u) { .x = x, .y = y };
+EMSCRIPTEN_KEEPALIVE void lever_puzzle_init(Puzzle* puzzle, i32 x, i32 y) {
+    puzzle->position  = (vec2u){ .x = x, .y = y };
     puzzle->completed = false;
     puzzle->type      = PUZZLE_LEVER_TOGGLE;
     puzzle->update    = lever_puzzle_update;
@@ -23,7 +25,7 @@ void       lever_puzzle_init(Puzzle* puzzle, i32 x, i32 y) {
     puzzle->state     = state;
 }
 
-void lever_puzzle_update(void* self, PuzzleEvent* event) {
+EMSCRIPTEN_KEEPALIVE void lever_puzzle_update(void* self, PuzzleEvent* event) {
 
     Puzzle* puzzle = (Puzzle*) self;
 

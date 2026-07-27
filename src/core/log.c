@@ -2,12 +2,13 @@
  * @file core/log.c
  * @brief Logging functions.
  */
-#include "log.h"
+#include "core/log.h"
+#include "core/config.h"
 
 #include <stdarg.h>
 #include <stdio.h>
 
-void log_error_f(const char* fmt, ...) {
+EMSCRIPTEN_KEEPALIVE void log_error_f(const char* fmt, ...) {
     va_list args;
     va_start(args, fmt);
     fprintf(stderr, "[ERROR] ");
@@ -16,7 +17,7 @@ void log_error_f(const char* fmt, ...) {
     va_end(args);
 }
 
-void log_info_f(const char* fmt, ...) {
+EMSCRIPTEN_KEEPALIVE void log_info_f(const char* fmt, ...) {
     va_list args;
     va_start(args, fmt);
     fprintf(stdout, "[INFO] ");
@@ -25,7 +26,7 @@ void log_info_f(const char* fmt, ...) {
     va_end(args);
 }
 
-void log_warning_f(const char* fmt, ...) {
+EMSCRIPTEN_KEEPALIVE void log_warning_f(const char* fmt, ...) {
     va_list args;
     va_start(args, fmt);
     fprintf(stderr, "[WARNING] ");

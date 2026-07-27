@@ -4,7 +4,8 @@
  */
 #include "ht.h"
 
-#include "log.h"
+#include "core/config.h"
+#include "core/log.h"
 
 // =============================================================================
 // Constants
@@ -26,7 +27,7 @@
  * @param key The key to hash
  * @return The hashed value
  */
-static inline u64 ht_hash(u64 key) {
+EMSCRIPTEN_KEEPALIVE static inline u64 ht_hash(u64 key) {
     key ^= key >> 33;
     key *= 0xff51afd7ed558ccdULL;
     key ^= key >> 33;
@@ -41,7 +42,7 @@ static inline u64 ht_hash(u64 key) {
  * @param n The number to round up
  * @return The next power of 2 >= n
  */
-static inline u64 ht_next_power_of_2(u64 n) {
+EMSCRIPTEN_KEEPALIVE static inline u64 ht_next_power_of_2(u64 n) {
     if (n == 0)
         return 1;
     n--;
@@ -61,7 +62,7 @@ static inline u64 ht_next_power_of_2(u64 n) {
  * @param new_capacity The new capacity for the table
  * @return true on success, false on failure
  */
-static bool ht_rehash(HashTable* ht, u64 new_capacity) {
+EMSCRIPTEN_KEEPALIVE static bool ht_rehash(HashTable* ht, u64 new_capacity) {
     if (!ht) {
         return false;
     }
@@ -116,7 +117,7 @@ static bool ht_rehash(HashTable* ht, u64 new_capacity) {
  * @param ht The hash table to check
  * @return true if no resize needed or resize succeeded, false on resize failure
  */
-static bool ht_check_resize(HashTable* ht) {
+EMSCRIPTEN_KEEPALIVE static bool ht_check_resize(HashTable* ht) {
     if (!ht) {
         return false;
     }
@@ -168,7 +169,7 @@ HashTable* ht_init(MemoryTag tag, u64 capacity) {
     return ht;
 }
 
-bool ht_deinit(HashTable* ht) {
+EMSCRIPTEN_KEEPALIVE bool ht_deinit(HashTable* ht) {
     if (!ht) {
         LOG_ERROR("Cannot deinitialize a NULL hash table.");
         return false;
@@ -179,7 +180,7 @@ bool ht_deinit(HashTable* ht) {
     return true;
 }
 
-void* ht_get(HashTable* ht, u64 key) {
+EMSCRIPTEN_KEEPALIVE void* ht_get(HashTable* ht, u64 key) {
     if (!ht) {
         LOG_ERROR("Cannot get from a NULL hash table.");
         return NULL;
@@ -236,7 +237,7 @@ HashEntry* ht_next(HashTable* ht, HashEntry* iter, u64* found) {
     return NULL; // End of table
 }
 
-void* ht_set(HashTable* ht, u64 key, void* value) {
+EMSCRIPTEN_KEEPALIVE void* ht_set(HashTable* ht, u64 key, void* value) {
     if (!ht) {
         LOG_ERROR("Cannot set in a NULL hash table.");
         return NULL;
@@ -295,7 +296,7 @@ void* ht_set(HashTable* ht, u64 key, void* value) {
     return NULL;
 }
 
-void* ht_remove(HashTable* ht, u64 key) {
+EMSCRIPTEN_KEEPALIVE void* ht_remove(HashTable* ht, u64 key) {
     if (!ht) {
         LOG_ERROR("Cannot remove from a NULL hash table.");
         return NULL;

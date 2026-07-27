@@ -1,5 +1,6 @@
 #include "puzzles/puzzle.h"
 
+#include "core/config.h"
 #include "core/log.h"
 #include "core/memory.h"
 #include "game/map.h"
@@ -34,7 +35,7 @@ PuzzleEvent* puzzle_generate_events(i32     playerX,
             if (dx < 3 && dy < 3) {
                 // TODO consider that count might exceed num_puzzles
                 events[count++]
-                    = (PuzzleEvent) { .puzzleIdx = i, .type = PUZZLE_EVENT_PLAYER_INTERACT };
+                    = (PuzzleEvent){ .puzzleIdx = i, .type = PUZZLE_EVENT_PLAYER_INTERACT };
             }
         }
     }
@@ -43,7 +44,8 @@ PuzzleEvent* puzzle_generate_events(i32     playerX,
     return events;
 }
 
-bool puzzle_update(Puzzle* puzzles, i32 num_puzzles, PuzzleEvent* events, i32 num_events) {
+EMSCRIPTEN_KEEPALIVE bool
+puzzle_update(Puzzle* puzzles, i32 num_puzzles, PuzzleEvent* events, i32 num_events) {
     i32 num_completed = 0;
     for (i32 i = 0; i < num_puzzles; i++) {
         Puzzle* puzzle = &puzzles[i];

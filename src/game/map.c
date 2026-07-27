@@ -4,6 +4,7 @@
  */
 #include "map.h"
 
+#include "core/config.h"
 #include "core/log.h"
 #include "core/random.h"
 #include "puzzles/cipher.h"
@@ -23,12 +24,12 @@ Map* gmap = NULL;
 #define MAX_CORRIDORS 8
 
 // Axis-aligned bounds of a room's floor area (tile coords, inclusive)
-typedef struct {
+EMSCRIPTEN_KEEPALIVE typedef struct {
     i32 x1, y1, x2, y2;
 } MapRoom;
 
 // A carved gap in a shared wall that connects two rooms
-typedef struct {
+EMSCRIPTEN_KEEPALIVE typedef struct {
     i32  room_a, room_b; // indices into rooms[]
     i32  x, y; // tile position of the gap
     bool locked; // true when a locked door sits here
@@ -45,12 +46,12 @@ static void generate_puzzles(Map* map);
 // Public API
 // ---------------------------------------------------------------------------
 
-void map_init(Map* map) {
+EMSCRIPTEN_KEEPALIVE void map_init(Map* map) {
     gmap = map;
     map_generate(map);
 }
 
-void map_generate(Map* map) {
+EMSCRIPTEN_KEEPALIVE void map_generate(Map* map) {
     random_seed(map->seed);
 
     map->num_puzzles       = 0;
@@ -66,7 +67,7 @@ Tile* map_get_tile(Map* map, int x, int y) {
     return &map->tiles[y][x];
 }
 
-bool tile_adjacent_to(Map* map, int x, int y, TileType type) {
+EMSCRIPTEN_KEEPALIVE bool tile_adjacent_to(Map* map, int x, int y, TileType type) {
     Tile* t = map_get_tile(map, x + 1, y);
     if (t->type == type) {
         return true;
@@ -93,7 +94,7 @@ bool tile_adjacent_to(Map* map, int x, int y, TileType type) {
 // Room and wall generation
 // ---------------------------------------------------------------------------
 
-static void generate_walls(Map* map) {
+EMSCRIPTEN_KEEPALIVE static void generate_walls(Map* map) {
 
     // ------------------------------------------------------------------
     // 1. Fill the entire map with solid wall tiles
@@ -431,7 +432,7 @@ static void generate_walls(Map* map) {
 // Puzzle (lever) generation – scattered across floor tiles as optional content
 // ---------------------------------------------------------------------------
 
-static void generate_puzzles(Map* map) {
+EMSCRIPTEN_KEEPALIVE static void generate_puzzles(Map* map) {
     const i32 lever_count = 3;
     i32       failures    = 0;
 
@@ -439,42 +440,41 @@ static void generate_puzzles(Map* map) {
         i32 x = 0, y = 0;
         i32 tries = 0;
 
-do {
-    x = random_i32_range(1, map->width - 2);
-    y = random_i32_range(1, map->height - 2);
-    tries++;
+        EMSCRIPTEN_KEEPALIVE do {
+            x = random_i32_range(1, map->width - 2);
+            y = random_i32_range(1, map->height - 2);
+            tries++;
 
-    bool invalid =
-        (i == 0
-            ? (map->tiles[y][x].type != TILE_WALL)
-            : (map->tiles[y][x].type != TILE_FLOOR))
-        || ((i32)map->playerStartPos.x == x && (i32)map->playerStartPos.y == y)
-        || tile_adjacent_to(map, x, y, TILE_DOOR);
+            bool invalid = (i == 0 ? (map->tiles[y][x].type != TILE_WALL)
+                                   : (map->tiles[y][x].type != TILE_FLOOR))
+                           || ((i32) map->playerStartPos.x == x && (i32) map->playerStartPos.y == y)
+                           || tile_adjacent_to(map, x, y, TILE_DOOR);
 
-    if (!invalid)
-        break;
+            if (!invalid)
+                break;
+        }
+        while (tries < 20)
+            ;
 
-} while (tries < 20);
-
-if (tries >= 20) {
-    failures++;
-    continue;
-}
+        EMSCRIPTEN_KEEPALIVE if (tries >= 20) {
+            failures++;
+            continue;
+        }
 
         bool make_hidden = (i == 0);
 
         if (make_hidden) {
             map->tiles[y][x].type       = TILE_HIDDEN_LEVER;
             map->tiles[y][x].texture_id = TILE_TEXTURE_HIDDEN_LEVER; // temporary
-              map->tiles[y][x].solid      = 1;
+            map->tiles[y][x].solid      = 1;
 
         } else {
-        map->tiles[y][x].type       = TILE_LEVER;
-        map->tiles[y][x].texture_id = TILE_TEXTURE_LEVER_OFF;
-        map->tiles[y][x].solid      = 1;
+            map->tiles[y][x].type       = TILE_LEVER;
+            map->tiles[y][x].texture_id = TILE_TEXTURE_LEVER_OFF;
+            map->tiles[y][x].solid      = 1;
         }
 
-        Puzzle* puzzle              = &map->puzzles[i - failures];
+        Puzzle* puzzle = &map->puzzles[i - failures];
         lever_puzzle_init(puzzle, x, y);
         LeverState* state = (LeverState*) puzzle->state;
         state->order      = (i - failures) + 1;
@@ -482,7 +482,7 @@ if (tries >= 20) {
     }
 }
 
-bool map_all_levers_active(Map* map) {
+EMSCRIPTEN_KEEPALIVE bool map_all_levers_active(Map* map) {
     for (i32 i = 0; i < map->num_puzzles; i++) {
 
         Puzzle* puzzle = &map->puzzles[i];

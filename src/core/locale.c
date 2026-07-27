@@ -13,7 +13,7 @@
 
 Locale* glocale = NULL;
 
-void    locale_init(const char* locale_path) {
+EMSCRIPTEN_KEEPALIVE void    locale_init(const char* locale_path) {
     bool path_alloced = false;
     if (!locale_path) {
         path_alloced = true;
@@ -78,7 +78,7 @@ void    locale_init(const char* locale_path) {
     }
 }
 
-void locale_shutdown(void) {
+EMSCRIPTEN_KEEPALIVE void locale_shutdown(void) {
     if (!glocale) {
         LOG_WARNING("Locale not initialized");
         return;
@@ -92,7 +92,7 @@ void locale_shutdown(void) {
     glocale = NULL;
 }
 
-char* locale_get(const char* key, char* buffer, u64 buffer_size) {
+EMSCRIPTEN_KEEPALIVE char* locale_get(const char* key, char* buffer, u64 buffer_size) {
     if (glocale) {
         // TODO optimize with hash map or binary search
         for (u64 i = 0; i < glocale->count; i++) {

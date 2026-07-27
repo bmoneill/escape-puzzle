@@ -11,6 +11,7 @@
  */
 #include "puzzles/cipher.h"
 
+#include "core/config.h"
 #include "core/locale.h"
 #include "core/log.h"
 #include "core/random.h"
@@ -31,7 +32,7 @@
  * On a correct answer the tile is converted to a floor; the loop otherwise
  * repeats until the player gets it right.
  */
-static void do_cipher(Tile* tile) {
+EMSCRIPTEN_KEEPALIVE static void do_cipher(Tile* tile) {
     char plaintext[32];
     char locale_key_buf[64];
     char encoded[32];
@@ -124,7 +125,7 @@ static void do_cipher(Tile* tile) {
  * Public API
  * ---------------------------------------------------------------------- */
 
-void cipher_door_spawn(Map* map, i32 x, i32 y) {
+EMSCRIPTEN_KEEPALIVE void cipher_door_spawn(Map* map, i32 x, i32 y) {
     Tile* tile = map_get_tile(map, x, y);
     if (!tile)
         return;
@@ -134,4 +135,4 @@ void cipher_door_spawn(Map* map, i32 x, i32 y) {
     tile->texture_id = TILE_TEXTURE_DOOR;
 }
 
-void cipher_door_try(Tile* tile) { do_cipher(tile); }
+EMSCRIPTEN_KEEPALIVE void cipher_door_try(Tile* tile) { do_cipher(tile); }

@@ -3,13 +3,14 @@
  * @brief Memory management system using arenas for efficient allocation and tracking.
  */
 #include "core/memory.h"
+#include "core/config.h"
 #include "core/log.h"
 
 #include <stdlib.h>
 
-MemoryManager* gmem = NULL;
+MemoryManager*            gmem = NULL;
 
-void           mem_init(void) {
+EMSCRIPTEN_KEEPALIVE void mem_init(void) {
     gmem = (MemoryManager*) malloc(sizeof(MemoryManager));
 
     if (!gmem) {
@@ -20,7 +21,7 @@ void           mem_init(void) {
     memset(gmem, 0, sizeof(MemoryManager));
 
     gmem->arenas[MEM_TAG_PERMANENT] = arena_init(ARENA_PERMANENT_SIZE, ARENA_MAX_BLOCKS, true);
-    gmem->arenas[MEM_TAG_LEVEL] = arena_init(ARENA_LEVEL_SIZE, ARENA_MAX_BLOCKS, true);
+    gmem->arenas[MEM_TAG_LEVEL]     = arena_init(ARENA_LEVEL_SIZE, ARENA_MAX_BLOCKS, true);
 
     // Frame and temp arenas are unmanaged for speed.
     gmem->arenas[MEM_TAG_FRAME] = arena_init(ARENA_FRAME_SIZE, ARENA_MAX_BLOCKS, false);
@@ -35,14 +36,14 @@ void           mem_init(void) {
 
     log_info_f(
         "Memory system initialized with arenas: permanent=%zu MB, level=%zu MB, frame=%zu MB, "
-                  "temp=%zu MB",
+        "temp=%zu MB",
         ARENA_PERMANENT_SIZE / (1024 * 1024),
         ARENA_LEVEL_SIZE / (1024 * 1024),
         ARENA_FRAME_SIZE / (1024 * 1024),
         ARENA_TEMP_SIZE / (1024 * 1024));
 }
 
-void mem_shutdown(void) {
+EMSCRIPTEN_KEEPALIVE void mem_shutdown(void) {
     if (gmem) {
         for (int i = 0; i < MEM_TAG_COUNT; i++) {
             arena_destroy(gmem->arenas[i]);
@@ -55,25 +56,25 @@ void mem_shutdown(void) {
     }
 }
 
-void mem_reset_frame(void) {
+EMSCRIPTEN_KEEPALIVE void mem_reset_frame(void) {
     arena_clear(gmem->arenas[MEM_TAG_FRAME]);
     gmem->stats.allocations[MEM_TAG_FRAME] = 0;
     gmem->stats.used[MEM_TAG_FRAME]        = 0;
 }
 
-void mem_reset_level(void) {
+EMSCRIPTEN_KEEPALIVE void mem_reset_level(void) {
     arena_clear(gmem->arenas[MEM_TAG_LEVEL]);
     gmem->stats.allocations[MEM_TAG_LEVEL] = 0;
     gmem->stats.used[MEM_TAG_LEVEL]        = 0;
 }
 
-void mem_reset_temp(void) {
+EMSCRIPTEN_KEEPALIVE void mem_reset_temp(void) {
     arena_clear(gmem->arenas[MEM_TAG_TEMP]);
     gmem->stats.allocations[MEM_TAG_TEMP] = 0;
     gmem->stats.used[MEM_TAG_TEMP]        = 0;
 }
 
-void* mem_alloc(MemoryTag tag, u64 size) {
+EMSCRIPTEN_KEEPALIVE void* mem_alloc(MemoryTag tag, u64 size) {
     if (tag >= MEM_TAG_COUNT || tag < 0) {
         log_error_f("alloc: Invalid memory tag: %d", tag);
         return NULL;
@@ -92,7 +93,7 @@ void* mem_alloc(MemoryTag tag, u64 size) {
     return ptr;
 }
 
-void* mem_calloc(MemoryTag tag, u64 size) {
+EMSCRIPTEN_KEEPALIVE void* mem_calloc(MemoryTag tag, u64 size) {
     if (tag >= MEM_TAG_COUNT || tag < 0) {
         log_error_f("calloc: Invalid memory tag: %d", tag);
         return NULL;
@@ -111,7 +112,7 @@ void* mem_calloc(MemoryTag tag, u64 size) {
     return ptr;
 }
 
-void* mem_realloc(MemoryTag tag, void* ptr, u64 new_size) {
+EMSCRIPTEN_KEEPALIVE void* mem_realloc(MemoryTag tag, void* ptr, u64 new_size) {
     if (tag >= MEM_TAG_COUNT || tag < 0) {
         log_error_f("realloc: Invalid memory tag: %d", tag);
         return NULL;
@@ -136,7 +137,7 @@ void* mem_realloc(MemoryTag tag, void* ptr, u64 new_size) {
     return new_ptr;
 }
 
-void mem_free(MemoryTag tag, void* ptr) {
+EMSCRIPTEN_KEEPALIVE void mem_free(MemoryTag tag, void* ptr) {
     if (tag >= MEM_TAG_COUNT || tag < 0) {
         log_error_f("free: Invalid memory tag: %d", tag);
         return;
@@ -151,7 +152,7 @@ void mem_free(MemoryTag tag, void* ptr) {
     arena_free(gmem->arenas[tag], ptr);
 }
 
-char* mem_strdup(MemoryTag tag, const char* str) {
+EMSCRIPTEN_KEEPALIVE char* mem_strdup(MemoryTag tag, const char* str) {
     if (tag >= MEM_TAG_COUNT || tag < 0) {
         log_error_f("strdup: Invalid memory tag: %d", tag);
         return NULL;

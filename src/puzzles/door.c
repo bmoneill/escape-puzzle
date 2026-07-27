@@ -1,4 +1,6 @@
 #include "door.h"
+
+#include "core/config.h"
 #include "core/locale.h"
 #include "core/log.h"
 #include "core/random.h"
@@ -6,12 +8,13 @@
 #include "game/tile.h"
 #include "graphics/textinput.h"
 #include "puzzles/cipher.h"
+
 #include <stdio.h>
 #include <string.h>
 
-static void do_riddle(Tile*);
+static void               do_riddle(Tile*);
 
-void        door_spawn(Map* map, i32 x, i32 y) {
+EMSCRIPTEN_KEEPALIVE void door_spawn(Map* map, i32 x, i32 y) {
     Tile* tile = map_get_tile(map, x, y);
     if (!tile)
         return;
@@ -21,7 +24,7 @@ void        door_spawn(Map* map, i32 x, i32 y) {
     tile->texture_id = TILE_TEXTURE_DOOR;
 }
 
-void door_try_open(Map* map, Player* player) {
+EMSCRIPTEN_KEEPALIVE void door_try_open(Map* map, Player* player) {
     i32 px = (i32) (player->x / TILE_SIZE);
     i32 py = (i32) (player->y / TILE_SIZE);
 
@@ -62,7 +65,7 @@ void door_try_open(Map* map, Player* player) {
     }
 }
 
-void riddle_door_spawn(Map* map, i32 x, i32 y) {
+EMSCRIPTEN_KEEPALIVE void riddle_door_spawn(Map* map, i32 x, i32 y) {
     Tile* tile = map_get_tile(map, x, y);
 
     if (!tile)
@@ -73,7 +76,7 @@ void riddle_door_spawn(Map* map, i32 x, i32 y) {
     tile->texture_id = TILE_TEXTURE_DOOR;
 }
 
-static void do_riddle(Tile* tile) {
+EMSCRIPTEN_KEEPALIVE static void do_riddle(Tile* tile) {
     char question[128];
     char answer_buf[64];
     char correct_answer[64];

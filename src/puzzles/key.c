@@ -1,7 +1,9 @@
 #include "key.h"
+
+#include "core/config.h"
 #include "game/tile.h"
 
-void key_spawn(Map* map, i32 x, i32 y) {
+EMSCRIPTEN_KEEPALIVE void key_spawn(Map* map, i32 x, i32 y) {
     Tile* tile = map_get_tile(map, x, y);
     if (!tile)
         return;
@@ -11,7 +13,7 @@ void key_spawn(Map* map, i32 x, i32 y) {
     tile->texture_id = TILE_TEXTURE_KEY;
 }
 
-void key_try_pickup(Map* map, Player* player) {
+EMSCRIPTEN_KEEPALIVE void key_try_pickup(Map* map, Player* player) {
     i32 px = (i32) (player->x / TILE_SIZE);
     i32 py = (i32) (player->y / TILE_SIZE);
 

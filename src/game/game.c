@@ -4,6 +4,7 @@
  */
 #include "game/game.h"
 
+#include "core/config.h"
 #include "core/log.h"
 #include "core/memory.h"
 #include "core/random.h"
@@ -28,7 +29,7 @@ bool level1 = true;
  * MenuItem action wrapper: starts a new random level.
  * Passes seed=0 so game_init picks a fresh random seed.
  */
-static void start_next_level(GameState* game) { game_init(game); }
+EMSCRIPTEN_KEEPALIVE static void start_next_level(GameState* game) { game_init(game); }
 
 /**
  * Shows the level-complete modal menu and blocks until the player chooses.
@@ -40,10 +41,10 @@ static void start_next_level(GameState* game) { game_init(game); }
  * If the player closes the window or presses Escape, menu_init returns
  * without selecting an item and game_init unwinds back to the main menu.
  */
-static void game_level_complete(GameState* game) {
+EMSCRIPTEN_KEEPALIVE static void game_level_complete(GameState* game) {
     (void) game;
     menu_init(
-        (MenuItem[]) {
+        (MenuItem[]){
             { "Next Level", start_next_level },
             { "Quit", game_exit },
         },
@@ -54,7 +55,7 @@ static void game_level_complete(GameState* game) {
  * Public API
  * ---------------------------------------------------------------------- */
 
-void game_init(GameState* game) {
+EMSCRIPTEN_KEEPALIVE void game_init(GameState* game) {
     if (level1) {
         if (seed) {
             random_seed((u64) seed);
@@ -117,7 +118,7 @@ void game_init(GameState* game) {
     }
 }
 
-void game_exit(GameState* game) {
+EMSCRIPTEN_KEEPALIVE void game_exit(GameState* game) {
     // TODO Perform any necessary cleanup here
     (void) game;
     exit(0);

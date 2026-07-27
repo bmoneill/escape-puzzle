@@ -3,6 +3,7 @@
  * @brief Player implementation.
  */
 #include "player.h"
+#include "core/config.h"
 #include "puzzles/door.h"
 #include "puzzles/key.h"
 
@@ -10,7 +11,7 @@
 
 #include <stdlib.h>
 
-void player_init(Player* player) {
+EMSCRIPTEN_KEEPALIVE void player_init(Player* player) {
     player->x          = 64;
     player->y          = 64;
 
@@ -20,12 +21,12 @@ void player_init(Player* player) {
     player->height     = 20;
     player->keys       = 0;
 
-    player->facing    = PLAYER_DIR_DOWN;
-    player->is_moving = false;
-    player->anim_tick = 0;
+    player->facing     = PLAYER_DIR_DOWN;
+    player->is_moving  = false;
+    player->anim_tick  = 0;
 }
 
-void player_update(Player* player, Map* map, i16 keys_pressed) {
+EMSCRIPTEN_KEEPALIVE void player_update(Player* player, Map* map, i16 keys_pressed) {
     if (keys_pressed & GAME_KEY_EXIT) {
         exit(0);
     }
@@ -37,7 +38,7 @@ void player_update(Player* player, Map* map, i16 keys_pressed) {
     player_move(player, map, keys_pressed);
 }
 
-void player_move(Player* player, Map* map, i16 keys) {
+EMSCRIPTEN_KEEPALIVE void player_move(Player* player, Map* map, i16 keys) {
     f64 dx = 0;
     f64 dy = 0;
 

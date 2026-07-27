@@ -5,6 +5,11 @@
 #ifndef CORE_CONFIG_H
 #define CORE_CONFIG_H
 
+// Emscripten stuff
+#ifndef EMSCRIPTEN_KEEPALIVE
+#define EMSCRIPTEN_KEEPALIVE
+#endif
+
 // =============================================================================
 // Window and Input Configuration
 // =============================================================================

@@ -4,7 +4,8 @@
  * This file provides the definitions for the functions declared in escapepuzzle.h.
  */
 #include "escapepuzzle.h"
+#include "core/config.h"
 
 #include <stdio.h>
 
-const char* escapepuzzle_version(void) { return ESCAPEPUZZLE_VERSION; }
+EMSCRIPTEN_KEEPALIVE const char* escapepuzzle_version(void) { return ESCAPEPUZZLE_VERSION; }
