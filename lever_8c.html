@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('lever_8c.html',''); initResizable(); }
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="lever_8h_source.html">puzzles/lever.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">core/config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="log_8h_source.html">core/log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="map_8h_source.html">game/map.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="puzzle_8h_source.html">puzzles/puzzle.h</a>&quot;</code><br />
@@ -103,22 +104,22 @@ $(document).ready(function(){initNavTree('lever_8c.html',''); initResizable(); }
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af68ffb88e004bfb39d9123d464119f50"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lever_8c.html#af68ffb88e004bfb39d9123d464119f50">lever_puzzle_init</a> (<a class="el" href="structPuzzle.html">Puzzle</a> *puzzle, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> x, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> y)</td></tr>
-<tr class="memdesc:af68ffb88e004bfb39d9123d464119f50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a lever toggle puzzle at the specified coordinates, setting its type and update function.  <br /></td></tr>
-<tr class="separator:af68ffb88e004bfb39d9123d464119f50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87a5870c2296ba053a3cf324a16f29fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lever_8c.html#a87a5870c2296ba053a3cf324a16f29fe">lever_puzzle_update</a> (void *self, <a class="el" href="structPuzzleEvent.html">PuzzleEvent</a> *event)</td></tr>
-<tr class="memdesc:a87a5870c2296ba053a3cf324a16f29fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update function for a lever puzzle, which toggles the puzzle's completion state based on the provided state.  <br /></td></tr>
-<tr class="separator:a87a5870c2296ba053a3cf324a16f29fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae8602cd15c28dece5c4e523196163f60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lever_8c.html#ae8602cd15c28dece5c4e523196163f60">lever_puzzle_init</a> (<a class="el" href="structPuzzle.html">Puzzle</a> *puzzle, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> x, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> y)</td></tr>
+<tr class="memdesc:ae8602cd15c28dece5c4e523196163f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes a lever toggle puzzle at the specified coordinates, setting its type and update function.  <br /></td></tr>
+<tr class="separator:ae8602cd15c28dece5c4e523196163f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a061fe826747294d2c8f03c81df272ed4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="lever_8c.html#a061fe826747294d2c8f03c81df272ed4">lever_puzzle_update</a> (void *self, <a class="el" href="structPuzzleEvent.html">PuzzleEvent</a> *event)</td></tr>
+<tr class="memdesc:a061fe826747294d2c8f03c81df272ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update function for a lever puzzle, which toggles the puzzle's completion state based on the provided state.  <br /></td></tr>
+<tr class="separator:a061fe826747294d2c8f03c81df272ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="af68ffb88e004bfb39d9123d464119f50" name="af68ffb88e004bfb39d9123d464119f50"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af68ffb88e004bfb39d9123d464119f50">&#9670;&#160;</a></span>lever_puzzle_init()</h2>
+<a id="ae8602cd15c28dece5c4e523196163f60" name="ae8602cd15c28dece5c4e523196163f60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8602cd15c28dece5c4e523196163f60">&#9670;&#160;</a></span>lever_puzzle_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void lever_puzzle_init </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void lever_puzzle_init </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPuzzle.html">Puzzle</a> *&#160;</td>
           <td class="paramname"><em>puzzle</em>, </td>
@@ -155,14 +156,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a87a5870c2296ba053a3cf324a16f29fe" name="a87a5870c2296ba053a3cf324a16f29fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87a5870c2296ba053a3cf324a16f29fe">&#9670;&#160;</a></span>lever_puzzle_update()</h2>
+<a id="a061fe826747294d2c8f03c81df272ed4" name="a061fe826747294d2c8f03c81df272ed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a061fe826747294d2c8f03c81df272ed4">&#9670;&#160;</a></span>lever_puzzle_update()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void lever_puzzle_update </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void lever_puzzle_update </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>self</em>, </td>

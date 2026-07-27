@@ -99,6 +99,7 @@ $(document).ready(function(){initNavTree('cipher_8c.html',''); initResizable(); 
 <p>Substitution cipher door puzzle.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="cipher_8h_source.html">puzzles/cipher.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">core/config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="locale_8h_source.html">core/locale.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="log_8h_source.html">core/log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="random_8h_source.html">core/random.h</a>&quot;</code><br />
@@ -111,25 +112,25 @@ $(document).ready(function(){initNavTree('cipher_8c.html',''); initResizable(); 
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa2b8b3ff8b33d8c3740009053ccffddd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_8c.html#aa2b8b3ff8b33d8c3740009053ccffddd">cipher_door_spawn</a> (<a class="el" href="structMap.html">Map</a> *map, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> x, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> y)</td></tr>
-<tr class="memdesc:aa2b8b3ff8b33d8c3740009053ccffddd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a cipher door tile at (x, y) on the map.  <br /></td></tr>
-<tr class="separator:aa2b8b3ff8b33d8c3740009053ccffddd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ecc0f237d2e1537ea0771f11855e7e2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_8c.html#a4ecc0f237d2e1537ea0771f11855e7e2">cipher_door_try</a> (<a class="el" href="structTile.html">Tile</a> *tile)</td></tr>
-<tr class="memdesc:a4ecc0f237d2e1537ea0771f11855e7e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the cipher puzzle for the given tile. Unlocks (converts to floor) the tile on a correct answer.  <br /></td></tr>
-<tr class="separator:a4ecc0f237d2e1537ea0771f11855e7e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf601de6a3c4db7018a24803c8941f2f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_8c.html#abf601de6a3c4db7018a24803c8941f2f">cipher_door_spawn</a> (<a class="el" href="structMap.html">Map</a> *map, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> x, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> y)</td></tr>
+<tr class="memdesc:abf601de6a3c4db7018a24803c8941f2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns a cipher door tile at (x, y) on the map.  <br /></td></tr>
+<tr class="separator:abf601de6a3c4db7018a24803c8941f2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a459b34ffcbea659eca8e9ed16e368be2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cipher_8c.html#a459b34ffcbea659eca8e9ed16e368be2">cipher_door_try</a> (<a class="el" href="structTile.html">Tile</a> *tile)</td></tr>
+<tr class="memdesc:a459b34ffcbea659eca8e9ed16e368be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Runs the cipher puzzle for the given tile. Unlocks (converts to floor) the tile on a correct answer.  <br /></td></tr>
+<tr class="separator:a459b34ffcbea659eca8e9ed16e368be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Substitution cipher door puzzle. </p>
 <p>Each time the player interacts with a cipher door, a fresh random monoalphabetic substitution cipher is generated via Fisher-Yates shuffle. A word is drawn from the pool of riddle answers already in the locale file, encoded with that cipher, then the full 26-letter key table and the encoded word are printed. The player must reverse the key manually and type the plaintext to open the door. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="aa2b8b3ff8b33d8c3740009053ccffddd" name="aa2b8b3ff8b33d8c3740009053ccffddd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa2b8b3ff8b33d8c3740009053ccffddd">&#9670;&#160;</a></span>cipher_door_spawn()</h2>
+<a id="abf601de6a3c4db7018a24803c8941f2f" name="abf601de6a3c4db7018a24803c8941f2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf601de6a3c4db7018a24803c8941f2f">&#9670;&#160;</a></span>cipher_door_spawn()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void cipher_door_spawn </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void cipher_door_spawn </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
           <td class="paramname"><em>map</em>, </td>
@@ -166,14 +167,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a4ecc0f237d2e1537ea0771f11855e7e2" name="a4ecc0f237d2e1537ea0771f11855e7e2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ecc0f237d2e1537ea0771f11855e7e2">&#9670;&#160;</a></span>cipher_door_try()</h2>
+<a id="a459b34ffcbea659eca8e9ed16e368be2" name="a459b34ffcbea659eca8e9ed16e368be2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a459b34ffcbea659eca8e9ed16e368be2">&#9670;&#160;</a></span>cipher_door_try()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void cipher_door_try </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void cipher_door_try </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structTile.html">Tile</a> *&#160;</td>
           <td class="paramname"><em>tile</em></td><td>)</td>

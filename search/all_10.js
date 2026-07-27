@@ -13,7 +13,7 @@ var searchData=
   ['theme_5ftemple_10',['THEME_TEMPLE',['../map_8h.html#a93137070672832a6fac39e59e6dfdbafa18176f4f33e59685b2a8fcc5a161ddbe',1,'map.h']]],
   ['tile_11',['Tile',['../structTile.html',1,'']]],
   ['tile_2eh_12',['tile.h',['../tile_8h.html',1,'']]],
-  ['tile_5fadjacent_5fto_13',['tile_adjacent_to',['../map_8c.html#ae3929b12254c1d753b7e6451935aee36',1,'tile_adjacent_to(Map *map, int x, int y, TileType type):&#160;map.c'],['../map_8h.html#ae3929b12254c1d753b7e6451935aee36',1,'tile_adjacent_to(Map *map, int x, int y, TileType type):&#160;map.c']]],
+  ['tile_5fadjacent_5fto_13',['tile_adjacent_to',['../map_8c.html#af435cd28d420a1fbf261c139b9bba437',1,'tile_adjacent_to(Map *map, int x, int y, TileType type):&#160;map.c'],['../map_8h.html#ae3929b12254c1d753b7e6451935aee36',1,'tile_adjacent_to(Map *map, int x, int y, TileType type):&#160;map.c']]],
   ['tile_5fcipher_5fdoor_14',['TILE_CIPHER_DOOR',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1aa4c5b8f489c44916f1ccd5f7d2eb8898',1,'tile.h']]],
   ['tile_5fdoor_15',['TILE_DOOR',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1ab1e49f8314d164b8aaca6e390f0adec4',1,'tile.h']]],
   ['tile_5fexit_16',['TILE_EXIT',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1aea496f253cb69969788c51bf22580e7c',1,'tile.h']]],

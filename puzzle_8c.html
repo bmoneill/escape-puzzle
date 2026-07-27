@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('puzzle_8c.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="puzzle_8h_source.html">puzzles/puzzle.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">core/config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="log_8h_source.html">core/log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="memory_8h_source.html">core/memory.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="map_8h_source.html">game/map.h</a>&quot;</code><br />
@@ -106,9 +107,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a75d86767a8e5ec66eb52753f50acf65d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPuzzleEvent.html">PuzzleEvent</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puzzle_8c.html#a75d86767a8e5ec66eb52753f50acf65d">puzzle_generate_events</a> (<a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> playerX, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> playerY, <a class="el" href="types_8h.html#a3e01dd59d72c4919aa21a46fa5299e23">i16</a> keys_pressed, <a class="el" href="structPuzzle.html">Puzzle</a> *puzzles, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> num_puzzles, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> *out_num_events)</td></tr>
 <tr class="memdesc:a75d86767a8e5ec66eb52753f50acf65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates puzzle events based on the player's position and interactions.  <br /></td></tr>
 <tr class="separator:a75d86767a8e5ec66eb52753f50acf65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac0d75812eab9bd904c9b92f0175c7972"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puzzle_8c.html#ac0d75812eab9bd904c9b92f0175c7972">puzzle_update</a> (<a class="el" href="structPuzzle.html">Puzzle</a> *puzzles, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> num_puzzles, <a class="el" href="structPuzzleEvent.html">PuzzleEvent</a> *events, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> num_events)</td></tr>
-<tr class="memdesc:ac0d75812eab9bd904c9b92f0175c7972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the state of all puzzles based on the generated events.  <br /></td></tr>
-<tr class="separator:ac0d75812eab9bd904c9b92f0175c7972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a440a7a79bdda223cf4b6964adef0b4e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="puzzle_8c.html#a440a7a79bdda223cf4b6964adef0b4e0">puzzle_update</a> (<a class="el" href="structPuzzle.html">Puzzle</a> *puzzles, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> num_puzzles, <a class="el" href="structPuzzleEvent.html">PuzzleEvent</a> *events, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> num_events)</td></tr>
+<tr class="memdesc:a440a7a79bdda223cf4b6964adef0b4e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the state of all puzzles based on the generated events.  <br /></td></tr>
+<tr class="separator:a440a7a79bdda223cf4b6964adef0b4e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a75d86767a8e5ec66eb52753f50acf65d" name="a75d86767a8e5ec66eb52753f50acf65d"></a>
@@ -177,14 +178,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac0d75812eab9bd904c9b92f0175c7972" name="ac0d75812eab9bd904c9b92f0175c7972"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac0d75812eab9bd904c9b92f0175c7972">&#9670;&#160;</a></span>puzzle_update()</h2>
+<a id="a440a7a79bdda223cf4b6964adef0b4e0" name="a440a7a79bdda223cf4b6964adef0b4e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a440a7a79bdda223cf4b6964adef0b4e0">&#9670;&#160;</a></span>puzzle_update()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool puzzle_update </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> bool puzzle_update </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPuzzle.html">Puzzle</a> *&#160;</td>
           <td class="paramname"><em>puzzles</em>, </td>

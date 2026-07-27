@@ -102,6 +102,7 @@ $(document).ready(function(){initNavTree('map_8c.html',''); initResizable(); });
 <p><a class="el" href="structMap.html">Map</a> implementation.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="map_8h_source.html">map.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">core/config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="log_8h_source.html">core/log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="random_8h_source.html">core/random.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="cipher_8h_source.html">puzzles/cipher.h</a>&quot;</code><br />
@@ -125,21 +126,21 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a50f105f8099b87e44a22eec8f0f2baa0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8c.html#a50f105f8099b87e44a22eec8f0f2baa0">map_init</a> (<a class="el" href="structMap.html">Map</a> *map)</td></tr>
-<tr class="memdesc:a50f105f8099b87e44a22eec8f0f2baa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the map.  <br /></td></tr>
-<tr class="separator:a50f105f8099b87e44a22eec8f0f2baa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad135fe77e3eccaf2b9fca86daa37d88a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8c.html#ad135fe77e3eccaf2b9fca86daa37d88a">map_generate</a> (<a class="el" href="structMap.html">Map</a> *map)</td></tr>
-<tr class="memdesc:ad135fe77e3eccaf2b9fca86daa37d88a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the map layout, including rooms, walls, and puzzles.  <br /></td></tr>
-<tr class="separator:ad135fe77e3eccaf2b9fca86daa37d88a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc542c4fb6a8e8640ad2a453419ec496"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8c.html#afc542c4fb6a8e8640ad2a453419ec496">map_init</a> (<a class="el" href="structMap.html">Map</a> *map)</td></tr>
+<tr class="memdesc:afc542c4fb6a8e8640ad2a453419ec496"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the map.  <br /></td></tr>
+<tr class="separator:afc542c4fb6a8e8640ad2a453419ec496"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e501c45e4b2aa99f508e3a702e4230e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8c.html#a4e501c45e4b2aa99f508e3a702e4230e">map_generate</a> (<a class="el" href="structMap.html">Map</a> *map)</td></tr>
+<tr class="memdesc:a4e501c45e4b2aa99f508e3a702e4230e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the map layout, including rooms, walls, and puzzles.  <br /></td></tr>
+<tr class="separator:a4e501c45e4b2aa99f508e3a702e4230e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b77f91c44bb5f8d8122fb40253da239"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTile.html">Tile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8c.html#a3b77f91c44bb5f8d8122fb40253da239">map_get_tile</a> (<a class="el" href="structMap.html">Map</a> *map, int x, int y)</td></tr>
 <tr class="memdesc:a3b77f91c44bb5f8d8122fb40253da239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a pointer to the tile at the specified coordinates.  <br /></td></tr>
 <tr class="separator:a3b77f91c44bb5f8d8122fb40253da239"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3929b12254c1d753b7e6451935aee36"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8c.html#ae3929b12254c1d753b7e6451935aee36">tile_adjacent_to</a> (<a class="el" href="structMap.html">Map</a> *map, int x, int y, <a class="el" href="tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1">TileType</a> type)</td></tr>
-<tr class="memdesc:ae3929b12254c1d753b7e6451935aee36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if tile at coords is adjacent to a tile of type type.  <br /></td></tr>
-<tr class="separator:ae3929b12254c1d753b7e6451935aee36"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2177f1b234ef152a6930a767ab0c80f3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8c.html#a2177f1b234ef152a6930a767ab0c80f3">map_all_levers_active</a> (<a class="el" href="structMap.html">Map</a> *map)</td></tr>
-<tr class="memdesc:a2177f1b234ef152a6930a767ab0c80f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if all lever puzzles have been activated.  <br /></td></tr>
-<tr class="separator:a2177f1b234ef152a6930a767ab0c80f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af435cd28d420a1fbf261c139b9bba437"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8c.html#af435cd28d420a1fbf261c139b9bba437">tile_adjacent_to</a> (<a class="el" href="structMap.html">Map</a> *map, int x, int y, <a class="el" href="tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1">TileType</a> type)</td></tr>
+<tr class="memdesc:af435cd28d420a1fbf261c139b9bba437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if tile at coords is adjacent to a tile of type type.  <br /></td></tr>
+<tr class="separator:af435cd28d420a1fbf261c139b9bba437"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb2751712a03dd5587dbc48337b65ce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="map_8c.html#aafb2751712a03dd5587dbc48337b65ce">map_all_levers_active</a> (<a class="el" href="structMap.html">Map</a> *map)</td></tr>
+<tr class="memdesc:aafb2751712a03dd5587dbc48337b65ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if all lever puzzles have been activated.  <br /></td></tr>
+<tr class="separator:aafb2751712a03dd5587dbc48337b65ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -178,14 +179,14 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a2177f1b234ef152a6930a767ab0c80f3" name="a2177f1b234ef152a6930a767ab0c80f3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2177f1b234ef152a6930a767ab0c80f3">&#9670;&#160;</a></span>map_all_levers_active()</h2>
+<a id="aafb2751712a03dd5587dbc48337b65ce" name="aafb2751712a03dd5587dbc48337b65ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafb2751712a03dd5587dbc48337b65ce">&#9670;&#160;</a></span>map_all_levers_active()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool map_all_levers_active </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> bool map_all_levers_active </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
           <td class="paramname"><em>map</em></td><td>)</td>
@@ -204,14 +205,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ad135fe77e3eccaf2b9fca86daa37d88a" name="ad135fe77e3eccaf2b9fca86daa37d88a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad135fe77e3eccaf2b9fca86daa37d88a">&#9670;&#160;</a></span>map_generate()</h2>
+<a id="a4e501c45e4b2aa99f508e3a702e4230e" name="a4e501c45e4b2aa99f508e3a702e4230e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e501c45e4b2aa99f508e3a702e4230e">&#9670;&#160;</a></span>map_generate()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void map_generate </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void map_generate </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
           <td class="paramname"><em>map</em></td><td>)</td>
@@ -272,14 +273,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a50f105f8099b87e44a22eec8f0f2baa0" name="a50f105f8099b87e44a22eec8f0f2baa0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a50f105f8099b87e44a22eec8f0f2baa0">&#9670;&#160;</a></span>map_init()</h2>
+<a id="afc542c4fb6a8e8640ad2a453419ec496" name="afc542c4fb6a8e8640ad2a453419ec496"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc542c4fb6a8e8640ad2a453419ec496">&#9670;&#160;</a></span>map_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void map_init </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void map_init </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
           <td class="paramname"><em>map</em></td><td>)</td>
@@ -298,14 +299,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ae3929b12254c1d753b7e6451935aee36" name="ae3929b12254c1d753b7e6451935aee36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3929b12254c1d753b7e6451935aee36">&#9670;&#160;</a></span>tile_adjacent_to()</h2>
+<a id="af435cd28d420a1fbf261c139b9bba437" name="af435cd28d420a1fbf261c139b9bba437"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af435cd28d420a1fbf261c139b9bba437">&#9670;&#160;</a></span>tile_adjacent_to()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool tile_adjacent_to </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> bool tile_adjacent_to </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
           <td class="paramname"><em>map</em>, </td>

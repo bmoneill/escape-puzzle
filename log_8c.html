@@ -98,33 +98,34 @@ $(document).ready(function(){initNavTree('log_8c.html',''); initResizable(); });
 
 <p>Logging functions.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &quot;<a class="el" href="log_8h_source.html">log.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="log_8h_source.html">core/log.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">core/config.h</a>&quot;</code><br />
 <code>#include &lt;stdarg.h&gt;</code><br />
 <code>#include &lt;stdio.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac66b97166c9d81f77a314b512c619d69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8c.html#ac66b97166c9d81f77a314b512c619d69">log_error_f</a> (const char *fmt,...)</td></tr>
-<tr class="memdesc:ac66b97166c9d81f77a314b512c619d69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a formatted error message to the console.  <br /></td></tr>
-<tr class="separator:ac66b97166c9d81f77a314b512c619d69"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab09a032832296a15179703a70b1a0c48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8c.html#ab09a032832296a15179703a70b1a0c48">log_info_f</a> (const char *fmt,...)</td></tr>
-<tr class="memdesc:ab09a032832296a15179703a70b1a0c48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a formatted informational message to the console.  <br /></td></tr>
-<tr class="separator:ab09a032832296a15179703a70b1a0c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a944792ee1a0c6615e3f74ebf1dd5e145"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8c.html#a944792ee1a0c6615e3f74ebf1dd5e145">log_warning_f</a> (const char *fmt,...)</td></tr>
-<tr class="memdesc:a944792ee1a0c6615e3f74ebf1dd5e145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a formatted warning message to the console.  <br /></td></tr>
-<tr class="separator:a944792ee1a0c6615e3f74ebf1dd5e145"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a182232a1a73053ac32cfcc516054eadb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8c.html#a182232a1a73053ac32cfcc516054eadb">log_error_f</a> (const char *fmt,...)</td></tr>
+<tr class="memdesc:a182232a1a73053ac32cfcc516054eadb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a formatted error message to the console.  <br /></td></tr>
+<tr class="separator:a182232a1a73053ac32cfcc516054eadb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4377e98982fe1f438fc321e2fc6b9657"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8c.html#a4377e98982fe1f438fc321e2fc6b9657">log_info_f</a> (const char *fmt,...)</td></tr>
+<tr class="memdesc:a4377e98982fe1f438fc321e2fc6b9657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a formatted informational message to the console.  <br /></td></tr>
+<tr class="separator:a4377e98982fe1f438fc321e2fc6b9657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a172509203f99293bf70ce174ac78dba8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="log_8c.html#a172509203f99293bf70ce174ac78dba8">log_warning_f</a> (const char *fmt,...)</td></tr>
+<tr class="memdesc:a172509203f99293bf70ce174ac78dba8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a formatted warning message to the console.  <br /></td></tr>
+<tr class="separator:a172509203f99293bf70ce174ac78dba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Logging functions. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ac66b97166c9d81f77a314b512c619d69" name="ac66b97166c9d81f77a314b512c619d69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac66b97166c9d81f77a314b512c619d69">&#9670;&#160;</a></span>log_error_f()</h2>
+<a id="a182232a1a73053ac32cfcc516054eadb" name="a182232a1a73053ac32cfcc516054eadb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a182232a1a73053ac32cfcc516054eadb">&#9670;&#160;</a></span>log_error_f()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void log_error_f </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void log_error_f </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fmt</em>, </td>
@@ -154,14 +155,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ab09a032832296a15179703a70b1a0c48" name="ab09a032832296a15179703a70b1a0c48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab09a032832296a15179703a70b1a0c48">&#9670;&#160;</a></span>log_info_f()</h2>
+<a id="a4377e98982fe1f438fc321e2fc6b9657" name="a4377e98982fe1f438fc321e2fc6b9657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4377e98982fe1f438fc321e2fc6b9657">&#9670;&#160;</a></span>log_info_f()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void log_info_f </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void log_info_f </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fmt</em>, </td>
@@ -191,14 +192,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a944792ee1a0c6615e3f74ebf1dd5e145" name="a944792ee1a0c6615e3f74ebf1dd5e145"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a944792ee1a0c6615e3f74ebf1dd5e145">&#9670;&#160;</a></span>log_warning_f()</h2>
+<a id="a172509203f99293bf70ce174ac78dba8" name="a172509203f99293bf70ce174ac78dba8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a172509203f99293bf70ce174ac78dba8">&#9670;&#160;</a></span>log_warning_f()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void log_warning_f </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void log_warning_f </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>fmt</em>, </td>

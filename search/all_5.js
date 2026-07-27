@@ -2,8 +2,8 @@ var searchData=
 [
   ['game_2ec_0',['game.c',['../game_8c.html',1,'']]],
   ['game_2eh_1',['game.h',['../game_8h.html',1,'']]],
-  ['game_5fexit_2',['game_exit',['../game_8c.html#a09e423ee70415035a79abf190698a4b8',1,'game_exit(GameState *game):&#160;game.c'],['../game_8h.html#a09e423ee70415035a79abf190698a4b8',1,'game_exit(GameState *game):&#160;game.c']]],
-  ['game_5finit_3',['game_init',['../game_8c.html#a6525e21c4a51aecdaeeebf9946b1a8d1',1,'game_init(GameState *game):&#160;game.c'],['../game_8h.html#a6525e21c4a51aecdaeeebf9946b1a8d1',1,'game_init(GameState *game):&#160;game.c']]],
+  ['game_5fexit_2',['game_exit',['../game_8c.html#ae204147619fc2f44a3f70463c8c30f1e',1,'game_exit(GameState *game):&#160;game.c'],['../game_8h.html#a09e423ee70415035a79abf190698a4b8',1,'game_exit(GameState *game):&#160;game.c']]],
+  ['game_5finit_3',['game_init',['../game_8c.html#a2321a09765eae204becc99ef2938983c',1,'game_init(GameState *game):&#160;game.c'],['../game_8h.html#a6525e21c4a51aecdaeeebf9946b1a8d1',1,'game_init(GameState *game):&#160;game.c']]],
   ['game_5fkey_5fback_4',['GAME_KEY_BACK',['../input_8h.html#acb4220a0a48fa45f6fa81cb900586ee4',1,'input.h']]],
   ['game_5fkey_5fdown_5',['GAME_KEY_DOWN',['../input_8h.html#abe8f03d0cfa57dbc272c13d7ae962fbd',1,'input.h']]],
   ['game_5fkey_5fexit_6',['GAME_KEY_EXIT',['../input_8h.html#a64027189285cc13c13a2c4d8d22ae890',1,'input.h']]],

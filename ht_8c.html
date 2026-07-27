@@ -100,7 +100,8 @@ $(document).ready(function(){initNavTree('ht_8c.html',''); initResizable(); });
 <p>Hash table implementation for mapping 64-bit keys to void* values.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="ht_8h_source.html">ht.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="log_8h_source.html">log.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">core/config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="log_8h_source.html">core/log.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
@@ -114,21 +115,21 @@ Functions</h2></td></tr>
 <tr class="memitem:a0d87ae8bb76e2e2855d1395008221604"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHashTable.html">HashTable</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ht_8c.html#a0d87ae8bb76e2e2855d1395008221604">ht_init</a> (<a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a> tag, unsigned long long capacity)</td></tr>
 <tr class="memdesc:a0d87ae8bb76e2e2855d1395008221604"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize a hash table with the given capacity.  <br /></td></tr>
 <tr class="separator:a0d87ae8bb76e2e2855d1395008221604"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61dfa33b3144e998538ddf4e974c6a71"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ht_8c.html#a61dfa33b3144e998538ddf4e974c6a71">ht_deinit</a> (<a class="el" href="structHashTable.html">HashTable</a> *ht)</td></tr>
-<tr class="memdesc:a61dfa33b3144e998538ddf4e974c6a71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitialize and free a hash table.  <br /></td></tr>
-<tr class="separator:a61dfa33b3144e998538ddf4e974c6a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa30a1699d5fc7e3e1b203ddfce0c7a4d"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ht_8c.html#aa30a1699d5fc7e3e1b203ddfce0c7a4d">ht_get</a> (<a class="el" href="structHashTable.html">HashTable</a> *ht, unsigned long long key)</td></tr>
-<tr class="memdesc:aa30a1699d5fc7e3e1b203ddfce0c7a4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value from the hash table.  <br /></td></tr>
-<tr class="separator:aa30a1699d5fc7e3e1b203ddfce0c7a4d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc9d2920a898ccad73b41b2d9a7c70a1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ht_8c.html#afc9d2920a898ccad73b41b2d9a7c70a1">ht_deinit</a> (<a class="el" href="structHashTable.html">HashTable</a> *ht)</td></tr>
+<tr class="memdesc:afc9d2920a898ccad73b41b2d9a7c70a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deinitialize and free a hash table.  <br /></td></tr>
+<tr class="separator:afc9d2920a898ccad73b41b2d9a7c70a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a348489a2f8d5645e9e3dc946bfb39cfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ht_8c.html#a348489a2f8d5645e9e3dc946bfb39cfe">ht_get</a> (<a class="el" href="structHashTable.html">HashTable</a> *ht, unsigned long long key)</td></tr>
+<tr class="memdesc:a348489a2f8d5645e9e3dc946bfb39cfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a value from the hash table.  <br /></td></tr>
+<tr class="separator:a348489a2f8d5645e9e3dc946bfb39cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6b0322f3dec9e0fb0e53b5c913407ac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structHashEntry.html">HashEntry</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ht_8c.html#a6b0322f3dec9e0fb0e53b5c913407ac6">ht_next</a> (<a class="el" href="structHashTable.html">HashTable</a> *ht, <a class="el" href="structHashEntry.html">HashEntry</a> *iter, unsigned long long *found)</td></tr>
 <tr class="memdesc:a6b0322f3dec9e0fb0e53b5c913407ac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next key-value pair in the hash table for iteration.  <br /></td></tr>
 <tr class="separator:a6b0322f3dec9e0fb0e53b5c913407ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af085884649e55086462646826f42da29"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ht_8c.html#af085884649e55086462646826f42da29">ht_set</a> (<a class="el" href="structHashTable.html">HashTable</a> *ht, unsigned long long key, void *value)</td></tr>
-<tr class="memdesc:af085884649e55086462646826f42da29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a key-value pair in the hash table.  <br /></td></tr>
-<tr class="separator:af085884649e55086462646826f42da29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acec75c5ded103cf52b0856dc1bcdcd8f"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ht_8c.html#acec75c5ded103cf52b0856dc1bcdcd8f">ht_remove</a> (<a class="el" href="structHashTable.html">HashTable</a> *ht, unsigned long long key)</td></tr>
-<tr class="memdesc:acec75c5ded103cf52b0856dc1bcdcd8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a key-value pair from the hash table.  <br /></td></tr>
-<tr class="separator:acec75c5ded103cf52b0856dc1bcdcd8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40bfbfd8a73feb900b4285ca58f2d297"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ht_8c.html#a40bfbfd8a73feb900b4285ca58f2d297">ht_set</a> (<a class="el" href="structHashTable.html">HashTable</a> *ht, unsigned long long key, void *value)</td></tr>
+<tr class="memdesc:a40bfbfd8a73feb900b4285ca58f2d297"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a key-value pair in the hash table.  <br /></td></tr>
+<tr class="separator:a40bfbfd8a73feb900b4285ca58f2d297"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b0d905c43c568929a799ad7b58d8647"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ht_8c.html#a2b0d905c43c568929a799ad7b58d8647">ht_remove</a> (<a class="el" href="structHashTable.html">HashTable</a> *ht, unsigned long long key)</td></tr>
+<tr class="memdesc:a2b0d905c43c568929a799ad7b58d8647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a key-value pair from the hash table.  <br /></td></tr>
+<tr class="separator:a2b0d905c43c568929a799ad7b58d8647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Hash table implementation for mapping 64-bit keys to void* values. </p>
@@ -162,14 +163,14 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a61dfa33b3144e998538ddf4e974c6a71" name="a61dfa33b3144e998538ddf4e974c6a71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61dfa33b3144e998538ddf4e974c6a71">&#9670;&#160;</a></span>ht_deinit()</h2>
+<a id="afc9d2920a898ccad73b41b2d9a7c70a1" name="afc9d2920a898ccad73b41b2d9a7c70a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc9d2920a898ccad73b41b2d9a7c70a1">&#9670;&#160;</a></span>ht_deinit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ht_deinit </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> bool ht_deinit </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structHashTable.html">HashTable</a> *&#160;</td>
           <td class="paramname"><em>ht</em></td><td>)</td>
@@ -189,14 +190,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aa30a1699d5fc7e3e1b203ddfce0c7a4d" name="aa30a1699d5fc7e3e1b203ddfce0c7a4d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa30a1699d5fc7e3e1b203ddfce0c7a4d">&#9670;&#160;</a></span>ht_get()</h2>
+<a id="a348489a2f8d5645e9e3dc946bfb39cfe" name="a348489a2f8d5645e9e3dc946bfb39cfe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a348489a2f8d5645e9e3dc946bfb39cfe">&#9670;&#160;</a></span>ht_get()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * ht_get </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void * ht_get </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structHashTable.html">HashTable</a> *&#160;</td>
           <td class="paramname"><em>ht</em>, </td>
@@ -310,14 +311,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acec75c5ded103cf52b0856dc1bcdcd8f" name="acec75c5ded103cf52b0856dc1bcdcd8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acec75c5ded103cf52b0856dc1bcdcd8f">&#9670;&#160;</a></span>ht_remove()</h2>
+<a id="a2b0d905c43c568929a799ad7b58d8647" name="a2b0d905c43c568929a799ad7b58d8647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0d905c43c568929a799ad7b58d8647">&#9670;&#160;</a></span>ht_remove()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * ht_remove </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void * ht_remove </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structHashTable.html">HashTable</a> *&#160;</td>
           <td class="paramname"><em>ht</em>, </td>
@@ -348,14 +349,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af085884649e55086462646826f42da29" name="af085884649e55086462646826f42da29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af085884649e55086462646826f42da29">&#9670;&#160;</a></span>ht_set()</h2>
+<a id="a40bfbfd8a73feb900b4285ca58f2d297" name="a40bfbfd8a73feb900b4285ca58f2d297"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40bfbfd8a73feb900b4285ca58f2d297">&#9670;&#160;</a></span>ht_set()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * ht_set </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void * ht_set </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structHashTable.html">HashTable</a> *&#160;</td>
           <td class="paramname"><em>ht</em>, </td>

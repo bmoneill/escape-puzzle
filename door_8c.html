@@ -96,6 +96,7 @@ $(document).ready(function(){initNavTree('door_8c.html',''); initResizable(); })
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="door_8h_source.html">door.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">core/config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="locale_8h_source.html">core/locale.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="log_8h_source.html">core/log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="random_8h_source.html">core/random.h</a>&quot;</code><br />
@@ -108,22 +109,22 @@ $(document).ready(function(){initNavTree('door_8c.html',''); initResizable(); })
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6bfa2fea5255c4a4631874b7d5296764"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="door_8c.html#a6bfa2fea5255c4a4631874b7d5296764">door_spawn</a> (<a class="el" href="structMap.html">Map</a> *map, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> x, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> y)</td></tr>
-<tr class="separator:a6bfa2fea5255c4a4631874b7d5296764"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a079bf19745af546946553f9368f0f92f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="door_8c.html#a079bf19745af546946553f9368f0f92f">door_try_open</a> (<a class="el" href="structMap.html">Map</a> *map, <a class="el" href="structPlayer.html">Player</a> *player)</td></tr>
-<tr class="separator:a079bf19745af546946553f9368f0f92f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a641ae619fff5bdc85550c7303e741ca4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="door_8c.html#a641ae619fff5bdc85550c7303e741ca4">riddle_door_spawn</a> (<a class="el" href="structMap.html">Map</a> *map, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> x, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> y)</td></tr>
-<tr class="separator:a641ae619fff5bdc85550c7303e741ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83943dba81d24de1a17efaa0539805c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="door_8c.html#a83943dba81d24de1a17efaa0539805c9">door_spawn</a> (<a class="el" href="structMap.html">Map</a> *map, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> x, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> y)</td></tr>
+<tr class="separator:a83943dba81d24de1a17efaa0539805c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45b108128b35c90bee80592bbfec412f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="door_8c.html#a45b108128b35c90bee80592bbfec412f">door_try_open</a> (<a class="el" href="structMap.html">Map</a> *map, <a class="el" href="structPlayer.html">Player</a> *player)</td></tr>
+<tr class="separator:a45b108128b35c90bee80592bbfec412f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a17ba5dee753b4069e2fda47dfe3fa3e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="door_8c.html#a17ba5dee753b4069e2fda47dfe3fa3e5">riddle_door_spawn</a> (<a class="el" href="structMap.html">Map</a> *map, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> x, <a class="el" href="types_8h.html#a832509ea197065489f1d60b6d7958cbf">i32</a> y)</td></tr>
+<tr class="separator:a17ba5dee753b4069e2fda47dfe3fa3e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a6bfa2fea5255c4a4631874b7d5296764" name="a6bfa2fea5255c4a4631874b7d5296764"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bfa2fea5255c4a4631874b7d5296764">&#9670;&#160;</a></span>door_spawn()</h2>
+<a id="a83943dba81d24de1a17efaa0539805c9" name="a83943dba81d24de1a17efaa0539805c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83943dba81d24de1a17efaa0539805c9">&#9670;&#160;</a></span>door_spawn()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void door_spawn </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void door_spawn </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
           <td class="paramname"><em>map</em>, </td>
@@ -150,14 +151,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a079bf19745af546946553f9368f0f92f" name="a079bf19745af546946553f9368f0f92f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a079bf19745af546946553f9368f0f92f">&#9670;&#160;</a></span>door_try_open()</h2>
+<a id="a45b108128b35c90bee80592bbfec412f" name="a45b108128b35c90bee80592bbfec412f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45b108128b35c90bee80592bbfec412f">&#9670;&#160;</a></span>door_try_open()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void door_try_open </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void door_try_open </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
           <td class="paramname"><em>map</em>, </td>
@@ -178,14 +179,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a641ae619fff5bdc85550c7303e741ca4" name="a641ae619fff5bdc85550c7303e741ca4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a641ae619fff5bdc85550c7303e741ca4">&#9670;&#160;</a></span>riddle_door_spawn()</h2>
+<a id="a17ba5dee753b4069e2fda47dfe3fa3e5" name="a17ba5dee753b4069e2fda47dfe3fa3e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17ba5dee753b4069e2fda47dfe3fa3e5">&#9670;&#160;</a></span>riddle_door_spawn()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void riddle_door_spawn </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void riddle_door_spawn </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structMap.html">Map</a> *&#160;</td>
           <td class="paramname"><em>map</em>, </td>

@@ -100,6 +100,7 @@ $(document).ready(function(){initNavTree('game_8c.html',''); initResizable(); })
 <p>Core game logic.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="game_8h_source.html">game/game.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">core/config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="log_8h_source.html">core/log.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="memory_8h_source.html">core/memory.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="random_8h_source.html">core/random.h</a>&quot;</code><br />
@@ -114,12 +115,12 @@ $(document).ready(function(){initNavTree('game_8c.html',''); initResizable(); })
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6525e21c4a51aecdaeeebf9946b1a8d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a6525e21c4a51aecdaeeebf9946b1a8d1">game_init</a> (<a class="el" href="structGameState.html">GameState</a> *game)</td></tr>
-<tr class="memdesc:a6525e21c4a51aecdaeeebf9946b1a8d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the game state and enters the game loop.  <br /></td></tr>
-<tr class="separator:a6525e21c4a51aecdaeeebf9946b1a8d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a09e423ee70415035a79abf190698a4b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a09e423ee70415035a79abf190698a4b8">game_exit</a> (<a class="el" href="structGameState.html">GameState</a> *game)</td></tr>
-<tr class="memdesc:a09e423ee70415035a79abf190698a4b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the game, performing any necessary cleanup.  <br /></td></tr>
-<tr class="separator:a09e423ee70415035a79abf190698a4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2321a09765eae204becc99ef2938983c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#a2321a09765eae204becc99ef2938983c">game_init</a> (<a class="el" href="structGameState.html">GameState</a> *game)</td></tr>
+<tr class="memdesc:a2321a09765eae204becc99ef2938983c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the game state and enters the game loop.  <br /></td></tr>
+<tr class="separator:a2321a09765eae204becc99ef2938983c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae204147619fc2f44a3f70463c8c30f1e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="game_8c.html#ae204147619fc2f44a3f70463c8c30f1e">game_exit</a> (<a class="el" href="structGameState.html">GameState</a> *game)</td></tr>
+<tr class="memdesc:ae204147619fc2f44a3f70463c8c30f1e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exits the game, performing any necessary cleanup.  <br /></td></tr>
+<tr class="separator:ae204147619fc2f44a3f70463c8c30f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -131,14 +132,14 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Core game logic. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a09e423ee70415035a79abf190698a4b8" name="a09e423ee70415035a79abf190698a4b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a09e423ee70415035a79abf190698a4b8">&#9670;&#160;</a></span>game_exit()</h2>
+<a id="ae204147619fc2f44a3f70463c8c30f1e" name="ae204147619fc2f44a3f70463c8c30f1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae204147619fc2f44a3f70463c8c30f1e">&#9670;&#160;</a></span>game_exit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void game_exit </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void game_exit </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structGameState.html">GameState</a> *&#160;</td>
           <td class="paramname"><em>game</em></td><td>)</td>
@@ -157,14 +158,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a6525e21c4a51aecdaeeebf9946b1a8d1" name="a6525e21c4a51aecdaeeebf9946b1a8d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6525e21c4a51aecdaeeebf9946b1a8d1">&#9670;&#160;</a></span>game_init()</h2>
+<a id="a2321a09765eae204becc99ef2938983c" name="a2321a09765eae204becc99ef2938983c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2321a09765eae204becc99ef2938983c">&#9670;&#160;</a></span>game_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void game_init </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void game_init </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structGameState.html">GameState</a> *&#160;</td>
           <td class="paramname"><em>game</em></td><td>)</td>

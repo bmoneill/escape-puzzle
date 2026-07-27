@@ -100,38 +100,39 @@ $(document).ready(function(){initNavTree('memory_8c.html',''); initResizable(); 
 <p>Memory management system using arenas for efficient allocation and tracking.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="memory_8h_source.html">core/memory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">core/config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="log_8h_source.html">core/log.h</a>&quot;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a44a136e3b70c36abb6f8dc060c778113"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a44a136e3b70c36abb6f8dc060c778113">mem_init</a> (void)</td></tr>
-<tr class="memdesc:a44a136e3b70c36abb6f8dc060c778113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the memory system.  <br /></td></tr>
-<tr class="separator:a44a136e3b70c36abb6f8dc060c778113"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65008a9a19c5da08c09f87d8aadabfa3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a65008a9a19c5da08c09f87d8aadabfa3">mem_shutdown</a> (void)</td></tr>
-<tr class="memdesc:a65008a9a19c5da08c09f87d8aadabfa3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuts down the memory system.  <br /></td></tr>
-<tr class="separator:a65008a9a19c5da08c09f87d8aadabfa3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad79d71bc8a124256651bc4425f5a09aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#ad79d71bc8a124256651bc4425f5a09aa">mem_reset_frame</a> (void)</td></tr>
-<tr class="memdesc:ad79d71bc8a124256651bc4425f5a09aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the frame arena, clearing all allocations.  <br /></td></tr>
-<tr class="separator:ad79d71bc8a124256651bc4425f5a09aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ae573ba27d36f039f19e071f23f2793"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a4ae573ba27d36f039f19e071f23f2793">mem_reset_level</a> (void)</td></tr>
-<tr class="memdesc:a4ae573ba27d36f039f19e071f23f2793"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the level arena, clearing all allocations.  <br /></td></tr>
-<tr class="separator:a4ae573ba27d36f039f19e071f23f2793"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acef1d168209583f2f68dbc0033f3608f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#acef1d168209583f2f68dbc0033f3608f">mem_reset_temp</a> (void)</td></tr>
-<tr class="memdesc:acef1d168209583f2f68dbc0033f3608f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the temp arena, clearing all allocations.  <br /></td></tr>
-<tr class="separator:acef1d168209583f2f68dbc0033f3608f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6efeb6e26b11f9fe0d1491bb38cfc0c1"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a6efeb6e26b11f9fe0d1491bb38cfc0c1">mem_alloc</a> (<a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a> tag, <a class="el" href="types_8h.html#a969c7c1ebb4f70581e040a3034b14ee0">u64</a> size)</td></tr>
-<tr class="separator:a6efeb6e26b11f9fe0d1491bb38cfc0c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c7628b94b825d070366306c6029ec7a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a8c7628b94b825d070366306c6029ec7a">mem_calloc</a> (<a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a> tag, <a class="el" href="types_8h.html#a969c7c1ebb4f70581e040a3034b14ee0">u64</a> size)</td></tr>
-<tr class="separator:a8c7628b94b825d070366306c6029ec7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae0fa1bb2a62926c15c76f615366bf82"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#aae0fa1bb2a62926c15c76f615366bf82">mem_realloc</a> (<a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a> tag, void *ptr, <a class="el" href="types_8h.html#a969c7c1ebb4f70581e040a3034b14ee0">u64</a> new_size)</td></tr>
-<tr class="separator:aae0fa1bb2a62926c15c76f615366bf82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d4be152ce25868f9be950462d5970e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a7d4be152ce25868f9be950462d5970e8">mem_free</a> (<a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a> tag, void *ptr)</td></tr>
-<tr class="memdesc:a7d4be152ce25868f9be950462d5970e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees memory back to the specified arena.  <br /></td></tr>
-<tr class="separator:a7d4be152ce25868f9be950462d5970e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24d7464ebba433f3b8a98dcccaa33c36"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a24d7464ebba433f3b8a98dcccaa33c36">mem_strdup</a> (<a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a> tag, const char *str)</td></tr>
-<tr class="memdesc:a24d7464ebba433f3b8a98dcccaa33c36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicates a string into memory allocated from the specified arena.  <br /></td></tr>
-<tr class="separator:a24d7464ebba433f3b8a98dcccaa33c36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aced6ff2edb8c930c19d8eff831b0f6c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#aced6ff2edb8c930c19d8eff831b0f6c6">mem_init</a> (void)</td></tr>
+<tr class="memdesc:aced6ff2edb8c930c19d8eff831b0f6c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the memory system.  <br /></td></tr>
+<tr class="separator:aced6ff2edb8c930c19d8eff831b0f6c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c23e9dd7819cd03cab46e7c1c986d67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a6c23e9dd7819cd03cab46e7c1c986d67">mem_shutdown</a> (void)</td></tr>
+<tr class="memdesc:a6c23e9dd7819cd03cab46e7c1c986d67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shuts down the memory system.  <br /></td></tr>
+<tr class="separator:a6c23e9dd7819cd03cab46e7c1c986d67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae4163ea12e697bd702606d56db67e412"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#ae4163ea12e697bd702606d56db67e412">mem_reset_frame</a> (void)</td></tr>
+<tr class="memdesc:ae4163ea12e697bd702606d56db67e412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the frame arena, clearing all allocations.  <br /></td></tr>
+<tr class="separator:ae4163ea12e697bd702606d56db67e412"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab47c108e2d4a1315a3ace1a9ed4c55ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#ab47c108e2d4a1315a3ace1a9ed4c55ed">mem_reset_level</a> (void)</td></tr>
+<tr class="memdesc:ab47c108e2d4a1315a3ace1a9ed4c55ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the level arena, clearing all allocations.  <br /></td></tr>
+<tr class="separator:ab47c108e2d4a1315a3ace1a9ed4c55ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe8bf7ef5d73ced37f7ce5ee97b30a5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#afe8bf7ef5d73ced37f7ce5ee97b30a5e">mem_reset_temp</a> (void)</td></tr>
+<tr class="memdesc:afe8bf7ef5d73ced37f7ce5ee97b30a5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the temp arena, clearing all allocations.  <br /></td></tr>
+<tr class="separator:afe8bf7ef5d73ced37f7ce5ee97b30a5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8af4cbde34dc5e6c3210f3ec7cd5b3d0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a8af4cbde34dc5e6c3210f3ec7cd5b3d0">mem_alloc</a> (<a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a> tag, <a class="el" href="types_8h.html#a969c7c1ebb4f70581e040a3034b14ee0">u64</a> size)</td></tr>
+<tr class="separator:a8af4cbde34dc5e6c3210f3ec7cd5b3d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a354c4d292e2088b5c4917d936d10555f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a354c4d292e2088b5c4917d936d10555f">mem_calloc</a> (<a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a> tag, <a class="el" href="types_8h.html#a969c7c1ebb4f70581e040a3034b14ee0">u64</a> size)</td></tr>
+<tr class="separator:a354c4d292e2088b5c4917d936d10555f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77156c614e152f693fefc8adb2ff84e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#af77156c614e152f693fefc8adb2ff84e">mem_realloc</a> (<a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a> tag, void *ptr, <a class="el" href="types_8h.html#a969c7c1ebb4f70581e040a3034b14ee0">u64</a> new_size)</td></tr>
+<tr class="separator:af77156c614e152f693fefc8adb2ff84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a308ca70a669ace12823ac7e76da5fc8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a308ca70a669ace12823ac7e76da5fc8e">mem_free</a> (<a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a> tag, void *ptr)</td></tr>
+<tr class="memdesc:a308ca70a669ace12823ac7e76da5fc8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Frees memory back to the specified arena.  <br /></td></tr>
+<tr class="separator:a308ca70a669ace12823ac7e76da5fc8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d3bdf5414b336cfbad5f0ca687d5f02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="memory_8c.html#a0d3bdf5414b336cfbad5f0ca687d5f02">mem_strdup</a> (<a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a> tag, const char *str)</td></tr>
+<tr class="memdesc:a0d3bdf5414b336cfbad5f0ca687d5f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplicates a string into memory allocated from the specified arena.  <br /></td></tr>
+<tr class="separator:a0d3bdf5414b336cfbad5f0ca687d5f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -142,14 +143,14 @@ Variables</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Memory management system using arenas for efficient allocation and tracking. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a6efeb6e26b11f9fe0d1491bb38cfc0c1" name="a6efeb6e26b11f9fe0d1491bb38cfc0c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6efeb6e26b11f9fe0d1491bb38cfc0c1">&#9670;&#160;</a></span>mem_alloc()</h2>
+<a id="a8af4cbde34dc5e6c3210f3ec7cd5b3d0" name="a8af4cbde34dc5e6c3210f3ec7cd5b3d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8af4cbde34dc5e6c3210f3ec7cd5b3d0">&#9670;&#160;</a></span>mem_alloc()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * mem_alloc </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void * mem_alloc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a>&#160;</td>
           <td class="paramname"><em>tag</em>, </td>
@@ -170,14 +171,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a8c7628b94b825d070366306c6029ec7a" name="a8c7628b94b825d070366306c6029ec7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c7628b94b825d070366306c6029ec7a">&#9670;&#160;</a></span>mem_calloc()</h2>
+<a id="a354c4d292e2088b5c4917d936d10555f" name="a354c4d292e2088b5c4917d936d10555f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a354c4d292e2088b5c4917d936d10555f">&#9670;&#160;</a></span>mem_calloc()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * mem_calloc </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void * mem_calloc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a>&#160;</td>
           <td class="paramname"><em>tag</em>, </td>
@@ -198,14 +199,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a7d4be152ce25868f9be950462d5970e8" name="a7d4be152ce25868f9be950462d5970e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d4be152ce25868f9be950462d5970e8">&#9670;&#160;</a></span>mem_free()</h2>
+<a id="a308ca70a669ace12823ac7e76da5fc8e" name="a308ca70a669ace12823ac7e76da5fc8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a308ca70a669ace12823ac7e76da5fc8e">&#9670;&#160;</a></span>mem_free()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void mem_free </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void mem_free </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a>&#160;</td>
           <td class="paramname"><em>tag</em>, </td>
@@ -236,14 +237,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a44a136e3b70c36abb6f8dc060c778113" name="a44a136e3b70c36abb6f8dc060c778113"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a44a136e3b70c36abb6f8dc060c778113">&#9670;&#160;</a></span>mem_init()</h2>
+<a id="aced6ff2edb8c930c19d8eff831b0f6c6" name="aced6ff2edb8c930c19d8eff831b0f6c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aced6ff2edb8c930c19d8eff831b0f6c6">&#9670;&#160;</a></span>mem_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void mem_init </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void mem_init </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -256,14 +257,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aae0fa1bb2a62926c15c76f615366bf82" name="aae0fa1bb2a62926c15c76f615366bf82"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae0fa1bb2a62926c15c76f615366bf82">&#9670;&#160;</a></span>mem_realloc()</h2>
+<a id="af77156c614e152f693fefc8adb2ff84e" name="af77156c614e152f693fefc8adb2ff84e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af77156c614e152f693fefc8adb2ff84e">&#9670;&#160;</a></span>mem_realloc()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void * mem_realloc </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void * mem_realloc </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a>&#160;</td>
           <td class="paramname"><em>tag</em>, </td>
@@ -290,14 +291,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ad79d71bc8a124256651bc4425f5a09aa" name="ad79d71bc8a124256651bc4425f5a09aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad79d71bc8a124256651bc4425f5a09aa">&#9670;&#160;</a></span>mem_reset_frame()</h2>
+<a id="ae4163ea12e697bd702606d56db67e412" name="ae4163ea12e697bd702606d56db67e412"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4163ea12e697bd702606d56db67e412">&#9670;&#160;</a></span>mem_reset_frame()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void mem_reset_frame </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void mem_reset_frame </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -311,14 +312,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a4ae573ba27d36f039f19e071f23f2793" name="a4ae573ba27d36f039f19e071f23f2793"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ae573ba27d36f039f19e071f23f2793">&#9670;&#160;</a></span>mem_reset_level()</h2>
+<a id="ab47c108e2d4a1315a3ace1a9ed4c55ed" name="ab47c108e2d4a1315a3ace1a9ed4c55ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab47c108e2d4a1315a3ace1a9ed4c55ed">&#9670;&#160;</a></span>mem_reset_level()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void mem_reset_level </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void mem_reset_level </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -332,14 +333,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="acef1d168209583f2f68dbc0033f3608f" name="acef1d168209583f2f68dbc0033f3608f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acef1d168209583f2f68dbc0033f3608f">&#9670;&#160;</a></span>mem_reset_temp()</h2>
+<a id="afe8bf7ef5d73ced37f7ce5ee97b30a5e" name="afe8bf7ef5d73ced37f7ce5ee97b30a5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe8bf7ef5d73ced37f7ce5ee97b30a5e">&#9670;&#160;</a></span>mem_reset_temp()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void mem_reset_temp </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void mem_reset_temp </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -353,14 +354,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a65008a9a19c5da08c09f87d8aadabfa3" name="a65008a9a19c5da08c09f87d8aadabfa3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65008a9a19c5da08c09f87d8aadabfa3">&#9670;&#160;</a></span>mem_shutdown()</h2>
+<a id="a6c23e9dd7819cd03cab46e7c1c986d67" name="a6c23e9dd7819cd03cab46e7c1c986d67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c23e9dd7819cd03cab46e7c1c986d67">&#9670;&#160;</a></span>mem_shutdown()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void mem_shutdown </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void mem_shutdown </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -373,14 +374,14 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a24d7464ebba433f3b8a98dcccaa33c36" name="a24d7464ebba433f3b8a98dcccaa33c36"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24d7464ebba433f3b8a98dcccaa33c36">&#9670;&#160;</a></span>mem_strdup()</h2>
+<a id="a0d3bdf5414b336cfbad5f0ca687d5f02" name="a0d3bdf5414b336cfbad5f0ca687d5f02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d3bdf5414b336cfbad5f0ca687d5f02">&#9670;&#160;</a></span>mem_strdup()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char * mem_strdup </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> char * mem_strdup </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="memory_8h.html#abb527c229857fc4d384b91933dbc13b9">MemoryTag</a>&#160;</td>
           <td class="paramname"><em>tag</em>, </td>

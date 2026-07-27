@@ -99,6 +99,7 @@ $(document).ready(function(){initNavTree('player_8c.html',''); initResizable(); 
 <p><a class="el" href="structPlayer.html">Player</a> implementation.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="player_8h_source.html">player.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">core/config.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="door_8h_source.html">puzzles/door.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="key_8h_source.html">puzzles/key.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="input_8h_source.html">graphics/input.h</a>&quot;</code><br />
@@ -106,27 +107,27 @@ $(document).ready(function(){initNavTree('player_8c.html',''); initResizable(); 
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a204189692f22f1cbe1568f74d6a5d196"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8c.html#a204189692f22f1cbe1568f74d6a5d196">player_init</a> (<a class="el" href="structPlayer.html">Player</a> *player)</td></tr>
-<tr class="memdesc:a204189692f22f1cbe1568f74d6a5d196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the player with default values.  <br /></td></tr>
-<tr class="separator:a204189692f22f1cbe1568f74d6a5d196"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a039b7e2dd52d25430103c10cb2d25d44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8c.html#a039b7e2dd52d25430103c10cb2d25d44">player_update</a> (<a class="el" href="structPlayer.html">Player</a> *player, <a class="el" href="structMap.html">Map</a> *map, <a class="el" href="types_8h.html#a3e01dd59d72c4919aa21a46fa5299e23">i16</a> keys_pressed)</td></tr>
-<tr class="memdesc:a039b7e2dd52d25430103c10cb2d25d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the player's state, including movement and interactions.  <br /></td></tr>
-<tr class="separator:a039b7e2dd52d25430103c10cb2d25d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a513959949a7e5ad2de2aa13624122683"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8c.html#a513959949a7e5ad2de2aa13624122683">player_move</a> (<a class="el" href="structPlayer.html">Player</a> *player, <a class="el" href="structMap.html">Map</a> *map, <a class="el" href="types_8h.html#a3e01dd59d72c4919aa21a46fa5299e23">i16</a> keys)</td></tr>
-<tr class="memdesc:a513959949a7e5ad2de2aa13624122683"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the player based on the current key inputs.  <br /></td></tr>
-<tr class="separator:a513959949a7e5ad2de2aa13624122683"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5dd6b4c11fcc0ca1e933418f41a9522"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8c.html#ac5dd6b4c11fcc0ca1e933418f41a9522">player_init</a> (<a class="el" href="structPlayer.html">Player</a> *player)</td></tr>
+<tr class="memdesc:ac5dd6b4c11fcc0ca1e933418f41a9522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the player with default values.  <br /></td></tr>
+<tr class="separator:ac5dd6b4c11fcc0ca1e933418f41a9522"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65b776d1d3427e6562d6a2741f63d624"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8c.html#a65b776d1d3427e6562d6a2741f63d624">player_update</a> (<a class="el" href="structPlayer.html">Player</a> *player, <a class="el" href="structMap.html">Map</a> *map, <a class="el" href="types_8h.html#a3e01dd59d72c4919aa21a46fa5299e23">i16</a> keys_pressed)</td></tr>
+<tr class="memdesc:a65b776d1d3427e6562d6a2741f63d624"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the player's state, including movement and interactions.  <br /></td></tr>
+<tr class="separator:a65b776d1d3427e6562d6a2741f63d624"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78ead67d14c13903dc2d047a66731997"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="player_8c.html#a78ead67d14c13903dc2d047a66731997">player_move</a> (<a class="el" href="structPlayer.html">Player</a> *player, <a class="el" href="structMap.html">Map</a> *map, <a class="el" href="types_8h.html#a3e01dd59d72c4919aa21a46fa5299e23">i16</a> keys)</td></tr>
+<tr class="memdesc:a78ead67d14c13903dc2d047a66731997"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the player based on the current key inputs.  <br /></td></tr>
+<tr class="separator:a78ead67d14c13903dc2d047a66731997"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="structPlayer.html">Player</a> implementation. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a204189692f22f1cbe1568f74d6a5d196" name="a204189692f22f1cbe1568f74d6a5d196"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a204189692f22f1cbe1568f74d6a5d196">&#9670;&#160;</a></span>player_init()</h2>
+<a id="ac5dd6b4c11fcc0ca1e933418f41a9522" name="ac5dd6b4c11fcc0ca1e933418f41a9522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5dd6b4c11fcc0ca1e933418f41a9522">&#9670;&#160;</a></span>player_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void player_init </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void player_init </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPlayer.html">Player</a> *&#160;</td>
           <td class="paramname"><em>player</em></td><td>)</td>
@@ -145,14 +146,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a513959949a7e5ad2de2aa13624122683" name="a513959949a7e5ad2de2aa13624122683"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a513959949a7e5ad2de2aa13624122683">&#9670;&#160;</a></span>player_move()</h2>
+<a id="a78ead67d14c13903dc2d047a66731997" name="a78ead67d14c13903dc2d047a66731997"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78ead67d14c13903dc2d047a66731997">&#9670;&#160;</a></span>player_move()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void player_move </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void player_move </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPlayer.html">Player</a> *&#160;</td>
           <td class="paramname"><em>player</em>, </td>
@@ -187,14 +188,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a039b7e2dd52d25430103c10cb2d25d44" name="a039b7e2dd52d25430103c10cb2d25d44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a039b7e2dd52d25430103c10cb2d25d44">&#9670;&#160;</a></span>player_update()</h2>
+<a id="a65b776d1d3427e6562d6a2741f63d624" name="a65b776d1d3427e6562d6a2741f63d624"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65b776d1d3427e6562d6a2741f63d624">&#9670;&#160;</a></span>player_update()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void player_update </td>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void player_update </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structPlayer.html">Player</a> *&#160;</td>
           <td class="paramname"><em>player</em>, </td>
