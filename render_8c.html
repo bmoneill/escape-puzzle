@@ -104,7 +104,6 @@ $(document).ready(function(){initNavTree('render_8c.html',''); initResizable(); 
 <code>#include &quot;<a class="el" href="map_8h_source.html">game/map.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="player_8h_source.html">game/player.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="tile_8h_source.html">game/tile.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="lever_8h_source.html">puzzles/lever.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="puzzle_8h_source.html">puzzles/puzzle.h</a>&quot;</code><br />
 <code>#include &quot;raylib.h&quot;</code><br />
 </div><table class="memberdecls">
@@ -116,6 +115,30 @@ Macros</h2></td></tr>
 <tr class="separator:ae3611cd7caad34521610ef1f7c116772"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afeb4a92c5b5a0c797d4a247ea9b73b49"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#afeb4a92c5b5a0c797d4a247ea9b73b49">ANIM_FRAMES_PER_STEP</a>&#160;&#160;&#160;10</td></tr>
 <tr class="separator:afeb4a92c5b5a0c797d4a247ea9b73b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2af409ba1c137ce3496f584a5a00e2cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#a2af409ba1c137ce3496f584a5a00e2cb">SPRITE_COL_WALL</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a2af409ba1c137ce3496f584a5a00e2cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a973403517fd80ba4e961215896d75815"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#a973403517fd80ba4e961215896d75815">SPRITE_ROW_WALL</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a973403517fd80ba4e961215896d75815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fd107c0b250c50649c04d2d67347cc5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#a4fd107c0b250c50649c04d2d67347cc5">SPRITE_COL_FLOOR</a>&#160;&#160;&#160;4</td></tr>
+<tr class="separator:a4fd107c0b250c50649c04d2d67347cc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7486e8ba4c53cb44f28367f6894be43d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#a7486e8ba4c53cb44f28367f6894be43d">SPRITE_ROW_FLOOR</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a7486e8ba4c53cb44f28367f6894be43d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aced9b7061a05dac486d9e4fee60282df"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#aced9b7061a05dac486d9e4fee60282df">SPRITE_COL_KEY</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:aced9b7061a05dac486d9e4fee60282df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1216c80622b64cff6ad57077e39da999"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#a1216c80622b64cff6ad57077e39da999">SPRITE_ROW_KEY</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a1216c80622b64cff6ad57077e39da999"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3f967d7793235f6be74d4fab5a1e1f1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#ab3f967d7793235f6be74d4fab5a1e1f1">SPRITE_COL_LEVER_FLOOR</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:ab3f967d7793235f6be74d4fab5a1e1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78f01a11840f397ecea1cc21088f4e2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#a78f01a11840f397ecea1cc21088f4e2f">SPRITE_ROW_LEVER_FLOOR_ON</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a78f01a11840f397ecea1cc21088f4e2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a85d6fb18640b5af0539c67c189e1d17e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#a85d6fb18640b5af0539c67c189e1d17e">SPRITE_ROW_LEVER_FLOOR_OFF</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a85d6fb18640b5af0539c67c189e1d17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9be50e6bdd69e5fe4a04794c17ea0ac2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#a9be50e6bdd69e5fe4a04794c17ea0ac2">SPRITE_COL_LEVER_WALL</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a9be50e6bdd69e5fe4a04794c17ea0ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5475404e38be551fd9c15a8f7990b982"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#a5475404e38be551fd9c15a8f7990b982">SPRITE_ROW_LEVER_WALL_ON</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a5475404e38be551fd9c15a8f7990b982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbd866d84e1c465726dd42f690b5ea88"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="render_8c.html#afbd866d84e1c465726dd42f690b5ea88">SPRITE_ROW_LEVER_WALL_OFF</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:afbd866d84e1c465726dd42f690b5ea88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -137,6 +160,174 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define ANIM_FRAMES_PER_STEP&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4fd107c0b250c50649c04d2d67347cc5" name="a4fd107c0b250c50649c04d2d67347cc5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fd107c0b250c50649c04d2d67347cc5">&#9670;&#160;</a></span>SPRITE_COL_FLOOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPRITE_COL_FLOOR&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aced9b7061a05dac486d9e4fee60282df" name="aced9b7061a05dac486d9e4fee60282df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aced9b7061a05dac486d9e4fee60282df">&#9670;&#160;</a></span>SPRITE_COL_KEY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPRITE_COL_KEY&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab3f967d7793235f6be74d4fab5a1e1f1" name="ab3f967d7793235f6be74d4fab5a1e1f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3f967d7793235f6be74d4fab5a1e1f1">&#9670;&#160;</a></span>SPRITE_COL_LEVER_FLOOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPRITE_COL_LEVER_FLOOR&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9be50e6bdd69e5fe4a04794c17ea0ac2" name="a9be50e6bdd69e5fe4a04794c17ea0ac2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9be50e6bdd69e5fe4a04794c17ea0ac2">&#9670;&#160;</a></span>SPRITE_COL_LEVER_WALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPRITE_COL_LEVER_WALL&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2af409ba1c137ce3496f584a5a00e2cb" name="a2af409ba1c137ce3496f584a5a00e2cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2af409ba1c137ce3496f584a5a00e2cb">&#9670;&#160;</a></span>SPRITE_COL_WALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPRITE_COL_WALL&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7486e8ba4c53cb44f28367f6894be43d" name="a7486e8ba4c53cb44f28367f6894be43d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7486e8ba4c53cb44f28367f6894be43d">&#9670;&#160;</a></span>SPRITE_ROW_FLOOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPRITE_ROW_FLOOR&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1216c80622b64cff6ad57077e39da999" name="a1216c80622b64cff6ad57077e39da999"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1216c80622b64cff6ad57077e39da999">&#9670;&#160;</a></span>SPRITE_ROW_KEY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPRITE_ROW_KEY&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a85d6fb18640b5af0539c67c189e1d17e" name="a85d6fb18640b5af0539c67c189e1d17e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a85d6fb18640b5af0539c67c189e1d17e">&#9670;&#160;</a></span>SPRITE_ROW_LEVER_FLOOR_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPRITE_ROW_LEVER_FLOOR_OFF&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a78f01a11840f397ecea1cc21088f4e2f" name="a78f01a11840f397ecea1cc21088f4e2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78f01a11840f397ecea1cc21088f4e2f">&#9670;&#160;</a></span>SPRITE_ROW_LEVER_FLOOR_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPRITE_ROW_LEVER_FLOOR_ON&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afbd866d84e1c465726dd42f690b5ea88" name="afbd866d84e1c465726dd42f690b5ea88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbd866d84e1c465726dd42f690b5ea88">&#9670;&#160;</a></span>SPRITE_ROW_LEVER_WALL_OFF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPRITE_ROW_LEVER_WALL_OFF&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5475404e38be551fd9c15a8f7990b982" name="a5475404e38be551fd9c15a8f7990b982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5475404e38be551fd9c15a8f7990b982">&#9670;&#160;</a></span>SPRITE_ROW_LEVER_WALL_ON</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPRITE_ROW_LEVER_WALL_ON&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a973403517fd80ba4e961215896d75815" name="a973403517fd80ba4e961215896d75815"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a973403517fd80ba4e961215896d75815">&#9670;&#160;</a></span>SPRITE_ROW_WALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPRITE_ROW_WALL&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
