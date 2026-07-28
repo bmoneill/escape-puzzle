@@ -1,5 +1,5 @@
 <div align="center">
-    <h1><b>escape-puzzle</b>
+    <h1><b>Puzzle Realm</b>
     <h4>An escape puzzle game using raylib.</h4>
     <a href="https://github.com/bmoneill/escape-puzzle/actions/workflows/ci-linux.yml"><img src="https://github.com/bmoneill/escape-puzzle/actions/workflows/ci-linux.yml/badge.svg?branch=main" alt="Linux CI status" /></a>
     <a href="https://github.com/bmoneill/escape-puzzle/actions/workflows/ci-macos.yml"><img src="https://github.com/bmoneill/escape-puzzle/actions/workflows/ci-macos.yml/badge.svg?branch=main" alt="macOS CI status" /></a>
