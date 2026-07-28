@@ -27,6 +27,8 @@
  *   col 2, row 2 = lever, deactivated, sitting on a floor (wood backdrop baked in)
  *   col 3, row 1 = lever, activated,   sitting on a wall  (stone backdrop baked in)
  *   col 3, row 2 = lever, deactivated, sitting on a wall  (stone backdrop baked in)
+ *   col 4, row 1 = door, closed, set in a stone archway   (stone backdrop baked in)
+ *   col 5, row 0 = stairway leading down, set in a wooden archway
  */
 #define SPRITE_COL_WALL            2
 #define SPRITE_ROW_WALL            0
@@ -40,6 +42,10 @@
 #define SPRITE_COL_LEVER_WALL      3
 #define SPRITE_ROW_LEVER_WALL_ON   1
 #define SPRITE_ROW_LEVER_WALL_OFF  2
+#define SPRITE_COL_DOOR            4
+#define SPRITE_ROW_DOOR            1
+#define SPRITE_COL_STAIRWAY        5
+#define SPRITE_ROW_STAIRWAY        0
 
 static Texture2D spritesheet;
 
@@ -222,11 +228,11 @@ void render_frame(GameState* game) {
             }
 
             case TILE_TEXTURE_DOOR:
-                DrawRectangle(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, PURPLE);
+                draw_sprite_cell(SPRITE_COL_DOOR, SPRITE_ROW_DOOR, x, y);
                 break;
 
             case TILE_TEXTURE_EXIT:
-                DrawRectangle(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, ORANGE);
+                draw_sprite_cell(SPRITE_COL_STAIRWAY, SPRITE_ROW_STAIRWAY, x, y);
                 break;
 
             default:
