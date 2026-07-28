@@ -389,11 +389,7 @@ EMSCRIPTEN_KEEPALIVE static void generate_walls(Map* map) {
         // riddle door spawn
 
         if (locked_count == 1) {
-            if (random_u8_range(0, 1) == 0) {
-                riddle_door_spawn(map, corridors[corr_idx].x, corridors[corr_idx].y);
-            } else {
-                cipher_door_spawn(map, corridors[corr_idx].x, corridors[corr_idx].y);
-            }
+            riddle_door_spawn(map, corridors[corr_idx].x, corridors[corr_idx].y);
         } else {
             // Place a locked door at the corridor gap
             door_spawn(map, corridors[corr_idx].x, corridors[corr_idx].y);
@@ -437,8 +433,9 @@ EMSCRIPTEN_KEEPALIVE static void generate_puzzles(Map* map) {
     i32       failures    = 0;
 
     for (i32 i = 0; i < lever_count; i++) {
-        i32 x = 0, y = 0;
-        i32 tries = 0;
+        i32  x = 0, y = 0;
+        i32  tries = 0;
+        bool found = false;
 
         do {
             x = random_i32_range(1, map->width - 2);
@@ -450,11 +447,13 @@ EMSCRIPTEN_KEEPALIVE static void generate_puzzles(Map* map) {
                            || ((i32) map->playerStartPos.x == x && (i32) map->playerStartPos.y == y)
                            || tile_adjacent_to(map, x, y, TILE_DOOR);
 
-            if (!invalid)
+            if (!invalid) {
+                found = true;
                 break;
+            }
         } while (tries < 20);
 
-        if (tries >= 20) {
+        if (!found) {
             failures++;
             continue;
         }

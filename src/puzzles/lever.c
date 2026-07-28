@@ -36,11 +36,17 @@ EMSCRIPTEN_KEEPALIVE void lever_puzzle_update(void* self, PuzzleEvent* event) {
     if (state->order == g_expected_lever) {
 
         // FIX: logical activation state (this was missing before)
-        state->activated                                               = true;
+        state->activated  = true;
 
-        puzzle->completed                                              = true;
+        puzzle->completed = true;
 
-        gmap->tiles[puzzle->position.y][puzzle->position.x].texture_id = TILE_TEXTURE_LEVER_ON;
+        // Only floor levers switch their texture_id to the "on" sprite.
+        // Hidden (wall) levers keep TILE_TEXTURE_HIDDEN_LEVER; the renderer
+        // picks the on/off wall-lever sprite based on state->activated.
+        Tile* tile = &gmap->tiles[puzzle->position.y][puzzle->position.x];
+        if (tile->type != TILE_HIDDEN_LEVER) {
+            tile->texture_id = TILE_TEXTURE_LEVER_ON;
+        }
 
         g_expected_lever++;
 
@@ -64,7 +70,13 @@ EMSCRIPTEN_KEEPALIVE void lever_puzzle_update(void* self, PuzzleEvent* event) {
                 p->completed = false;
 
                 // NOTE: this resets visuals, but NOT state->activated (intentional? depends on design)
-                gmap->tiles[p->position.y][p->position.x].texture_id = TILE_TEXTURE_LEVER_OFF;
+                // Only floor levers use TILE_TEXTURE_LEVER_OFF; hidden (wall)
+                // levers keep TILE_TEXTURE_HIDDEN_LEVER and are rendered
+                // based on their LeverState->activated flag instead.
+                Tile* t = &gmap->tiles[p->position.y][p->position.x];
+                if (t->type != TILE_HIDDEN_LEVER) {
+                    t->texture_id = TILE_TEXTURE_LEVER_OFF;
+                }
             }
         }
     }

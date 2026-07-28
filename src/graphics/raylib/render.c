@@ -234,8 +234,6 @@ void render_frame(GameState* game) {
                 break;
             }
 
-            DrawRectangleLines(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, GRAY);
-
             draw_lever_number(game, x, y);
 
             DrawText(TextFormat("Keys: %d", game->player.keys), 10, 10, 20, WHITE);
