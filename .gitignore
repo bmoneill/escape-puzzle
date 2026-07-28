@@ -2,6 +2,7 @@
 build*
 vgcore*
 gmon.out
+.cache
 
 # Docs output
 docs/html
