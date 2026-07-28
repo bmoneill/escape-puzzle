@@ -22,17 +22,17 @@ typedef enum {
     (vec2u) { .x = (i32) ((player)->x / TILE_SIZE), .y = (i32) ((player)->y / TILE_SIZE) }
 
 typedef struct {
-    f64 x; //!< Player's x-coordinate.
-    f64 y; //!< Player's y-coordinate.
+    f64             x; //!< Player's x-coordinate.
+    f64             y; //!< Player's y-coordinate.
 
-    f64 move_speed; //!< Player's movement speed in pixels per frame.
+    f64             move_speed; //!< Player's movement speed in pixels per frame.
 
-    u16 width; //!< Player's width in pixels.
-    u16 height; //!< Player's height in pixels.
+    u16             width; //!< Player's width in pixels.
+    u16             height; //!< Player's height in pixels.
 
-    i32 keys; // inventory
+    i32             keys; // inventory
 
-    PlayerDirection facing;   //!< Direction the player is currently facing.
+    PlayerDirection facing; //!< Direction the player is currently facing.
     bool            is_moving; //!< Whether the player moved this frame.
     u32             anim_tick; //!< Increments each frame while moving; resets on stop.
 } Player;

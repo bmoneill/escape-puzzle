@@ -11,9 +11,9 @@
 #include <stdio.h>
 #include <string.h>
 
-Locale* glocale = NULL;
+Locale*                   glocale = NULL;
 
-EMSCRIPTEN_KEEPALIVE void    locale_init(const char* locale_path) {
+EMSCRIPTEN_KEEPALIVE void locale_init(const char* locale_path) {
     bool path_alloced = false;
     if (!locale_path) {
         path_alloced = true;

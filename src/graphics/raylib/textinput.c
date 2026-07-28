@@ -45,8 +45,8 @@
 #define WRAP_FUDGE  2 /* extra logical lines budgeted for word-wrapping */
 
 #define FLASH_PANEL_W  300 /* width of the "Incorrect!" flash panel         */
-#define FLASH_PANEL_H   80 /* height of the "Incorrect!" flash panel        */
-#define FONT_FLASH      28 /* font size for the flash message               */
+#define FLASH_PANEL_H  80 /* height of the "Incorrect!" flash panel        */
+#define FONT_FLASH     28 /* font size for the flash message               */
 #define FLASH_DURATION 1.2f /* seconds the flash panel stays visible        */
 
 /* -------------------------------------------------------------------------
@@ -105,9 +105,9 @@ void textinput_show(
     i32 body_lines     = body ? count_lines(body) : 0;
     i32 feedback_lines = feedback ? 1 : 0;
 
-    i32 panel_h = PAD + prompt_lines * (FONT_PROMPT + LINE_GAP) + (body_lines > 0 ? PAD / 2 : 0)
-                  + body_lines * (FONT_BODY + LINE_GAP) + PAD / 2 + INPUT_H
-                  + feedback_lines * (FONT_PROMPT + LINE_GAP + 8) + PAD;
+    i32 panel_h   = PAD + prompt_lines * (FONT_PROMPT + LINE_GAP) + (body_lines > 0 ? PAD / 2 : 0)
+                    + body_lines * (FONT_BODY + LINE_GAP) + PAD / 2 + INPUT_H
+                    + feedback_lines * (FONT_PROMPT + LINE_GAP + 8) + PAD;
 
     i32 screen_w  = GetScreenWidth();
     i32 screen_h  = GetScreenHeight();
@@ -152,7 +152,7 @@ void textinput_show(
         /* --- Render ------------------------------------------------------- */
 
         BeginDrawing();
-        ClearBackground((Color) { 20, 20, 20, 255 });
+        ClearBackground((Color){ 20, 20, 20, 255 });
 
         /* Panel background */
         DrawRectangle(panel_x, panel_y, PANEL_W, panel_h, WHITE);
