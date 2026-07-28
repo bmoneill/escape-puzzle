@@ -8,13 +8,38 @@
 #include "game/map.h"
 #include "game/player.h"
 #include "game/tile.h"
-#include "puzzles/lever.h"
 #include "puzzles/puzzle.h"
 #include "raylib.h"
 
 #define TILE_SIZE            32
 #define SPRITE_SIZE          48
 #define ANIM_FRAMES_PER_STEP 10
+
+/*
+ * Static-world sprite locations within the spritesheet (col, row of
+ * SPRITE_SIZE x SPRITE_SIZE cells). See draw_player()'s comment for the
+ * player animation cells.
+ *
+ *   col 2, row 0 = wall stone tile
+ *   col 4, row 0 = floor wood tile
+ *   col 3, row 0 = key (drawn on top of the floor texture, has transparency)
+ *   col 2, row 1 = lever, activated,   sitting on a floor (wood backdrop baked in)
+ *   col 2, row 2 = lever, deactivated, sitting on a floor (wood backdrop baked in)
+ *   col 3, row 1 = lever, activated,   sitting on a wall  (stone backdrop baked in)
+ *   col 3, row 2 = lever, deactivated, sitting on a wall  (stone backdrop baked in)
+ */
+#define SPRITE_COL_WALL            2
+#define SPRITE_ROW_WALL            0
+#define SPRITE_COL_FLOOR           4
+#define SPRITE_ROW_FLOOR           0
+#define SPRITE_COL_KEY             3
+#define SPRITE_ROW_KEY             0
+#define SPRITE_COL_LEVER_FLOOR     2
+#define SPRITE_ROW_LEVER_FLOOR_ON  1
+#define SPRITE_ROW_LEVER_FLOOR_OFF 2
+#define SPRITE_COL_LEVER_WALL      3
+#define SPRITE_ROW_LEVER_WALL_ON   1
+#define SPRITE_ROW_LEVER_WALL_OFF  2
 
 static Texture2D spritesheet;
 
@@ -24,6 +49,30 @@ void             render_init(void) {
     spritesheet = LoadTexture("assets/spritesheet.png");
 }
 
+/**
+ * @brief Draws a single SPRITE_SIZE x SPRITE_SIZE cell of the spritesheet,
+ * scaled to fill a TILE_SIZE x TILE_SIZE destination square on-screen.
+ */
+static void draw_sprite_cell(int col, int row, int x, int y) {
+    Rectangle src
+        = { (float) (col * SPRITE_SIZE), (float) (row * SPRITE_SIZE), SPRITE_SIZE, SPRITE_SIZE };
+    Rectangle dst = { (float) (x * TILE_SIZE), (float) (y * TILE_SIZE), TILE_SIZE, TILE_SIZE };
+    DrawTexturePro(spritesheet, src, dst, (Vector2){ 0, 0 }, 0.0f, WHITE);
+}
+
+/**
+ * @brief Finds the puzzle registered at the given tile coordinates, if any.
+ */
+static Puzzle* find_puzzle_at(GameState* game, int x, int y) {
+    for (int i = 0; i < game->map.num_puzzles; i++) {
+        Puzzle* p = &game->map.puzzles[i];
+        if (p->position.x == (unsigned int) x && p->position.y == (unsigned int) y) {
+            return p;
+        }
+    }
+    return NULL;
+}
+
 static void draw_lever_number(GameState* game, int x, int y) {
     Tile* tile = &game->map.tiles[y][x];
 
@@ -31,22 +80,17 @@ static void draw_lever_number(GameState* game, int x, int y) {
         return;
     }
 
-    // find matching puzzle
-    for (int i = 0; i < game->map.num_puzzles; i++) {
+    Puzzle* p = find_puzzle_at(game, x, y);
 
-        Puzzle* p = &game->map.puzzles[i];
+    if (p) {
+        LeverState* state = (LeverState*) p->state;
 
-        if (p->position.x == (unsigned int) x && p->position.y == (unsigned int) y) {
-
-            LeverState* state = (LeverState*) p->state;
-
-            if (state) {
-                DrawText(TextFormat("%d", state->order),
-                         x * TILE_SIZE + 10,
-                         y * TILE_SIZE + 8,
-                         20,
-                         WHITE);
-            }
+        if (state) {
+            DrawText(TextFormat("%d", state->order),
+                     x * TILE_SIZE + 10,
+                     y * TILE_SIZE + 8,
+                     20,
+                     WHITE);
         }
     }
 }
@@ -131,33 +175,63 @@ void render_frame(GameState* game) {
      */
     for (int y = 0; y < game->map.height; y++) {
         for (int x = 0; x < game->map.width; x++) {
-            Tile* tile      = &game->map.tiles[y][x];
+            Tile* tile = &game->map.tiles[y][x];
 
-            Color tileColor = DARKGRAY;
+            switch (tile->texture_id) {
+            case TILE_TEXTURE_FLOOR:
+                draw_sprite_cell(SPRITE_COL_FLOOR, SPRITE_ROW_FLOOR, x, y);
+                break;
 
-            if (tile->texture_id == TILE_TEXTURE_WALL) {
-                tileColor = BLACK;
-            } else if (tile->texture_id == TILE_TEXTURE_LEVER_OFF) {
-                tileColor = RED;
-            } else if (tile->texture_id == TILE_TEXTURE_LEVER_ON) {
-                tileColor = GREEN;
-            } else if (tile->texture_id == TILE_TEXTURE_DOOR) {
-                tileColor = PURPLE;
-            } else if (tile->texture_id == TILE_TEXTURE_KEY) {
-                tileColor = YELLOW;
-            } else if (tile->texture_id == TILE_TEXTURE_EXIT) {
-                tileColor = ORANGE;
-            } else if (tile->texture_id == TILE_TEXTURE_HIDDEN_LEVER) {
-                tileColor = WHITE; // temporary
+            case TILE_TEXTURE_WALL:
+                draw_sprite_cell(SPRITE_COL_WALL, SPRITE_ROW_WALL, x, y);
+                break;
+
+            case TILE_TEXTURE_KEY:
+                // The key sprite has transparent parts, so draw the floor
+                // underneath it first.
+                draw_sprite_cell(SPRITE_COL_FLOOR, SPRITE_ROW_FLOOR, x, y);
+                draw_sprite_cell(SPRITE_COL_KEY, SPRITE_ROW_KEY, x, y);
+                break;
+
+            case TILE_TEXTURE_LEVER_ON:
+                // Regular (non-hidden) levers sit on a floor tile, and their
+                // sprite already includes the wood floor backdrop.
+                draw_sprite_cell(SPRITE_COL_LEVER_FLOOR, SPRITE_ROW_LEVER_FLOOR_ON, x, y);
+                break;
+
+            case TILE_TEXTURE_LEVER_OFF:
+                draw_sprite_cell(SPRITE_COL_LEVER_FLOOR, SPRITE_ROW_LEVER_FLOOR_OFF, x, y);
+                break;
+
+            case TILE_TEXTURE_HIDDEN_LEVER: {
+                // Hidden levers are embedded in a wall tile, and their sprite
+                // already includes the stone wall backdrop, so it can be
+                // drawn directly. Pick on/off based on the puzzle's state.
+                bool    activated = false;
+                Puzzle* p         = find_puzzle_at(game, x, y);
+
+                if (p) {
+                    LeverState* state = (LeverState*) p->state;
+                    if (state)
+                        activated = state->activated;
+                }
+
+                int row = activated ? SPRITE_ROW_LEVER_WALL_ON : SPRITE_ROW_LEVER_WALL_OFF;
+                draw_sprite_cell(SPRITE_COL_LEVER_WALL, row, x, y);
+                break;
             }
 
-            if (tile->texture_id == TILE_TEXTURE_FLOOR) {
-                // Floor texture lives at col 2, row 0 of the spritesheet
-                Rectangle src = { 2 * SPRITE_SIZE, 0, SPRITE_SIZE, SPRITE_SIZE };
-                Rectangle dst = { x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE };
-                DrawTexturePro(spritesheet, src, dst, (Vector2){ 0, 0 }, 0.0f, WHITE);
-            } else {
-                DrawRectangle(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, tileColor);
+            case TILE_TEXTURE_DOOR:
+                DrawRectangle(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, PURPLE);
+                break;
+
+            case TILE_TEXTURE_EXIT:
+                DrawRectangle(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, ORANGE);
+                break;
+
+            default:
+                DrawRectangle(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, DARKGRAY);
+                break;
             }
 
             DrawRectangleLines(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, GRAY);

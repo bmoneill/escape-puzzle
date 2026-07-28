@@ -1,0 +1,2 @@
+- Remove border lines
+- Wall lever on converts to floor tile
