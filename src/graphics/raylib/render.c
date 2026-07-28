@@ -8,8 +8,8 @@
 #include "game/map.h"
 #include "game/player.h"
 #include "game/tile.h"
-#include "puzzles/puzzle.h"
 #include "puzzles/lever.h"
+#include "puzzles/puzzle.h"
 #include "raylib.h"
 
 #define TILE_SIZE            32
@@ -18,8 +18,8 @@
 
 static Texture2D spritesheet;
 
-void render_init(void) {
-    InitWindow(800, 600, "Escape Puzzle");
+void             render_init(void) {
+    InitWindow(800, 600, "Puzzle Realm");
     SetTargetFPS(60);
     spritesheet = LoadTexture("assets/spritesheet.png");
 }
@@ -27,8 +27,7 @@ void render_init(void) {
 static void draw_lever_number(GameState* game, int x, int y) {
     Tile* tile = &game->map.tiles[y][x];
 
-    if (tile->texture_id != TILE_TEXTURE_LEVER_OFF &&
-        tile->texture_id != TILE_TEXTURE_LEVER_ON) {
+    if (tile->texture_id != TILE_TEXTURE_LEVER_OFF && tile->texture_id != TILE_TEXTURE_LEVER_ON) {
         return;
     }
 
@@ -37,18 +36,16 @@ static void draw_lever_number(GameState* game, int x, int y) {
 
         Puzzle* p = &game->map.puzzles[i];
 
-        if (p->position.x == (unsigned int)x && p->position.y == (unsigned int)y) {
+        if (p->position.x == (unsigned int) x && p->position.y == (unsigned int) y) {
 
-            LeverState* state = (LeverState*)p->state;
+            LeverState* state = (LeverState*) p->state;
 
             if (state) {
-                DrawText(
-                    TextFormat("%d", state->order),
-                    x * TILE_SIZE + 10,
-                    y * TILE_SIZE + 8,
-                    20,
-                    WHITE
-                );
+                DrawText(TextFormat("%d", state->order),
+                         x * TILE_SIZE + 10,
+                         y * TILE_SIZE + 8,
+                         20,
+                         WHITE);
             }
         }
     }
@@ -75,17 +72,26 @@ static void draw_player(const Player* player) {
     bool flip_x = false;
 
     switch (player->facing) {
-        case PLAYER_DIR_DOWN:  row = 0;                  break;
-        case PLAYER_DIR_UP:    row = 1;                  break;
-        case PLAYER_DIR_LEFT:  row = 2;                  break;
-        case PLAYER_DIR_RIGHT: row = 2; flip_x = true;  break;
+    case PLAYER_DIR_DOWN:
+        row = 0;
+        break;
+    case PLAYER_DIR_UP:
+        row = 1;
+        break;
+    case PLAYER_DIR_LEFT:
+        row = 2;
+        break;
+    case PLAYER_DIR_RIGHT:
+        row    = 2;
+        flip_x = true;
+        break;
     }
 
     if (player->is_moving) {
         if (player->facing == PLAYER_DIR_UP || player->facing == PLAYER_DIR_DOWN) {
             // 4-phase cycle: still(0) -> walk(1) -> still(2) -> walk-flipped(3)
             u32 phase = (player->anim_tick / ANIM_FRAMES_PER_STEP) % 4;
-            col = (phase == 1 || phase == 3) ? 1 : 0;
+            col       = (phase == 1 || phase == 3) ? 1 : 0;
             if (phase == 3)
                 flip_x = !flip_x;
         } else {
@@ -98,10 +104,10 @@ static void draw_player(const Player* player) {
     // For a horizontal flip, raylib uses a negative source width with x at the
     // right edge of the cell.
     Rectangle src = {
-        .x      = (float)(col * SPRITE_SIZE),
-        .y      = (float)(row * SPRITE_SIZE),
-        .width  = flip_x ? -(float)SPRITE_SIZE : (float)SPRITE_SIZE,
-        .height = (float)SPRITE_SIZE,
+        .x      = (float) (col * SPRITE_SIZE),
+        .y      = (float) (row * SPRITE_SIZE),
+        .width  = flip_x ? -(float) SPRITE_SIZE : (float) SPRITE_SIZE,
+        .height = (float) SPRITE_SIZE,
     };
 
     // Centre the sprite over the player's collision box
@@ -135,9 +141,9 @@ void render_frame(GameState* game) {
                 tileColor = RED;
             } else if (tile->texture_id == TILE_TEXTURE_LEVER_ON) {
                 tileColor = GREEN;
-            } else if  (tile->texture_id == TILE_TEXTURE_DOOR) {
+            } else if (tile->texture_id == TILE_TEXTURE_DOOR) {
                 tileColor = PURPLE;
-            } else if  (tile->texture_id == TILE_TEXTURE_KEY) {
+            } else if (tile->texture_id == TILE_TEXTURE_KEY) {
                 tileColor = YELLOW;
             } else if (tile->texture_id == TILE_TEXTURE_EXIT) {
                 tileColor = ORANGE;
@@ -156,9 +162,9 @@ void render_frame(GameState* game) {
 
             DrawRectangleLines(x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE, GRAY);
 
-             draw_lever_number(game, x, y);
+            draw_lever_number(game, x, y);
 
-            DrawText(TextFormat ("Keys: %d", game->player.keys), 10, 10, 20, WHITE);
+            DrawText(TextFormat("Keys: %d", game->player.keys), 10, 10, 20, WHITE);
         }
     }
 
