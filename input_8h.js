@@ -7,5 +7,7 @@ var input_8h =
     [ "GAME_KEY_LEFT", "input_8h.html#a83f136de18c2c9d2de30f396f50b2ac5", null ],
     [ "GAME_KEY_RIGHT", "input_8h.html#ac10f7aa4f3dd7d09bbe5da80f8b05da1", null ],
     [ "GAME_KEY_UP", "input_8h.html#aa4967346a2851749d235a9c911a92a39", null ],
-    [ "get_keys_pressed", "input_8h.html#aaf78a7c56ce068b9c892152540f09113", null ]
+    [ "get_keys_pressed", "input_8h.html#aaf78a7c56ce068b9c892152540f09113", null ],
+    [ "touch_input_get_keys", "input_8h.html#a8223715eb4d523d6419aee1d4f444afb", null ],
+    [ "touch_input_set_key", "input_8h.html#a74c7caf7ae82cd1ab8ac08ab6b4fac0a", null ]
 ];

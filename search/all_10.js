@@ -22,7 +22,7 @@ var searchData=
   ['tile_5fkey_19',['TILE_KEY',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a421c27efc7cfedce8cdc3b95f813717d',1,'tile.h']]],
   ['tile_5flever_20',['TILE_LEVER',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1ae13fe0f1294ff3a5df8dac7bbec79655',1,'tile.h']]],
   ['tile_5friddle_5fdoor_21',['TILE_RIDDLE_DOOR',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1a81bdb803e168f8196b1c374dfb8c6d5d',1,'tile.h']]],
-  ['tile_5fsize_22',['TILE_SIZE',['../render_8c.html#a62ecd70800687eb2d625af180c4210d7',1,'TILE_SIZE():&#160;render.c'],['../tile_8h.html#a62ecd70800687eb2d625af180c4210d7',1,'TILE_SIZE():&#160;tile.h']]],
+  ['tile_5fsize_22',['TILE_SIZE',['../tile_8h.html#a62ecd70800687eb2d625af180c4210d7',1,'TILE_SIZE():&#160;tile.h'],['../render_8c.html#a62ecd70800687eb2d625af180c4210d7',1,'TILE_SIZE():&#160;render.c']]],
   ['tile_5ftexture_5fdoor_23',['TILE_TEXTURE_DOOR',['../tile_8h.html#abc26137979d4816fca454c8249dc5076a9d6c0b179f96cf3000a64c8709d6bd01',1,'tile.h']]],
   ['tile_5ftexture_5fexit_24',['TILE_TEXTURE_EXIT',['../tile_8h.html#abc26137979d4816fca454c8249dc5076aa825d016772a2d1425edbf6648027639',1,'tile.h']]],
   ['tile_5ftexture_5ffloor_25',['TILE_TEXTURE_FLOOR',['../tile_8h.html#abc26137979d4816fca454c8249dc5076aef579e7b3f5a4c1d9990a40c7270ba0d',1,'tile.h']]],
@@ -36,6 +36,8 @@ var searchData=
   ['tiletextureid_33',['TileTextureID',['../tile_8h.html#abc26137979d4816fca454c8249dc5076',1,'tile.h']]],
   ['tiletype_34',['TileType',['../tile_8h.html#ac9e486ec80ccfdb28a4f4837d419c9f1',1,'tile.h']]],
   ['tombstones_35',['tombstones',['../structHashTable.html#a7fbdec2f98050eb26811d65b84795e43',1,'HashTable']]],
-  ['type_36',['type',['../structPuzzle.html#ae56f1406501e96e75184243e721dda7b',1,'Puzzle::type()'],['../structPuzzleEvent.html#a65f4698f812653d4ac4c4c32f9db0df0',1,'PuzzleEvent::type()'],['../structTile.html#a97d14167d3a1ce734215dba8b98ea9f9',1,'Tile::type()']]],
-  ['types_2eh_37',['types.h',['../types_8h.html',1,'']]]
+  ['touch_5finput_5fget_5fkeys_36',['touch_input_get_keys',['../input_8c.html#a8223715eb4d523d6419aee1d4f444afb',1,'touch_input_get_keys(void):&#160;input.c'],['../input_8h.html#a8223715eb4d523d6419aee1d4f444afb',1,'touch_input_get_keys(void):&#160;input.c']]],
+  ['touch_5finput_5fset_5fkey_37',['touch_input_set_key',['../input_8c.html#aa73d0364a6c2fdbb3ff99bfe579c02a5',1,'touch_input_set_key(int key_mask, int is_down):&#160;input.c'],['../input_8h.html#a74c7caf7ae82cd1ab8ac08ab6b4fac0a',1,'touch_input_set_key(int key_mask, int is_down):&#160;input.c']]],
+  ['type_38',['type',['../structPuzzle.html#ae56f1406501e96e75184243e721dda7b',1,'Puzzle::type()'],['../structPuzzleEvent.html#a65f4698f812653d4ac4c4c32f9db0df0',1,'PuzzleEvent::type()'],['../structTile.html#a97d14167d3a1ce734215dba8b98ea9f9',1,'Tile::type()']]],
+  ['types_2eh_39',['types.h',['../types_8h.html',1,'']]]
 ];

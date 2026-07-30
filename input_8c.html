@@ -99,10 +99,17 @@ $(document).ready(function(){initNavTree('input_8c.html',''); initResizable(); }
 <p>Raylib implementation of input handling.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="input_8h_source.html">graphics/input.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="config_8h_source.html">core/config.h</a>&quot;</code><br />
 <code>#include &quot;raylib.h&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:aa73d0364a6c2fdbb3ff99bfe579c02a5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8c.html#aa73d0364a6c2fdbb3ff99bfe579c02a5">touch_input_set_key</a> (int key_mask, int is_down)</td></tr>
+<tr class="memdesc:aa73d0364a6c2fdbb3ff99bfe579c02a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets or clears a virtual key state driven by on-screen touch controls (used by the web build's mobile UI).  <br /></td></tr>
+<tr class="separator:aa73d0364a6c2fdbb3ff99bfe579c02a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8223715eb4d523d6419aee1d4f444afb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a2b19d553290a8d4a083d3c03280ea800">u16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8c.html#a8223715eb4d523d6419aee1d4f444afb">touch_input_get_keys</a> (void)</td></tr>
+<tr class="memdesc:a8223715eb4d523d6419aee1d4f444afb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the current bitfield of GAME_KEY_* values held down via on-screen touch controls.  <br /></td></tr>
+<tr class="separator:a8223715eb4d523d6419aee1d4f444afb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf78a7c56ce068b9c892152540f09113"><td class="memItemLeft" align="right" valign="top"><a class="el" href="types_8h.html#a2b19d553290a8d4a083d3c03280ea800">u16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="input_8c.html#aaf78a7c56ce068b9c892152540f09113">get_keys_pressed</a> (void)</td></tr>
 <tr class="memdesc:aaf78a7c56ce068b9c892152540f09113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current state of key presses as a bitfield, where each bit corresponds to a specific key defined by the GAME_KEY_* constants.  <br /></td></tr>
 <tr class="separator:aaf78a7c56ce068b9c892152540f09113"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,6 +135,66 @@ Functions</h2></td></tr>
 
 <p>Retrieves the current state of key presses as a bitfield, where each bit corresponds to a specific key defined by the GAME_KEY_* constants. </p>
 <dl class="section return"><dt>Returns</dt><dd>A 16-bit unsigned integer representing the current key states, with bits set accordingly. </dd></dl>
+
+</div>
+</div>
+<a id="a8223715eb4d523d6419aee1d4f444afb" name="a8223715eb4d523d6419aee1d4f444afb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8223715eb4d523d6419aee1d4f444afb">&#9670;&#160;</a></span>touch_input_get_keys()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="types_8h.html#a2b19d553290a8d4a083d3c03280ea800">u16</a> touch_input_get_keys </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the current bitfield of GAME_KEY_* values held down via on-screen touch controls. </p>
+<p>Unlike <a class="el" href="input_8h.html#aaf78a7c56ce068b9c892152540f09113" title="Retrieves the current state of key presses as a bitfield, where each bit corresponds to a specific ke...">get_keys_pressed()</a>, this reports only the touch button state (no keyboard), so callers outside the main gameplay loop (e.g. menu navigation) can apply their own edge-detection semantics on top of it.</p>
+<dl class="section return"><dt>Returns</dt><dd>A bitfield of GAME_KEY_* values currently held down via <a class="el" href="input_8h.html#a74c7caf7ae82cd1ab8ac08ab6b4fac0a" title="Sets or clears a virtual key state driven by on-screen touch controls (used by the web build&#39;s mobile...">touch_input_set_key()</a>. </dd></dl>
+
+</div>
+</div>
+<a id="aa73d0364a6c2fdbb3ff99bfe579c02a5" name="aa73d0364a6c2fdbb3ff99bfe579c02a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa73d0364a6c2fdbb3ff99bfe579c02a5">&#9670;&#160;</a></span>touch_input_set_key()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="config_8h.html#accd20b3e3d5a4dd1228fb0d35d686df5">EMSCRIPTEN_KEEPALIVE</a> void touch_input_set_key </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>key_mask</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>is_down</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets or clears a virtual key state driven by on-screen touch controls (used by the web build's mobile UI). </p>
+<p>The result is merged into <a class="el" href="input_8h.html#aaf78a7c56ce068b9c892152540f09113" title="Retrieves the current state of key presses as a bitfield, where each bit corresponds to a specific ke...">get_keys_pressed()</a> every frame, alongside physical keyboard input. Intended to be called from JavaScript (via the exported symbol) when a touch control button is pressed or released.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key_mask</td><td>One of the GAME_KEY_* bit values. </td></tr>
+    <tr><td class="paramname">is_down</td><td>Non-zero if the virtual button is currently pressed, zero if released. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
