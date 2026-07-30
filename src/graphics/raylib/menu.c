@@ -6,6 +6,7 @@
 
 #include "core/config.h"
 #include "core/memory.h"
+#include "graphics/input.h"
 
 #include "raylib.h"
 
@@ -82,13 +83,21 @@ void        menu_init(MenuItem* items, i32 num_items) {
 }
 
 static bool menu_update(MenuItem* items, i32 num_items, i32* selected_item) {
-    if (IsKeyPressed(KEY_UP)) {
+    // On-screen touch controls (web/mobile builds) reuse the same up/down/interact
+    // buttons as gameplay. touch_input_get_keys() reports held state, so edge
+    // detection is done here to match IsKeyPressed()'s press-once semantics.
+    static u16 last_touch_keys = 0;
+    u16        touch_keys      = touch_input_get_keys();
+    u16        touch_pressed   = touch_keys & ~last_touch_keys;
+    last_touch_keys            = touch_keys;
+
+    if (IsKeyPressed(KEY_UP) || (touch_pressed & GAME_KEY_UP)) {
         *selected_item = (*selected_item - 1 + num_items) % num_items;
     }
-    if (IsKeyPressed(KEY_DOWN)) {
+    if (IsKeyPressed(KEY_DOWN) || (touch_pressed & GAME_KEY_DOWN)) {
         *selected_item = (*selected_item + 1) % num_items;
     }
-    if (IsKeyPressed(KEY_ENTER)) {
+    if (IsKeyPressed(KEY_ENTER) || (touch_pressed & GAME_KEY_INTERACT)) {
         GameState* game_state = MEM_PERM(sizeof(GameState));
         items[*selected_item].action(game_state);
         return false;

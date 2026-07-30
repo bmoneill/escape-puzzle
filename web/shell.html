@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="EN-us">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>Escape Puzzle</title>
+
+        <meta name="title" content="Escape Puzzle" />
+        <meta
+            name="description"
+            content="Escape Puzzle - a raylib powered escape-room puzzle game"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+        />
+
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="https://www.raylib.com/favicon.ico" />
+
+        <style>
+            html,
+            body {
+                margin: 0px;
+                overflow: hidden;
+                background-color: black;
+                height: 100%;
+            }
+            canvas.emscripten {
+                border: 0px none;
+                background-color: black;
+            }
+
+            /*
+         * On-screen touch controls, shown only on devices detected as mobile
+         * (see the isMobileDevice() check below). Button presses are forwarded
+         * to the C game via the exported touch_input_set_key() function
+         * (src/graphics/raylib/input.c), using the same GAME_KEY_* bitmask
+         * defined in src/graphics/input.h.
+         */
+            .touch-controls {
+                display: none;
+                position: fixed;
+                inset: 0;
+                z-index: 10;
+                pointer-events: none;
+                font-family: sans-serif;
+                -webkit-user-select: none;
+                user-select: none;
+                touch-action: none;
+            }
+            body.mobile-controls .touch-controls {
+                display: block;
+            }
+
+            .touch-btn {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                pointer-events: auto;
+                color: white;
+                background: rgba(255, 255, 255, 0.15);
+                border: 2px solid rgba(255, 255, 255, 0.4);
+                border-radius: 12px;
+                -webkit-tap-highlight-color: transparent;
+            }
+            .touch-btn.active {
+                background: rgba(255, 255, 255, 0.45);
+            }
+
+            .touch-dpad {
+                position: absolute;
+                left: 24px;
+                bottom: 24px;
+                width: 168px;
+                height: 168px;
+            }
+            .touch-dpad .touch-btn {
+                width: 56px;
+                height: 56px;
+                font-size: 22px;
+            }
+            .touch-dpad .up {
+                left: 56px;
+                top: 0px;
+            }
+            .touch-dpad .down {
+                left: 56px;
+                top: 112px;
+            }
+            .touch-dpad .left {
+                left: 0px;
+                top: 56px;
+            }
+            .touch-dpad .right {
+                left: 112px;
+                top: 56px;
+            }
+
+            .touch-interact {
+                width: 84px;
+                height: 84px;
+                right: 32px;
+                bottom: 40px;
+                font-size: 18px;
+                font-weight: bold;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas
+            class="emscripten"
+            id="canvas"
+            oncontextmenu="event.preventDefault()"
+            tabindex="-1"
+        ></canvas>
+
+        <div class="touch-controls" id="touch-controls">
+            <div class="touch-dpad">
+                <div class="touch-btn up" id="touch-up" data-key="2">
+                    &#9650;
+                </div>
+                <div class="touch-btn down" id="touch-down" data-key="1">
+                    &#9660;
+                </div>
+                <div class="touch-btn left" id="touch-left" data-key="4">
+                    &#9664;
+                </div>
+                <div class="touch-btn right" id="touch-right" data-key="8">
+                    &#9654;
+                </div>
+            </div>
+            <div
+                class="touch-btn touch-interact"
+                id="touch-interact"
+                data-key="32"
+            >
+                E
+            </div>
+        </div>
+
+        <p id="output" />
+        <script>
+            var Module = {
+                print: (function () {
+                    var element = document.getElementById("output");
+                    if (element) element.value = ""; // clear browser cache
+                    return function (text) {
+                        if (arguments.length > 1)
+                            text = Array.prototype.slice
+                                .call(arguments)
+                                .join(" ");
+                        console.log(text);
+                        if (element) {
+                            element.value += text + "\n";
+                            element.scrollTop = element.scrollHeight; // focus on bottom
+                        }
+                    };
+                })(),
+                canvas: (function () {
+                    var canvas = document.getElementById("canvas");
+                    return canvas;
+                })(),
+            };
+
+            // Detect mobile/touch devices so the on-screen movement and
+            // interact buttons are only shown to players who actually need
+            // them (desktop/keyboard players keep the plain canvas).
+            function isMobileDevice() {
+                var ua = navigator.userAgent || navigator.vendor || "";
+                var uaLooksMobile =
+                    /Android|iPhone|iPad|iPod|IEMobile|BlackBerry|Opera Mini|Mobile/i.test(
+                        ua,
+                    );
+                var touchCapable =
+                    "ontouchstart" in window || navigator.maxTouchPoints > 0;
+                var coarsePointer =
+                    window.matchMedia &&
+                    window.matchMedia("(pointer: coarse)").matches;
+
+                return uaLooksMobile || (touchCapable && coarsePointer);
+            }
+
+            // Wires a touch/mouse control button to the C-side virtual key
+            // state (touch_input_set_key(), exported via EMSCRIPTEN_KEEPALIVE).
+            function bindTouchButton(element) {
+                var keyMask = parseInt(element.dataset.key, 10);
+
+                function setKey(isDown) {
+                    if (typeof Module._touch_input_set_key === "function") {
+                        Module._touch_input_set_key(keyMask, isDown ? 1 : 0);
+                    }
+                    element.classList.toggle("active", isDown);
+                }
+
+                var press = function (e) {
+                    e.preventDefault();
+                    setKey(true);
+                };
+                var release = function (e) {
+                    e.preventDefault();
+                    setKey(false);
+                };
+
+                element.addEventListener("touchstart", press, {
+                    passive: false,
+                });
+                element.addEventListener("touchend", release, {
+                    passive: false,
+                });
+                element.addEventListener("touchcancel", release, {
+                    passive: false,
+                });
+
+                // Mouse handlers let the controls be exercised with a mouse too
+                // (e.g. touch emulation while testing in a desktop browser).
+                element.addEventListener("mousedown", press);
+                element.addEventListener("mouseup", release);
+                element.addEventListener("mouseleave", release);
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                if (!isMobileDevice()) return;
+
+                document.body.classList.add("mobile-controls");
+                document
+                    .querySelectorAll("#touch-controls [data-key]")
+                    .forEach(bindTouchButton);
+            });
+        </script>
+        {{{ SCRIPT }}}
+    </body>
+</html>

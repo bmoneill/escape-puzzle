@@ -70,13 +70,20 @@ if(WASM)
     # Preload all game assets into the Emscripten virtual filesystem so that
     # fopen()/LoadTexture() calls resolve correctly inside the browser sandbox.
     set(WASM_ASSETS_FLAG "--preload-file=${CMAKE_SOURCE_DIR}/assets@assets")
-    set(WASM_SHELL_FLAG  "--shell-file=${CMAKE_SOURCE_DIR}/external/raylib/src/minshell.html")
+    set(WASM_SHELL_FLAG  "--shell-file=${CMAKE_SOURCE_DIR}/web/shell.html")
 
     target_link_options(${PROJECT_NAME} PRIVATE
-        # Asyncify lets the existing while(1) game loops yield to the browser
-        # each frame via WASM_YIELD() without requiring a full state-machine
-        # refactor.  The stack size is increased from the default 4 KiB because
-        # the menu -> game -> menu call chain can be several frames deep.
+        # The core gameplay loop (game_init()/game_frame() in game/game.c)
+        # follows raylib's WASM guidelines directly: it registers a per-frame
+        # callback via emscripten_set_main_loop_arg() instead of blocking in a
+        # while() loop, so the browser drives frame timing itself.
+        #
+        # Everything else (main menu, level-complete menu, text input prompts)
+        # still uses nested while(1) loops. Asyncify lets those yield to the
+        # browser each frame via WASM_YIELD() without requiring a full
+        # state-machine refactor. The stack size is increased from the
+        # default 4 KiB because the menu -> game -> menu call chain can be
+        # several frames deep.
         -sASYNCIFY=1
         -sASYNCIFY_STACK_SIZE=131072
 
